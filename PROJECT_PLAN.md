@@ -179,8 +179,8 @@ Giai đoạn này chỉ có 6 ngày nên tài liệu (hướng dẫn cài đặt
 
 ## 6. Giả định và nội dung chờ xác nhận
 
-- Dự án bắt đầu 19/10/2026 và kết thúc 10/12/2026; ngày cụ thể từ Giai đoạn 2 trở đi là **dự kiến**, sẽ cập nhật khi có lịch học phần.
-- Vai trò và module Giai đoạn 2–6 là **đề xuất**, chờ nhóm trưởng và các thành viên duyệt.
+- Dự án bắt đầu 19/10/2026 và kết thúc 10/12/2026; ngày cụ thể từ Giai đoạn 2 trở đi là **dự kiến**, sẽ cập nhật theo tiến độ thực tế.
+- Vai trò và module Giai đoạn 2–6 là **đề xuất**.
 - Hạn nộp Chương 1 lấy theo đề của giảng viên: **trước 21:00 ngày 21/10/2026**.
 - Công nghệ, hosting, nơi lưu ảnh và phương án vận chuyển còn đang nghiên cứu, sẽ chốt trong Giai đoạn 2.
 - Danh sách chức năng và mức ưu tiên chính thức theo `REQUIREMENTS.md`; quy trình nghiệp vụ theo `docs/business-workflow.md`.
