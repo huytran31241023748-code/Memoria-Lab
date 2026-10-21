@@ -1,4 +1,4 @@
-# AI USAGE LOG – MEMORIA CRAFT
+# AI USAGE LOG – MEMORIA LAB
 **Dự án: Memoria Lab**
 
 ## Lần sử dụng 1
@@ -13,13 +13,13 @@ Phân tích yêu cầu từ mô tả đề tài, khách hàng mục tiêu, vấn
 
 ### Prompt
 
-Tên MEMORIA CRAFT trong prompt là tên tại lần sử dụng ban đầu; tên hiện tại của dự án là Memoria Lab.
+Tên MEMORIA LAB trong prompt là tên tại lần sử dụng ban đầu; tên hiện tại của dự án là Memoria Lab.
 
 ```text
 Bạn là chuyên gia phân tích nghiệp vụ cho dự án thương mại điện tử.
 
 Thông tin dự án:
-- Tên dự án: MEMORIA CRAFT – Nền tảng TMĐT quà tặng kỷ niệm cá nhân hóa và Digital Scrapbook tương tác
+- Tên dự án: MEMORIA LAB – Nền tảng TMĐT quà tặng kỷ niệm cá nhân hóa và Digital Scrapbook tương tác
 - Sản phẩm hoặc dịch vụ: Scrapbook, khung tranh, thiệp, hộp quà cá nhân hóa; khách tự thiết kế (chọn template, tải ảnh, nhập lời nhắn, thêm sticker) và xem trước 2D trước khi đặt mua
 - Khách hàng mục tiêu: Học sinh, sinh viên, cặp đôi, nhóm bạn, người thích quà sáng tạo (16–26 tuổi), không rành phần mềm thiết kế
 - Vấn đề kinh doanh: (1) khó hình dung thành phẩm; (2) gửi ảnh/yêu cầu qua tin nhắn thiếu trực quan; (3) mẫu cố định hạn chế sáng tạo; (4) quà vật lý và kỷ niệm số bị tách rời
