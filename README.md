@@ -114,7 +114,7 @@ Mã chức năng, tiêu chí nghiệm thu và các chính sách/thông số ch�
 
 Nhóm gồm 8 thành viên. Phân công chi tiết, nhiệm vụ và tiến độ nằm trong [PROJECT_PLAN.md](PROJECT_PLAN.md).
 
-| STT | Thành viên | Trách nhiệm Chương 1 | Trách nhiệm phát triển |
+| STT | Thành viên | Vai trò và trách nhiệm Chương 1 | Vai trò và trách nhiệm phát triển |
 |---|---|---|---|
 | 1 | Trần Lâm Huy | Điều phối, thống nhất đề tài, tạo repository, viết README, kiểm tra và nộp bài. | Phụ trách chính QR/trang kỷ niệm; tích hợp, quản lý repository, triển khai và tài liệu kỹ thuật. |
 | 2 | Phạm Đình Quang | Phân tích khách hàng, phạm vi, vai trò, chức năng/NFR và REQUIREMENTS. | Tài khoản, quyền và khu vực khách hàng; điều phối kiểm thử/QA. |
@@ -189,5 +189,3 @@ Task, người phụ trách, trạng thái và rủi ro được theo dõi trong
 - [GitHub Repository](https://github.com/huytran31241023748-code/memoria-craft)
 - [GitHub Issues](https://github.com/huytran31241023748-code/memoria-craft/issues)
 - **Website demo và hướng dẫn cài đặt/sử dụng:** cập nhật trong giai đoạn triển khai và hoàn thiện.
-
-
