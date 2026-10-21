@@ -15,6 +15,7 @@ MEMORIA CRAFT là dự án phát triển website thương mại điện tử chu
 Thay vì chỉ lựa chọn các sản phẩm có mẫu thiết kế cố định, khách hàng có thể chọn mẫu, tải lên hình ảnh cá nhân, thêm nội dung văn bản và thay đổi một số thành phần trang trí để tạo ra món quà phù hợp với sở thích hoặc câu chuyện kỷ niệm của mình.
 Website cũng hướng đến việc kết hợp sản phẩm quà tặng vật lý với các yếu tố kỷ niệm số như Digital Scrapbook và trang lưu giữ kỷ niệm trực tuyến. Tuy nhiên, những chức năng này thuộc định hướng phát triển sau và cần được nhóm đánh giá về tính khả thi trước khi triển khai.
 Để có cơ sở xây dựng giao diện, lựa chọn chức năng và xác định quy trình nghiệp vụ phù hợp, nhóm tiến hành khảo sát ba website gồm Canva, Mixbook và Photocare.
+
 1.2. Mục đích khảo sát
 Việc khảo sát được thực hiện nhằm nghiên cứu cách các website hiện có tổ chức giao diện, trình bày sản phẩm, hỗ trợ cá nhân hóa và thực hiện các hoạt động thương mại điện tử.
 Nội dung khảo sát tập trung vào 9 tiêu chí:
@@ -28,6 +29,7 @@ Checkout: Quy trình đặt hàng, thanh toán và giao nhận.
 Promotion: Chương trình ưu đãi và mã giảm giá.
 UX: Trải nghiệm người dùng trong quá trình lựa chọn, thiết kế và mua sản phẩm.
 Từ kết quả khảo sát, nhóm đánh giá những điểm mạnh, điểm hạn chế và rút ra bài học có thể áp dụng cho MEMORIA CRAFT.
+
 1.3. Lý do lựa chọn ba website
 Canva – Nền tảng thiết kế trực tuyến
 Website: https://www.canva.com/
@@ -42,6 +44,7 @@ Website: https://www.photocare.vn/
 Photocare được lựa chọn vì có mô hình kinh doanh tương đồng với MEMORIA CRAFT. Website cung cấp các sản phẩm quà tặng sử dụng ảnh và nội dung theo yêu cầu như khung ảnh, cốc in hình, đèn LED và pha lê.
 Photocare phù hợp để khảo sát cách tổ chức cửa hàng thương mại điện tử, hệ thống danh mục, giá bán, giỏ hàng, thanh toán và quá trình tiếp nhận nội dung cá nhân hóa từ khách hàng.
 Như vậy, ba website đại diện cho ba khía cạnh bổ trợ nhau: thiết kế trực quan, cá nhân hóa sản phẩm gắn với đặt mua và kinh doanh quà tặng trực tuyến.
+
 1.4. Phương pháp và phạm vi khảo sát
 Nhóm sử dụng các hình thức khảo sát gồm quan sát giao diện website, xem thông tin sản phẩm, phân tích các bước thao tác có thể tiếp cận và đối chiếu với tài liệu hướng dẫn chính thức của từng nền tảng.
 Để đảm bảo tính khách quan, các nhận xét được phân biệt theo nguồn bằng chứng:
@@ -51,18 +54,22 @@ Nhận xét phân tích: Đánh giá và suy luận của nhóm dựa trên các
 Chưa kiểm thử: Những thao tác chưa được nhóm xác minh đầy đủ, đặc biệt là giao dịch thanh toán và phản hồi khi xảy ra lỗi.
 Việc một website có tài liệu hướng dẫn chức năng không đồng nghĩa với việc nhóm đã kiểm thử thành công chức năng đó.
 Các nhận xét về điểm yếu của website được xây dựng từ đặc điểm giao diện, quy trình và trải nghiệm sử dụng, không dựa trên những nội dung nhóm chưa có điều kiện khảo sát.
+
 2. KHẢO SÁT WEBSITE THỨ NHẤT: CANVA
 Website: https://www.canva.com/
 Trang Scrapbook: https://www.canva.com/create/scrapbooks/
 Thư viện mẫu: https://www.canva.com/scrapbooks/templates/
+
 2.1. Giới thiệu tổng quan
 Canva là nền tảng thiết kế đồ họa trực tuyến, cung cấp các công cụ giúp người dùng tạo nhiều loại sản phẩm thiết kế như poster, thiệp, album ảnh, scrapbook và các ấn phẩm kỹ thuật số.
 Người dùng có thể lựa chọn mẫu có sẵn, tải lên hình ảnh cá nhân, thêm văn bản, sticker, biểu tượng và điều chỉnh bố cục theo nhu cầu.
 Canva hướng đến người dùng phổ thông, giúp những người không có nhiều kiến thức thiết kế vẫn có thể tạo ra sản phẩm mang dấu ấn cá nhân.
 Đối với MEMORIA CRAFT, Canva có mức độ tương đồng cao ở chức năng Studio Customize Scrapbook.
 Tuy nhiên, Canva là nền tảng thiết kế đa mục đích, không phải website chuyên bán quà tặng vật lý. Vì vậy, nhóm tập trung học hỏi công cụ chỉnh sửa và trải nghiệm cá nhân hóa, đồng thời chỉ tham khảo các chức năng thương mại điện tử thuộc dịch vụ Canva Print.
+
 2.2. Phân tích giao diện (Layout)
 
+docs/2.1.png
 Hình 2.1. Giao diện giới thiệu công cụ Scrapbook của Canva. Nguồn: Canva.
 Trang giới thiệu Scrapbook của Canva sử dụng bố cục hai phần rõ ràng. Bên trái là tiêu đề lớn, đoạn giới thiệu và nút "Start Designing a Scrapbook"; bên phải là hình ảnh minh họa công cụ thiết kế trên máy tính.
 Màu sắc chủ đạo nhẹ nhàng, các khoảng trắng được bố trí hợp lý giúp nội dung trở nên dễ quan sát. Hình ảnh minh họa cho phép người dùng hình dung kết quả thiết kế trước khi bắt đầu sử dụng.
@@ -70,8 +77,10 @@ Phía dưới khu vực giới thiệu, Canva trình bày các lợi ích nổi 
 Điểm mạnh: Giao diện trực quan, có tiêu đề rõ ràng và nút hành động nổi bật, giúp người dùng dễ dàng bắt đầu quá trình thiết kế.
 Điểm hạn chế: Trang tập trung vào công cụ thiết kế hơn là thông tin mua sắm, nên chưa thể hiện đầy đủ các yếu tố như giá bán, chất liệu hoặc tùy chọn sản phẩm vật lý.
 Bài học cho MEMORIA CRAFT: Trang giới thiệu Studio Customize Scrapbook nên sử dụng hình ảnh minh họa trước và sau khi tùy chỉnh, kết hợp nút "Bắt đầu thiết kế" ở vị trí dễ nhìn.
+
 2.3. Phân tích điều hướng (Navigation)
 
+docs/2.2.png
 Hình 2.2. Giao diện tìm kiếm và lựa chọn mẫu thiết kế Scrapbook.
 Canva cho phép người dùng tiếp cận các mẫu thiết kế thông qua thanh tìm kiếm, danh mục và thư viện template.
 Khi nhập từ khóa "scrapbook", hệ thống hiển thị nhiều mẫu theo phong cách khác nhau, kèm hình ảnh xem trước.
@@ -82,6 +91,7 @@ Sau khi lựa chọn mẫu, người dùng có thể chuyển đến khu vực E
 Bài học cho MEMORIA CRAFT: Nên xây dựng luồng điều hướng đơn giản:
 Chọn sản phẩm → Chọn mẫu → Cá nhân hóa → Xem trước → Đặt mua.
 Cách tổ chức này giúp khách hàng tập trung vào mục tiêu tạo quà tặng mà không cần thao tác qua quá nhiều công cụ.
+
 2.4. Phân tích sản phẩm và danh mục (Product)
 Canva cung cấp nhiều mẫu scrapbook theo các chủ đề như sinh nhật, gia đình, du lịch, tình yêu, tốt nghiệp và các dịp kỷ niệm.
 Mỗi mẫu có phong cách thiết kế riêng về màu sắc, hình ảnh, bố cục và cách sắp xếp văn bản.
@@ -92,6 +102,7 @@ Tuy nhiên, cần phân biệt mẫu thiết kế với sản phẩm thương m�
 Điểm hạn chế: Canva không tập trung quản lý sản phẩm quà tặng vật lý theo mô hình cửa hàng chuyên biệt.
 Bài học cho MEMORIA CRAFT: Cần tổ chức dữ liệu sản phẩm và mẫu thiết kế riêng biệt.
 Ví dụ, khách hàng lựa chọn một sản phẩm scrapbook vật lý, sau đó chọn template phù hợp để cá nhân hóa. Khi đặt hàng, hệ thống phải lưu được sản phẩm đã chọn cùng với nội dung thiết kế tương ứng.
+
 2.5. Phân tích tìm kiếm và bộ lọc (Search & Filter)
 Canva hỗ trợ tìm kiếm mẫu thiết kế theo từ khóa và chủ đề.
 Người dùng có thể nhập các từ như Scrapbook, Birthday, Graduation hoặc Travel để tìm những mẫu liên quan.
@@ -102,6 +113,7 @@ Cần phân biệt việc lọc mẫu thiết kế với việc lọc sản ph�
 Bài học cho MEMORIA CRAFT: Nên phát triển hai nhóm tìm kiếm:
 Tìm sản phẩm theo loại quà, dịp tặng và các thuộc tính thương mại.
 Tìm mẫu thiết kế và các thành phần trang trí bên trong Studio.
+
 2.6. Phân tích giỏ hàng (Cart)
 Đối với hoạt động thiết kế scrapbook thông thường, Canva không lấy giỏ hàng làm chức năng trọng tâm.
 Tuy nhiên, theo tài liệu chính thức về Canva Print, khách hàng có thể lựa chọn sản phẩm in, kiểm tra thiết kế và thêm sản phẩm vào giỏ hàng khi dịch vụ hỗ trợ.
@@ -112,6 +124,7 @@ Giới hạn khảo sát: Phân tích này dựa trên tài liệu Canva Print c
 Bài học cho MEMORIA CRAFT: Khi khách hàng hoàn thành thiết kế, hệ thống cần lưu riêng cấu hình thiết kế của mỗi sản phẩm trong giỏ hàng.
 Hai sản phẩm cùng loại nhưng có hình ảnh hoặc lời nhắn khác nhau phải được quản lý như hai mục giỏ hàng khác nhau.
 Nguồn: https://www.canva.com/help/order-prints/
+
 2.7. Phân tích thanh toán (Checkout)
 Theo tài liệu trợ giúp Canva Print, quy trình đặt in gồm các bước lựa chọn thông số in, kiểm tra bản thiết kế, nhập thông tin giao hàng, lựa chọn phương thức thanh toán và xác nhận đơn.
 Trong quá trình này, hệ thống có bước kiểm tra bản thiết kế trước khi hoàn tất đặt hàng.
@@ -120,14 +133,17 @@ Trong quá trình này, hệ thống có bước kiểm tra bản thiết kế t
 Giới hạn khảo sát: Nhóm chưa có minh chứng kiểm thử toàn bộ quy trình thanh toán hoặc các trường hợp giao dịch thất bại.
 Bài học cho MEMORIA CRAFT: Cần có bước xem trước và xác nhận bản thiết kế trước khi tạo đơn hàng.
 Sau khi khách xác nhận, hệ thống phải lưu lại phiên bản thiết kế tương ứng để phục vụ xử lý đơn.
+
 2.8. Phân tích khuyến mãi (Promotion)
 Canva cung cấp các tài nguyên thiết kế miễn phí và trả phí. Ngoài ra, theo tài liệu Canva Print, dịch vụ in ấn có hỗ trợ nhập coupon tại checkout trong phạm vi áp dụng.
 Tuy nhiên, hệ thống khuyến mãi của Canva không phải đối tượng tham khảo chính của dự án vì nền tảng tập trung vào dịch vụ thiết kế.
 Điểm mạnh: Có cơ chế áp dụng mã ưu đãi trong quy trình đặt in.
 Giới hạn khảo sát: Nhóm chưa thực hiện thử nghiệm với mã coupon hợp lệ hoặc không hợp lệ.
 Bài học cho MEMORIA CRAFT: Nên xây dựng module khuyến mãi riêng, cho phép người dùng nhập voucher, kiểm tra điều kiện và cập nhật tổng tiền đơn hàng.
+
 2.9. Phân tích trải nghiệm người dùng (UX)
 
+docs/2.3.png
 Hình 2.3. Giao diện Canva Editor với thanh công cụ và vùng thiết kế.
 Canva Editor được chia thành hai khu vực chính.
 Bên trái là thanh công cụ cho phép truy cập template, thành phần đồ họa, văn bản và hình ảnh tải lên.
@@ -136,6 +152,7 @@ Các thao tác chỉnh sửa được Canva hỗ trợ gồm thêm hình ảnh, 
 Điểm mạnh: Giao diện trực quan, người dùng có thể tương tác với các đối tượng thiết kế mà không cần kiến thức lập trình hay đồ họa chuyên sâu.
 Điểm hạn chế: Số lượng công cụ lớn có thể tạo ra khó khăn cho người mới khi phải lựa chọn quá nhiều chức năng.
 Bài học cho MEMORIA CRAFT: Không cần xây dựng trình thiết kế phức tạp như Canva. Studio của nhóm nên ưu tiên thao tác đơn giản, số lượng công cụ giới hạn và khả năng xem trước.
+
 2.10. Quy trình sử dụng tham khảo
 Quy trình sử dụng Canva trong phạm vi scrapbook được tổng hợp như sau:
 Truy cập website và tìm kiếm mẫu scrapbook.
@@ -146,6 +163,7 @@ Thêm văn bản, sticker và các thành phần trang trí.
 Lưu, tải xuống hoặc chia sẻ thiết kế.
 Nếu sử dụng Canva Print tại khu vực được hỗ trợ, khách hàng có thể tiếp tục quy trình lựa chọn cấu hình in và đặt mua.
 Quy trình này thể hiện khả năng kết hợp thiết kế trực tuyến với một số hình thức sử dụng sản phẩm vật lý.
+
 2.11. Đánh giá điểm mạnh và điểm yếu
 Điểm mạnh
 Điểm hạn chế
@@ -168,16 +186,19 @@ Thứ ba, cần có bước xem trước thiết kế trước khi đặt hàng.
 Trong giai đoạn đầu, nhóm có thể sử dụng những template với bố cục xác định trước, cho phép khách tải ảnh và nhập nội dung vào các vị trí được quy định.
 Khả năng di chuyển và thay đổi kích thước đối tượng trong vùng thiết kế có thể được bổ sung nếu nhóm kiểm thử thành công phương án sử dụng thư viện phù hợp như Fabric.js.
 Các chức năng nâng cao như chỉnh sửa nhiều trang phức tạp, quản lý layer chuyên sâu, cộng tác đồng thời và xuất file in chất lượng chuyên nghiệp chưa được ưu tiên.
+
 3. KHẢO SÁT WEBSITE THỨ HAI: MIXBOOK
 Website: https://www.mixbook.com/
 Trang Photo Books: https://www.mixbook.com/all-photo-books
+
 3.1. Giới thiệu tổng quan
 Mixbook là nền tảng cung cấp dịch vụ thiết kế và đặt in các sản phẩm ảnh cá nhân hóa, nổi bật là photo book.
 Người dùng có thể lựa chọn mẫu thiết kế, tải ảnh cá nhân lên, chỉnh sửa bố cục, thêm nội dung và đặt mua sản phẩm hoàn thiện.
 Khác với Canva, Mixbook có định hướng rõ hơn về việc chuyển một thiết kế kỹ thuật số thành sản phẩm vật lý.
 Đây là website có giá trị tham khảo đối với MEMORIA CRAFT trong việc xây dựng quy trình lựa chọn mẫu, tùy chỉnh sản phẩm, quản lý giỏ hàng và thực hiện đặt mua.
-3.2. Phân tích giao diện (Layout)
 
+3.2. Phân tích giao diện (Layout)
+docs/3.1.png
 Hình 3.1. Giao diện trang chủ Mixbook với banner chương trình khuyến mãi.
 Trang chủ Mixbook sử dụng banner lớn để giới thiệu các chương trình ưu đãi, kết hợp nút hành động giúp khách hàng bắt đầu tạo photo book.
 Thanh điều hướng nằm ở đầu trang, hiển thị những nhóm sản phẩm chính như Photo Books, Cards, Calendars và Home Decor.
@@ -186,8 +207,9 @@ Trong ảnh khảo sát, banner khuyến mãi sử dụng màu sắc nổi bật
 Điểm mạnh: Giao diện nhấn mạnh sản phẩm và chương trình khuyến mãi, giúp khách hàng nhanh chóng tiếp cận nội dung nổi bật.
 Điểm hạn chế: Banner có kích thước lớn, chiếm đáng kể không gian đầu trang trước khi người dùng xem danh sách sản phẩm.
 Bài học cho MEMORIA CRAFT: Nên sử dụng banner để giới thiệu sản phẩm nổi bật hoặc chương trình khuyến mãi, nhưng cần giữ các danh mục quà tặng ở vị trí dễ truy cập.
-3.3. Phân tích điều hướng (Navigation)
 
+3.3. Phân tích điều hướng (Navigation)
+docs/3.2.png
 Hình 3.2. Giao diện danh sách Photo Books trên Mixbook.
 Mixbook tổ chức danh mục theo loại sản phẩm và chủ đề.
 Trong trang All Photo Books, khách hàng có thể khám phá các mẫu theo những chủ đề như Travel, Family, Birthday, Wedding và các dịp khác.
@@ -196,22 +218,26 @@ Ngoài ra, website hiển thị hình ảnh mẫu, tên sản phẩm và những
 Điểm hạn chế: Số lượng mẫu lớn có thể khiến quá trình lựa chọn kéo dài nếu người dùng chưa xác định phong cách mong muốn.
 Bài học cho MEMORIA CRAFT: Nên tổ chức điều hướng theo cả loại quà tặng và dịp tặng.
 Ví dụ, khách có thể tìm scrapbook theo loại sản phẩm hoặc theo các dịp như sinh nhật, tốt nghiệp và kỷ niệm tình yêu.
-3.4. Phân tích sản phẩm và danh mục (Product)
 
+3.4. Phân tích sản phẩm và danh mục (Product)
+docs/3.3.png
 Hình 3.3. Trang giới thiệu sản phẩm thiệp ảnh cá nhân hóa của Mixbook.
 Ngoài photo book, Mixbook còn cung cấp nhiều dòng sản phẩm liên quan đến ảnh cá nhân hóa như thiệp, lịch và sản phẩm trang trí.
 Đối với photo book, người dùng có thể lựa chọn mẫu và các thông số như kích thước, kiểu bìa, chất liệu giấy hoặc số trang tùy từng sản phẩm.
 Các thông số này ảnh hưởng đến hình thức thành phẩm và giá bán.
 
 Nguồn: https://www.mixbook.com/inspiration/mixbook-order-guide
+docs/3.4.png
 Hình 3.4. Minh họa cách lựa chọn cấu hình photo book theo tài liệu hướng dẫn của Mixbook.
 Điểm mạnh: Cho phép khách hàng cá nhân hóa cả nội dung thiết kế và đặc điểm vật lý của sản phẩm.
 Điểm hạn chế: Có nhiều lựa chọn về kích thước, bìa và chất liệu, khiến khách hàng cần tìm hiểu sự khác biệt giữa các phiên bản trước khi mua.
 Bài học cho MEMORIA CRAFT: Nên thiết kế hệ thống thuộc tính sản phẩm rõ ràng. Mỗi lựa chọn về kích thước hoặc chất liệu cần có mô tả và mức giá tương ứng.
 Ở giai đoạn đầu, nhóm nên giới hạn số lượng biến thể để giảm độ phức tạp khi xây dựng và quản lý dữ liệu.
+
 3.5. Phân tích tìm kiếm và bộ lọc (Search & Filter)
 Mixbook hỗ trợ tìm kiếm sản phẩm thông qua thanh tìm kiếm, hệ thống danh mục và bộ lọc mẫu thiết kế. Tại trang All Photo Books, người dùng có thể tìm kiếm các mẫu theo chủ đề như Travel, Family, Birthday và Wedding, đồng thời sử dụng chức năng Filters để thu hẹp danh sách theo nhu cầu cá nhân.
 
+docs/3.5.png
 Hình 3.5. Giao diện bộ lọc mẫu thiết kế của Mixbook theo mức độ tùy chỉnh, phong cách, màu sắc và tính năng đặc biệt. Nguồn: Mixbook, ảnh khảo sát của nhóm.
 Qua giao diện khảo sát, Mixbook cung cấp bộ lọc gồm bốn nhóm tiêu chí chính:
 Thứ nhất, mức độ tùy chỉnh (Customization Level):
@@ -235,8 +261,9 @@ Bài học cho MEMORIA CRAFT:
 Nhóm có thể tham khảo cách Mixbook tổ chức bộ lọc theo phong cách và màu sắc để áp dụng cho thư viện mẫu scrapbook. Tuy nhiên, để phù hợp với phạm vi đồ án, MEMORIA CRAFT nên ưu tiên các tiêu chí đơn giản như chủ đề, phong cách thiết kế và màu sắc.
 Đối với khu vực cửa hàng, nhóm cần xây dựng bộ lọc riêng theo loại sản phẩm, khoảng giá, dịp tặng và chất liệu nếu phù hợp.
 Việc tách bộ lọc mẫu thiết kế khỏi bộ lọc sản phẩm thương mại giúp người dùng dễ dàng tìm kiếm, đồng thời giữ cho giao diện và quá trình phát triển hệ thống không quá phức tạp.
-3.6. Phân tích giỏ hàng (Cart)
 
+3.6. Phân tích giỏ hàng (Cart)
+docs/3.6.png
 Hình 3.6. Giao diện giỏ hàng Mixbook với thông tin sản phẩm, số lượng, tùy chọn vận chuyển và mã giảm giá đã áp dụng.
 Qua quá trình khảo sát, nhóm đã tạo một sản phẩm Photo Book và chuyển sản phẩm vào giỏ hàng trên Mixbook.
 Trong giao diện giỏ hàng, website hiển thị tên sản phẩm, hình ảnh xem trước, loại sách, kích thước, chất liệu và số lượng.
@@ -262,6 +289,7 @@ Giá trị này phản ánh cấu hình và điều kiện tại thời điểm 
 Điểm hạn chế: Việc thay đổi một số thông số sản phẩm cần chuyển qua giao diện chỉnh sửa cấu hình, thay vì thực hiện trực tiếp tất cả thao tác tại giỏ hàng.
 Bài học cho MEMORIA CRAFT: Giỏ hàng phải lưu được cấu hình của từng sản phẩm cá nhân hóa. Khách hàng cần có khả năng kiểm tra hình ảnh xem trước, giá, số lượng, phí vận chuyển và mức giảm giá trước khi đặt mua.
 Nếu hai sản phẩm cùng loại nhưng sử dụng hình ảnh hoặc nội dung thiết kế khác nhau, hệ thống phải lưu chúng thành hai mục giỏ hàng riêng biệt.
+
 3.7. Phân tích thanh toán (Checkout)
 Mixbook tổ chức quy trình mua hàng theo hướng người dùng hoàn thiện thiết kế, lựa chọn cấu hình sản phẩm và kiểm tra giỏ hàng trước khi chuyển sang checkout.
 Trong giao diện giỏ hàng đã khảo sát, hệ thống cho phép lựa chọn hình thức giao hàng Economy hoặc Rush.
@@ -271,6 +299,7 @@ Website cũng cung cấp khu vực tính thuế và vận chuyển theo quốc g
 Giới hạn khảo sát: Nhóm đã trực tiếp kiểm tra giao diện cấu hình và giỏ hàng nhưng chưa hoàn tất bước nhập thông tin thanh toán và xác nhận giao dịch. Vì vậy, chưa có căn cứ đánh giá toàn bộ quy trình xử lý giao dịch thành công, thất bại hoặc hủy.
 Bài học cho MEMORIA CRAFT: Cần xây dựng checkout hiển thị rõ thông tin sản phẩm, bản thiết kế đã xác nhận, địa chỉ giao hàng, phí vận chuyển, khuyến mãi và tổng tiền.
 Hệ thống backend phải quản lý trạng thái thanh toán riêng với trạng thái xử lý đơn hàng.
+
 3.8. Phân tích khuyến mãi (Promotion)
 Mixbook có chương trình khuyến mãi được giới thiệu trên trang chủ và hỗ trợ nhập mã coupon trong quá trình đặt hàng.
 Đáng chú ý, qua thao tác khảo sát thực tế, nhóm đã nhập và áp dụng thành công một mã giảm giá tại trang cấu hình sản phẩm. Trạng thái giảm giá tiếp tục được hiển thị trong giỏ hàng.
@@ -280,8 +309,9 @@ Phần tổng kết thể hiện riêng giá sản phẩm, số tiền được 
 Điểm hạn chế: Việc áp dụng coupon làm bảng tổng kết có nhiều mức giá khác nhau, gồm giá gốc, giá sau giảm và tổng tiền đã cộng vận chuyển. Khách hàng cần đọc kỹ để phân biệt các khoản này.
 Bài học cho MEMORIA CRAFT: Chức năng voucher cần cho phép nhập mã, xác minh điều kiện sử dụng và cập nhật tổng tiền.
 Nên trình bày rõ giá gốc, số tiền giảm, phí vận chuyển và số tiền cuối cùng nhằm hạn chế nhầm lẫn cho khách hàng.
-3.9. Phân tích trải nghiệm người dùng (UX)
 
+3.9. Phân tích trải nghiệm người dùng (UX)
+docs/3.7.png
 Hình 3.7. Giao diện Mixbook Studio với thanh công cụ Sticker, vùng thiết kế, điều khiển trang và các chức năng chỉnh sửa.
 Qua ảnh khảo sát trực tiếp, Mixbook Studio cung cấp giao diện thiết kế gồm thanh công cụ bên trái và vùng chỉnh sửa sản phẩm ở giữa.
 Các nhóm chức năng trong thanh công cụ gồm Photos, Layouts, Backgrounds, Stickers, Text và Themes.
@@ -296,6 +326,7 @@ Ngoài ra, khi thêm thành phần trang trí có kích thước lớn, người
 Bài học cho MEMORIA CRAFT: Studio nên có bố cục đơn giản, chỉ tập trung vào những thao tác như chọn mẫu, tải ảnh, nhập văn bản, thêm sticker và xem trước.
 Nhóm chưa cần phát triển đầy đủ các tính năng quản lý nhiều trang, cộng tác hoặc tự động thiết kế như Mixbook.
 Trong giai đoạn đầu, có thể sử dụng template với những vị trí ảnh và văn bản được xác định sẵn, sau đó bổ sung khả năng kéo thả giới hạn nếu nhóm kiểm thử thành công.
+
 3.10. Quy trình giao dịch tham khảo
 Dựa trên quá trình khảo sát thực tế, quy trình tạo và đặt mua Photo Book tại Mixbook được tổng hợp như sau:
 Truy cập website và lựa chọn sản phẩm Photo Book.
@@ -309,6 +340,7 @@ Thêm sản phẩm vào giỏ hàng.
 Kiểm tra cấu hình, phí vận chuyển và tổng tiền.
 Chuyển sang Checkout để tiếp tục thanh toán.
 Nhóm đã trực tiếp khảo sát đến bước giỏ hàng và áp dụng coupon thành công. Các bước thanh toán cuối cùng chưa được kiểm thử đầy đủ.
+
 3.11. Đánh giá điểm mạnh và điểm yếu
 Điểm mạnh
 Điểm hạn chế
@@ -331,15 +363,18 @@ Cấu hình sản phẩm: Cho phép lựa chọn kích thước, chất liệu h
 Giỏ hàng: Lưu riêng bản thiết kế của từng sản phẩm cá nhân hóa, hiển thị thông tin cấu hình, số lượng và giá.
 Khuyến mãi và vận chuyển: Hiển thị rõ voucher, phí vận chuyển và tổng tiền trước khi thanh toán.
 MEMORIA CRAFT nên học hỏi quy trình kết nối thiết kế với đơn hàng của Mixbook, nhưng không triển khai toàn bộ trình chỉnh sửa phức tạp. Nhóm ưu tiên Studio theo template cơ bản để bảo đảm khả năng hoàn thành đồ án.
+
 4. KHẢO SÁT WEBSITE THỨ BA: PHOTOCARE
 Website: https://www.photocare.vn/
 Danh mục sản phẩm: https://www.photocare.vn/danh-muc/tat-ca-san-pham
+
 4.1. Giới thiệu tổng quan
 Photocare là website kinh doanh các sản phẩm quà tặng cá nhân hóa tại Việt Nam.
 Website cung cấp những sản phẩm như khung ảnh, cốc in hình, pha lê, đèn LED, tranh gương và các sản phẩm in ảnh theo yêu cầu.
 Khách hàng có thể lựa chọn sản phẩm, cung cấp hình ảnh cá nhân và nhập nội dung muốn in để cửa hàng tiếp nhận yêu cầu.
 Photocare có mô hình tương đồng với MEMORIA CRAFT ở hoạt động kinh doanh quà tặng vật lý và xử lý yêu cầu cá nhân hóa.
 Đặc biệt, đây là website tại Việt Nam nên phù hợp để khảo sát cách hiển thị giá, tổ chức danh mục và quy trình giao hàng cho khách hàng trong nước.
+
 4.2. Phân tích giao diện (Layout)
 
 Hình 4.1. Giao diện trang chủ Photocare.
@@ -350,6 +385,7 @@ Bên dưới là các nhóm sản phẩm, hình ảnh quà tặng và thông tin
 Điểm mạnh: Màu sắc nhất quán, hình ảnh trực quan và thông điệp phù hợp với lĩnh vực kinh doanh.
 Điểm hạn chế: Trang chủ chứa nhiều khu vực giới thiệu và hình ảnh, khiến chiều dài trang tương đối lớn.
 Bài học cho MEMORIA CRAFT: Nên sử dụng phong cách giao diện nhẹ nhàng, giàu cảm xúc nhưng bố cục cần rõ ràng và ưu tiên thông tin sản phẩm.
+
 4.3. Phân tích điều hướng (Navigation)
 Hình 4.2. Giao diện danh mục sản phẩm Photocare.
 
@@ -362,6 +398,7 @@ Mỗi nhóm được trình bày bằng hình ảnh minh họa, tên danh mục 
 Điểm hạn chế: Khi danh mục mở rộng, việc phân loại theo nhiều hướng có thể khiến một số sản phẩm xuất hiện ở nhiều nhóm, đòi hỏi hệ thống điều hướng rõ ràng để tránh gây nhầm lẫn.
 Bài học cho MEMORIA CRAFT: Nên kết hợp danh mục theo loại sản phẩm và dịp tặng.
 Ví dụ, scrapbook có thể xuất hiện trong danh mục Scrapbook và đồng thời được giới thiệu trong nhóm Quà tốt nghiệp hoặc Quà kỷ niệm.
+
 4.4. Phân tích sản phẩm (Product)
 
 Hình 4.4. Giao diện giới thiệu sản phẩm nổi bật với hình ảnh, tên và giá.
@@ -375,6 +412,7 @@ Trang này thể hiện việc người dùng cung cấp dữ liệu cho cửa h
 Điểm mạnh: Cung cấp thông tin sản phẩm và cho phép khách gửi ảnh, nội dung cá nhân hóa theo yêu cầu.
 Điểm hạn chế: Trên trang sản phẩm được khảo sát, người dùng chưa được cung cấp một công cụ kéo thả trực tiếp để tự điều chỉnh bố cục và xem trước thiết kế hoàn chỉnh.
 Bài học cho MEMORIA CRAFT: Có thể học hỏi cách Photocare tiếp nhận dữ liệu cá nhân hóa, đồng thời phát triển trải nghiệm xem trước thiết kế đơn giản để khách chủ động kiểm tra trước khi đặt mua.
+
 4.5. Phân tích tìm kiếm và bộ lọc (Search & Filter)
 Hình 4.6. Danh sách sản phẩm và các danh mục của Photocare.
 Photocare cung cấp ô tìm kiếm trên thanh điều hướng và hệ thống danh mục để khách hàng tiếp cận sản phẩm.
@@ -388,6 +426,7 @@ Tại giao diện "Tất cả sản phẩm" được khảo sát, Photocare sử
 Điểm hạn chế: Việc thiếu bộ lọc đa thuộc tính trên trang được khảo sát khiến khách hàng chưa thể kết hợp nhiều điều kiện để thu hẹp danh sách.
 Bài học cho MEMORIA CRAFT: Nên phát triển bộ lọc theo loại sản phẩm, dịp tặng, khoảng giá, đối tượng nhận quà và phong cách hoặc chất liệu.
 Nhờ vậy, khách hàng có thể dễ dàng lựa chọn quà phù hợp với nhu cầu và ngân sách.
+
 4.6. Phân tích giỏ hàng (Cart)
 
 Hình 4.7. Giao diện giỏ hàng Photocare hiển thị sản phẩm, số lượng và tổng tiền.
@@ -400,6 +439,7 @@ Ngoài ra, website cung cấp liên kết "Tiếp tục mua sắm" để khách 
 Đây là hạn chế quan sát được của cách hiển thị trên giao diện, không phải kết luận về dữ liệu mà hệ thống lưu trữ phía backend.
 Bài học cho MEMORIA CRAFT: Mỗi sản phẩm cá nhân hóa trong giỏ hàng nên hiển thị thông tin hoặc ảnh xem trước của bản thiết kế tương ứng.
 Nếu khách mua hai sản phẩm cùng loại nhưng có nội dung thiết kế khác nhau, hệ thống phải quản lý thành hai mục riêng để tránh nhầm lẫn khi sản xuất.
+
 4.7. Phân tích thanh toán (Checkout)
 
 Hình 4.8. Giao diện nhập thông tin giao hàng và xác nhận đơn hàng trên Photocare.
@@ -412,6 +452,7 @@ Trong tình huống khảo sát được chụp lại, một sản phẩm có gi
 Giới hạn khảo sát: Ảnh cho thấy lựa chọn MoMo xuất hiện trong giao diện, nhưng chưa chứng minh giao dịch được chuyển đến cổng MoMo hoặc xử lý kết quả thanh toán thành công.
 Bài học cho MEMORIA CRAFT: Nên xây dựng trang checkout ngắn gọn, có kiểm tra dữ liệu đầu vào và hiển thị rõ các khoản tiền.
 Bên cạnh giao diện, backend phải lưu trạng thái đơn và xác minh kết quả thanh toán theo đúng yêu cầu của phương thức được tích hợp.
+
 4.8. Phân tích khuyến mãi (Promotion)
 Tại trang checkout, Photocare cung cấp ô nhập mã giảm giá và nút "Áp dụng".
 Khu vực thông tin đơn hàng hiển thị giá trị giảm giá coupon, phí vận chuyển và tổng tiền.
@@ -420,6 +461,7 @@ Bên cạnh đó, Photocare công bố chính sách ưu đãi vận chuyển the
 Giới hạn khảo sát: Nhóm chưa xác minh đầy đủ phản hồi khi nhập mã coupon không hợp lệ, hết hạn hoặc không đủ điều kiện.
 Bài học cho MEMORIA CRAFT: Nên hỗ trợ mã giảm giá có điều kiện, thời hạn và giới hạn sử dụng. Tổng tiền phải được backend tính toán lại sau khi kiểm tra voucher.
 Nguồn chính sách vận chuyển: https://www.photocare.vn/chinh-sach-van-chuyen-va-giao-nhan
+
 4.9. Phân tích trải nghiệm người dùng (UX)
 
 Hình 4.9. Khu vực truyền thông và phản hồi khách hàng được Photocare giới thiệu trên website.
@@ -430,6 +472,7 @@ Các hình ảnh phản hồi này góp phần tạo cảm giác tin cậy và t
 Điểm mạnh: Nội dung gần gũi với người dùng Việt Nam, kết hợp thông tin mua sắm và yếu tố cảm xúc.
 Điểm hạn chế: Với sản phẩm phải gửi ảnh và nội dung cho cửa hàng, khách hàng chưa thể trực tiếp điều chỉnh bản thiết kế hoàn chỉnh ngay tại trang sản phẩm được khảo sát.
 Bài học cho MEMORIA CRAFT: Nên kết hợp cách trình bày sản phẩm và nội dung giàu cảm xúc của Photocare với công cụ cá nhân hóa trực tiếp để nâng cao sự chủ động của khách hàng.
+
 4.10. Quy trình giao dịch tham khảo
 Quy trình đặt mua sản phẩm tại Photocare được tổng hợp theo các bước:
 Truy cập website và lựa chọn sản phẩm.
@@ -444,6 +487,7 @@ Kiểm tra phí vận chuyển và mã giảm giá.
 Lựa chọn phương thức thanh toán và xác nhận đặt hàng.
 Đối với sản phẩm cần xử lý thiết kế riêng, cửa hàng có thể tiếp nhận và thực hiện các bước xử lý tiếp theo theo quy trình của mình.
 Các thao tác tạo đơn thành công và xử lý thanh toán thực tế chưa được nhóm xác minh đầy đủ.
+
 4.11. Đánh giá điểm mạnh và điểm yếu
 Điểm mạnh
 Điểm hạn chế
@@ -468,6 +512,7 @@ Tổ chức giỏ hàng và checkout phù hợp thị trường Việt Nam.
 Hiển thị phí vận chuyển, mã giảm giá và tổng tiền.
 Đồng thời, MEMORIA CRAFT có thể tạo điểm khác biệt bằng công cụ cá nhân hóa cho phép khách hàng xem trước sản phẩm trước khi đặt mua.
 Đối với những trường hợp ảnh chưa đạt chất lượng hoặc nội dung không phù hợp, hệ thống nên hỗ trợ quản trị viên kiểm tra và yêu cầu khách hàng điều chỉnh trước khi sản xuất.
+
 5. BẢNG SO SÁNH TỔNG HỢP BA WEBSITE
 5.1. So sánh theo các tiêu chí khảo sát
 Tiêu chí
@@ -527,20 +572,25 @@ Cấu trúc cửa hàng quà tặng TMĐT
 Qua khảo sát, ba website thể hiện những thế mạnh khác nhau. Canva nổi bật về công cụ thiết kế và cá nhân hóa trực quan; Mixbook kết hợp thư viện mẫu, Studio, cấu hình sản phẩm và quy trình mua hàng; Photocare phù hợp để tham khảo cách tổ chức cửa hàng quà tặng tại Việt Nam.
 Đặc biệt, quá trình khảo sát Mixbook cho thấy tầm quan trọng của việc liên kết bản thiết kế với các tùy chọn sản phẩm, giỏ hàng, phí vận chuyển và khuyến mãi.
 MEMORIA CRAFT có thể kết hợp những ưu điểm này để xây dựng website thương mại điện tử quà tặng cá nhân hóa với quy trình mua sắm rõ ràng và Studio đơn giản, dễ sử dụng.
+
 5.3. Những điều MEMORIA CRAFT nên học hỏi
 Từ Canva, nhóm học được cách xây dựng thư viện mẫu và giao diện cá nhân hóa đơn giản, dễ sử dụng.
 Từ Mixbook, nhóm học được cách liên kết bản thiết kế với cấu hình sản phẩm và đơn hàng.
 Từ Photocare, nhóm học được cách tổ chức cửa hàng quà tặng tại Việt Nam, đặc biệt về danh mục, thông tin sản phẩm, giỏ hàng và checkout.
+
 5.4. Những chức năng không nên triển khai ngay
 MEMORIA CRAFT không nên phát triển toàn bộ công cụ thiết kế như Canva vì số lượng chức năng lớn, đòi hỏi nhiều thời gian lập trình và kiểm thử.
 Nhóm cũng không nên triển khai ngay chức năng chỉnh sửa photo book nhiều trang phức tạp hoặc cộng tác nhiều người như Mixbook.
 Trong phạm vi đồ án, nên ưu tiên những nghiệp vụ có thể phân tích, thiết kế, xây dựng và kiểm thử hoàn chỉnh.
+
 6. ĐỀ XUẤT CHỨC NĂNG ÁP DỤNG CHO MEMORIA CRAFT
+
 6.1. Định hướng phát triển
 Dựa trên kết quả khảo sát và README của nhóm, MEMORIA CRAFT được định hướng là website thương mại điện tử bán quà tặng kỷ niệm cá nhân hóa.
 Website cần đáp ứng các chức năng thương mại điện tử nền tảng như danh mục, sản phẩm, tài khoản, giỏ hàng, thanh toán, vận chuyển, khuyến mãi và quản trị.
 Bên cạnh đó, nhóm dự kiến phát triển Studio Customize Scrapbook ở mức cơ bản để tạo điểm khác biệt.
 Tuy nhiên, chức năng Studio cần được giới hạn theo khả năng kỹ thuật thực tế của nhóm, tránh đặt mục tiêu xây dựng một trình thiết kế quá phức tạp.
+
 6.2. Danh sách chức năng đề xuất
 Mã
 Chức năng
@@ -616,6 +666,7 @@ Xác nhận và thêm sản phẩm vào giỏ hàng.
 Các khung ảnh và vị trí văn bản có thể được xác định sẵn để giảm độ phức tạp trong quá trình xử lý.
 Nếu nhóm kiểm thử thành công thư viện hỗ trợ thiết kế 2D như Fabric.js, có thể phát triển thêm khả năng di chuyển hoặc thay đổi kích thước một số đối tượng trong phạm vi giới hạn.
 Nhóm chưa ưu tiên xây dựng hệ thống quản lý layer phức tạp, chỉnh sửa nhiều trang nâng cao, cộng tác đồng thời hoặc xuất file in chất lượng chuyên nghiệp.
+
 6.4. Đề xuất quy trình mua hàng
 Quy trình mua hàng dự kiến của MEMORIA CRAFT gồm:
 Bước 1: Khách hàng truy cập website và lựa chọn danh mục.
@@ -631,6 +682,7 @@ Bước 10: Quản trị viên kiểm tra dữ liệu thiết kế trước khi 
 Bước 11: Đơn hàng hợp lệ được chuyển sang trạng thái xử lý hoặc chuẩn bị sản xuất theo quy tắc thanh toán.
 Bước 12: Sản phẩm được giao đến khách hàng và cập nhật trạng thái đơn.
 Với sản phẩm không cần cá nhân hóa, khách hàng có thể bỏ qua bước sử dụng Studio.
+
 6.5. Bổ sung quy trình kiểm tra ảnh và nội dung cá nhân hóa
 Do MEMORIA CRAFT kinh doanh sản phẩm in ảnh và nội dung theo yêu cầu, hệ thống cần có cơ chế kiểm tra dữ liệu cá nhân hóa.
 Khi người dùng tải ảnh lên, hệ thống nên kiểm tra định dạng, dung lượng và kích thước ảnh tối thiểu theo yêu cầu của sản phẩm.
@@ -642,6 +694,7 @@ Các trạng thái xử lý dự kiến gồm:
 Chờ thanh toán → Chờ kiểm tra thiết kế → Cần chỉnh sửa thiết kế / Đã duyệt thiết kế → Đang sản xuất → Đang giao → Hoàn thành.
 Đơn hàng có thể có thêm các trạng thái bị hủy hoặc không thanh toán thành công.
 Trạng thái thanh toán và trạng thái xử lý sản phẩm cần được quản lý riêng để tránh trường hợp đơn chưa đủ điều kiện thanh toán nhưng đã được đưa vào sản xuất.
+
 6.6. Đề xuất quản lý dữ liệu cá nhân hóa
 Hệ thống cần lưu thông tin thiết kế gắn với từng sản phẩm trong đơn hàng.
 Ví dụ, cùng một khách hàng đặt hai scrapbook có cùng mẫu nhưng sử dụng hai bộ ảnh và lời nhắn khác nhau. Khi đó, hệ thống phải quản lý hai cấu hình thiết kế riêng biệt.
@@ -649,13 +702,16 @@ Ví dụ, cùng một khách hàng đặt hai scrapbook có cùng mẫu nhưng s
 Quản trị viên được phân quyền có thể xem và tải ảnh gốc do khách cung cấp để phục vụ xử lý sản phẩm.
 Hệ thống cần hạn chế quyền truy cập vào hình ảnh cá nhân và dữ liệu đơn hàng để bảo vệ thông tin khách hàng.
 Đối với file in, nhóm cần xác định giới hạn chất lượng ảnh và quy trình kiểm tra phù hợp, thay vì cam kết có thể tự động xử lý mọi hình ảnh chất lượng thấp.
+
 6.7. Định hướng tạo sự khác biệt
 MEMORIA CRAFT dự kiến tạo ra sự khác biệt thông qua việc kết hợp mô hình cửa hàng quà tặng với trải nghiệm cá nhân hóa trực tiếp.
 Khác với quy trình chỉ yêu cầu khách gửi ảnh và đợi cửa hàng thiết kế, MEMORIA CRAFT hướng đến việc giúp khách xem trước nội dung quà tặng trước khi đặt mua.
 Khách hàng có thể lựa chọn mẫu, tải ảnh, nhập lời nhắn và điều chỉnh các thành phần được hỗ trợ trong phạm vi thiết kế.
 Điểm khác biệt không nằm ở số lượng công cụ thiết kế, mà ở việc đơn giản hóa quá trình tạo quà tặng và kết nối kết quả cá nhân hóa với hoạt động mua hàng.
 Về lâu dài, nhóm có thể mở rộng sang Digital Scrapbook, mã QR, Photo Booth và các chức năng lưu giữ kỷ niệm số khi có đủ nguồn lực.
+
 7. TỔNG HỢP MINH CHỨNG VÀ GIỚI HẠN KHẢO SÁT
+
 7.1. Minh chứng đã thu thập
 Nhóm đã thu thập ảnh giao diện và thực hiện các thao tác khảo sát trên ba website. Các hình ảnh minh chứng được trình bày tại từng mục phân tích phía trên.
 Website
@@ -668,11 +724,13 @@ Photocare
 Trang chủ, danh mục, sản phẩm, giỏ hàng, checkout, mã giảm giá và khu vực đánh giá khách hàng (Hình 4.1–4.10)
 
 Trong đó, Mixbook đã được nhóm trực tiếp khảo sát từ quá trình thiết kế đến cấu hình, thêm giỏ hàng và áp dụng coupon thành công. Các thông tin chưa được trực tiếp thao tác được đối chiếu với tài liệu chính thức.
+
 7.2. Giới hạn khảo sát
 Canva: Chưa thực hiện đầy đủ quy trình đặt in, giỏ hàng và thanh toán qua Canva Print.
 Mixbook: Đã khảo sát Studio, bộ lọc, cấu hình sản phẩm, giỏ hàng và áp dụng coupon thành công; chưa hoàn tất bước thanh toán cuối cùng và kiểm thử các trường hợp giao dịch lỗi.
 Photocare: Đã có minh chứng giao diện giỏ hàng và checkout; chưa xác minh thanh toán MoMo thành công, phản hồi khi nhập sai dữ liệu và quá trình xử lý đơn sau khi đặt hàng.
 Những nội dung chưa kiểm thử được ghi nhận là giới hạn khảo sát, không xem là điểm yếu của website. Nhóm không đưa ra kết luận về hoạt động thanh toán hoặc xử lý backend khi chưa có đủ minh chứng.
+
 7.3. Hướng hoàn thiện minh chứng
 Để tăng tính thực chứng, nhóm nên tiếp tục kiểm tra các thao tác có thể thực hiện mà không cần thanh toán thật, chẳng hạn:
 Lựa chọn mẫu và chỉnh sửa sản phẩm.
@@ -683,6 +741,7 @@ Nhập thử dữ liệu không hợp lệ trong biểu mẫu nếu có thể th
 Quan sát các bước checkout đến trước khi xác nhận giao dịch thật.
 Mỗi kết quả kiểm tra cần ghi nhận thao tác, kết quả thực tế và ảnh minh chứng tương ứng.
 Đối với những bước không thể truy cập, nhóm sử dụng tài liệu chính thức và ghi rõ nguồn, không trình bày như kết quả tự kiểm thử.
+
 8. KẾT LUẬN
 Thông qua việc khảo sát Canva, Mixbook và Photocare, nhóm đã tìm hiểu những yếu tố cần thiết để xây dựng website thương mại điện tử bán quà tặng cá nhân hóa.
 Canva cung cấp kinh nghiệm về việc tổ chức công cụ thiết kế trực quan, thư viện mẫu và khả năng cá nhân hóa hình ảnh, văn bản.
@@ -694,6 +753,7 @@ Studio Customize Scrapbook được xác định là chức năng mở rộng c�
 Bên cạnh đó, hệ thống cần lưu và quản lý chính xác dữ liệu thiết kế của khách hàng, hỗ trợ kiểm tra ảnh trước khi sản xuất và bảo vệ thông tin cá nhân.
 Những chức năng phức tạp như Digital Scrapbook, Photo Booth, cộng tác đồng thời, thiết kế 3D và AI hỗ trợ thiết kế sẽ được xem xét ở các giai đoạn phát triển sau.
 Nhìn chung, việc phân tích ba website không nhằm sao chép toàn bộ chức năng của các nền tảng tham khảo, mà giúp nhóm xác định những giải pháp phù hợp với mục tiêu kinh doanh, khả năng kỹ thuật và thời gian thực hiện đồ án.
+
 9. TÀI LIỆU THAM KHẢO
 9.1. Canva
 Canva. Free Online Scrapbook Maker.
