@@ -1,238 +1,193 @@
-# Tên dự án: MEMORIA CRAFT - Nền tảng thương mại điện tử quà tặng kỷ niệm cá nhân hóa và Digital Scrapbook tương tác
+# Memoria Lab
+
+Nền tảng thương mại điện tử quà tặng kỷ niệm cá nhân hóa, kết hợp Web Photobooth, Custom Studio, QR kỷ niệm và đặt in sản phẩm.
 
 ## 1. Giới thiệu
 
 ### 1.1. Tổng quan dự án
 
-**Memoria Craft** là dự án phát triển website thương mại điện tử chuyên cung cấp các sản phẩm quà tặng kỷ niệm cá nhân hóa, tập trung vào scrapbook, khung tranh, thiệp và hộp quà mang dấu ấn riêng của người tặng.
+**Memoria Lab** cung cấp trải nghiệm tạo và đặt mua quà tặng từ ảnh, lời nhắn và kỷ niệm cá nhân trên cùng một website. Sản phẩm chính gồm dải ảnh Photostrip, khung tranh Digital Scrapbook để bàn và thiệp cá nhân hóa; hộp quà, khung và bao thư là phụ kiện có thể bán kèm.
 
-Điểm nổi bật của dự án là kết hợp hoạt động mua sắm trực tuyến với công cụ tùy chỉnh sản phẩm, cho phép khách hàng tham gia vào quá trình thiết kế quà tặng trước khi đặt mua.
+Khách hàng có thể chụp ảnh bằng webcam hoặc tải ảnh từ thiết bị, chỉnh sửa trong Custom Studio, xem trước thiết kế 2D và đặt in. Mã QR trên sản phẩm kết nối quà tặng vật lý với trang kỷ niệm có ảnh, lời nhắn và nhạc nền.
 
-Thay vì chỉ lựa chọn những sản phẩm có mẫu thiết kế cố định, khách hàng có thể chọn bố cục, thêm hình ảnh, nội dung và các thành phần trang trí để tạo ra sản phẩm phù hợp với sở thích hoặc câu chuyện kỷ niệm của mình.
+Dự án thuộc **nhóm A — Website bán hàng chuyên biệt**, kết hợp chức năng hỗ trợ cá nhân hóa và giao dịch của nhóm C trong bài tập Chương 1.
 
-Website định hướng kết hợp sản phẩm quà tặng vật lý với các yếu tố kỷ niệm số như Digital Scrapbook và trang lưu giữ kỷ niệm trực tuyến.
+### 1.2. Vấn đề kinh doanh
 
-Memoria Craft thuộc nhóm A – Website bán hàng chuyên biệt, đồng thời tích hợp những chức năng hỗ trợ giao dịch và cá nhân hóa sản phẩm của nhóm C.
+Memoria Lab tập trung giải quyết các vấn đề sau:
 
-### 1.2. Vấn đề kinh doanh cần giải quyết
+- **Khó hình dung thành phẩm:** khách khó kiểm tra bố cục, ảnh và lời nhắn trước khi đặt mua quà tặng cá nhân hóa.
+- **Thông tin thiết kế phân tán:** việc chụp ảnh, chỉnh sửa và gửi yêu cầu qua nhiều công cụ hoặc tin nhắn khiến khách và cửa hàng khó thống nhất đúng phiên bản.
+- **Hạn chế khả năng tự thiết kế:** khách muốn điều chỉnh ảnh, chữ và trang trí nhưng không quen phần mềm đồ họa chuyên sâu.
+- **Quà tặng vật lý tách rời kỷ niệm số:** ảnh, lời nhắn và nhạc thường không được kết nối thuận tiện với thành phẩm.
 
-Hiện nay, khách hàng có nhu cầu mua quà tặng cá nhân hóa thường gặp một số khó khăn:
+### 1.3. Giải pháp và điểm khác biệt
 
-- Khó hình dung thành phẩm: Khách hàng không biết chính xác scrapbook, khung tranh hoặc hộp quà sẽ trông như thế nào sau khi kết hợp hình ảnh, màu sắc và nội dung mong muốn.
-- Quy trình cá nhân hóa thiếu trực quan: Việc gửi ảnh, thông điệp và yêu cầu thiết kế qua tin nhắn khiến khách hàng khó điều chỉnh bố cục hoặc kiểm tra sản phẩm trước khi đặt hàng.
-- Hạn chế khả năng sáng tạo: Các mẫu sản phẩm được thiết kế sẵn chưa đáp ứng đầy đủ nhu cầu tạo ra món quà mang dấu ấn cá nhân.
-- Thiếu sự kết nối giữa quà tặng vật lý và kỷ niệm số: Hình ảnh, lời nhắn và những kỷ niệm đa phương tiện thường được lưu trữ riêng biệt, chưa được kết hợp thuận tiện vào trải nghiệm quà tặng.
+Luồng trải nghiệm chính:
 
-### 1.3. Giải pháp của Memoria Craft
+**Chọn sản phẩm → Chụp Photobooth hoặc tải ảnh → Thiết kế trong Studio → Chuẩn bị kỷ niệm và QR nếu sử dụng → Xem trước → Thêm giỏ → Đặt hàng → VNPay Sandbox hoặc COD → Admin duyệt thiết kế → Chuẩn bị in và giao hàng.**
 
-Memoria Craft hướng đến việc xây dựng một website cho phép khách hàng thực hiện quy trình:
+Điểm khác biệt là kết nối công cụ chụp, thiết kế, nội dung kỷ niệm và đặt in với từng sản phẩm trong đơn hàng. Customer mở lại thiết kế từ giỏ; đơn đã đặt giữ bản lưu độc lập để tránh thay đổi ngoài ý muốn. Admin kiểm tra, yêu cầu sửa hoặc duyệt trước khi dùng đúng phiên bản phục vụ in.
 
-Lựa chọn sản phẩm → Tùy chỉnh thiết kế → Xem trước thành phẩm → Thêm vào giỏ hàng → Thanh toán → Theo dõi đơn hàng.
-
-Website dự kiến cung cấp công cụ thiết kế scrapbook trực quan, hỗ trợ khách hàng lựa chọn template, thay đổi hình ảnh, nội dung và bố cục.
-
-Ngoài ra, hệ thống sẽ phát triển các chức năng thương mại điện tử như quản lý sản phẩm, giỏ hàng, đặt hàng, thanh toán, vận chuyển, khuyến mãi và quản trị để hỗ trợ hoạt động kinh doanh.
-
-Dự án hướng tới hai giá trị chính:
-
-- Đối với khách hàng: Chủ động cá nhân hóa quà tặng, xem trước thiết kế và đặt hàng thuận tiện trên cùng một website.
-- Đối với đơn vị kinh doanh: Tiếp nhận và quản lý thông tin thiết kế có cấu trúc, hạn chế sai sót trong xử lý yêu cầu, đồng thời quản lý giao dịch và đơn hàng tập trung.
+Đối với khách hàng, website hỗ trợ chủ động sáng tạo và kiểm tra thành phẩm. Đối với đơn vị bán, hệ thống tập trung dữ liệu thiết kế, đơn hàng, thanh toán và trạng thái xử lý.
 
 ## 2. Khách hàng mục tiêu
 
-Memoria Craft hướng đến nhóm khách hàng trẻ, chủ yếu trong độ tuổi **16–26**, có nhu cầu mua hoặc tự thiết kế quà tặng mang giá trị kỷ niệm.
+Memoria Lab hướng đến khách hàng trẻ, chủ yếu **16–26 tuổi**, có nhu cầu tạo quà tặng và lưu giữ kỷ niệm nhưng không nhất thiết có kỹ năng thiết kế chuyên nghiệp.
 
-### 2.1. Các nhóm khách hàng chính
+| Nhóm khách hàng | Nhu cầu chính |
+|---|---|
+| Học sinh, sinh viên | Dải ảnh, thiệp và khung tranh cho tốt nghiệp, kỷ yếu, sinh nhật hoặc hoạt động tập thể. |
+| Các cặp đôi | Quà cá nhân hóa kết hợp ảnh, lời nhắn và nhạc cho dịp kỷ niệm. |
+| Nhóm bạn thân | Ghi lại chuyến đi, hoạt động chung và những cột mốc bằng ảnh/quà tặng có nội dung riêng. |
+| Người yêu thích quà tặng sáng tạo | Tự chọn khung, sắp xếp ảnh/chữ/sticker và xem trước trước khi mua. |
 
-| **Nhóm khách hàng**                   | **Nhu cầu và đặc điểm**                                                                                         |
-| ------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| **Học sinh, sinh viên**               | Làm quà kỷ yếu, quà tốt nghiệp, scrapbook lưu giữ hình ảnh lớp học, bạn bè hoặc các cột mốc đáng nhớ.           |
-| **Các cặp đôi**                       | Thiết kế khung tranh, album và quà tặng cá nhân hóa cho sinh nhật, kỷ niệm ngày yêu hoặc dịp đặc biệt.          |
-| **Nhóm bạn thân**                     | Lưu giữ những chuyến đi, hoạt động chung và kỷ niệm thông qua các sản phẩm có thể tùy chỉnh hình ảnh, lời nhắn. |
-| **Người yêu thích quà tặng sáng tạo** | Mong muốn tự lựa chọn bố cục, họa tiết và nội dung thay vì mua sản phẩm được thiết kế hoàn toàn sẵn.            |
-
-### 2.2. Nhu cầu chung
-
-- Sản phẩm có tính cá nhân hóa và mang ý nghĩa kỷ niệm.
-- Giao diện dễ sử dụng, kể cả với người không có kỹ năng thiết kế.
-- Có khả năng xem trước sản phẩm trước khi đặt hàng.
-- Thông tin sản phẩm, giá bán, thanh toán và giao hàng rõ ràng.
-- Có thể lưu giữ hoặc chia sẻ những kỷ niệm dưới hình thức số.
+Nhu cầu chung gồm giao diện dễ dùng, tùy chỉnh trực quan, giá và phí rõ ràng, bảo vệ ảnh cá nhân, theo dõi đơn thuận tiện và chia sẻ kỷ niệm theo quyền được cho phép.
 
 ## 3. Chức năng chính
 
-Memoria Craft dự kiến phát triển các nhóm chức năng sau. Phạm vi chi tiết và mức độ ưu tiên sẽ được xác định trong tài liệu REQUIREMENTS.md.
+### 3.1. Cửa hàng và tài khoản
 
-### 3.1. Các chức năng thương mại điện tử nền tảng
+- Trang chủ có banner/sự kiện/khuyến mãi, sản phẩm nổi bật và bán chạy.
+- Danh mục, chi tiết, ảnh, chất liệu, kích thước, phụ kiện và giá theo biến thể; hiển thị giá gốc, giá giảm và phần trăm giảm khi có khuyến mãi.
+- Tìm kiếm và sắp xếp; lọc kết hợp tối thiểu năm thuộc tính: loại sản phẩm, kích thước, chất liệu, khoảng giá và chủ đề.
+- Sản phẩm liên quan, gợi ý mua kèm, review/rating; chỉ Customer đã mua và có đơn hoàn thành được đánh giá.
+- Đăng ký, đăng nhập, đăng xuất; quản lý hồ sơ, địa chỉ, sản phẩm đã xem/đã mua và lịch sử đơn của mình.
+- Guest được thử Photobooth/Studio; cần đăng nhập để lưu thiết kế vào giỏ và đặt hàng.
 
-**A. Danh mục và sản phẩm**
+### 3.2. Web Photobooth
 
-- Hiển thị trang chủ, danh mục sản phẩm và sản phẩm nổi bật.
-- Xem thông tin chi tiết, hình ảnh, giá bán và các tùy chọn sản phẩm.
-- Tìm kiếm, lọc và sắp xếp sản phẩm theo những tiêu chí phù hợp.
-- Hiển thị sản phẩm liên quan và đánh giá của khách hàng.
+- Sử dụng webcam sau khi khách cấp quyền; có tùy chọn lật gương khi xem trước.
+- Chọn khung 1×3, 1×4 hoặc 2×2 phù hợp khổ sản phẩm, bộ lọc và đếm ngược chụp.
+- Chụp liên tiếp, xem lại và chụp lại từng ảnh.
+- Tải ảnh từ thiết bị khi không dùng được camera hoặc muốn dùng ảnh có sẵn.
+- Chuyển ảnh và khung sang Custom Studio để tiếp tục chỉnh sửa.
 
-**B. Tài khoản khách hàng**
+### 3.3. Custom Studio và file in
 
-- Đăng ký, đăng nhập và quản lý thông tin cá nhân.
-- Theo dõi lịch sử mua hàng và trạng thái đơn hàng.
-- Quản lý những thiết kế đã lưu nếu chức năng này được triển khai trong phạm vi chính thức.
+- Chọn template tương thích sản phẩm và khổ thiết kế.
+- Thêm ảnh, văn bản, sticker; kéo thả, đổi kích thước, xoay/lật các đối tượng được phép; chỉnh font, màu, nền và thứ tự lớp.
+- Khóa khung chuẩn và bảo vệ vùng thiết kế; xem trước 2D theo tỉ lệ sản phẩm.
+- Lưu cấu hình và preview theo từng dòng giỏ; mở lại để sửa, giữ nội dung khi chuyển đăng nhập.
+- Tạo bản lưu thiết kế độc lập khi đặt hàng; lưu phiên bản sửa để Admin duyệt lại.
+- Xuất PNG phục vụ in theo quy cách được chốt; Admin kiểm tra và tải đúng phiên bản đã duyệt.
 
-**C. Giỏ hàng và đặt hàng**
+Phạm vi cá nhân hóa là **ấn phẩm phẳng một mặt**, với các khổ 5×15 cm, 10×15 cm và A5 theo sản phẩm/template tương thích. Không xây dựng trình thiết kế album nhiều trang hoặc phần mềm đồ họa đa mục đích.
 
-- Thêm sản phẩm hoặc thiết kế đã tùy chỉnh vào giỏ hàng.
-- Điều chỉnh số lượng và xóa sản phẩm.
-- Kiểm tra tổng tiền, phí vận chuyển và giảm giá.
-- Nhập thông tin nhận hàng và xác nhận đặt hàng.
+### 3.4. Trang kỷ niệm và QR
 
-### 3.2. Chức năng đặc trưng – Studio Customize Scrapbook
+- Tạo nội dung ảnh, lời nhắn và nhạc nền gắn với sản phẩm cá nhân hóa.
+- Sinh QR liên kết đúng trang kỷ niệm, chèn vào thiết kế và giữ liên kết với đúng dòng giỏ/đơn.
+- Hiển thị trang kỷ niệm phù hợp điện thoại; chỉ cung cấp nội dung được phép chia sẻ, không lộ ảnh nguồn riêng tư hoặc dữ liệu đơn hàng.
+- Quyền xem, lúc kích hoạt, quyền sửa/tắt trang và thời hạn lưu còn cần nhóm xác nhận trong REQUIREMENTS.
 
-Đây là chức năng mở rộng nghiệp vụ dự kiến của Memoria Craft, cho phép khách hàng tham gia trực tiếp vào quá trình thiết kế sản phẩm.
+Video quá trình chụp và link tải ảnh/video tạm là **đề xuất chưa chốt**, tách khỏi phạm vi QR/trang kỷ niệm đã nêu.
 
-Các tính năng dự kiến:
+### 3.5. Giỏ hàng, đặt hàng và thanh toán
 
-- Chọn sản phẩm và mẫu thiết kế (template) có sẵn.
-- Tải lên hình ảnh cá nhân theo giới hạn định dạng và dung lượng được quy định.
-- Thêm, di chuyển và thay đổi kích thước hình ảnh, chữ hoặc sticker.
-- Tùy chỉnh màu sắc, bố cục và một số thành phần trang trí.
-- Xem trước thiết kế bằng giao diện 2D.
-- Lưu cấu hình thiết kế để gắn với sản phẩm trong đơn hàng.
+- Giỏ có preview, biến thể, phụ kiện và số lượng; mỗi thiết kế khác nhau là một dòng riêng.
+- Checkout kiểm tra địa chỉ, voucher, phí giao hàng và tổng tiền; backend tính lại giá trước khi tạo đơn.
+- **VNPay Sandbox:** tích hợp tạo giao dịch thử, nhận và xác thực kết quả thành công/thất bại/hủy; không ghi nhận trùng khi callback lặp.
+- **COD:** áp dụng cho cả hàng bán sẵn và hàng cá nhân hóa. Đơn COD hợp lệ được duyệt/sản xuất dù chưa thu tiền; chỉ ghi đã thu khi có căn cứ xác nhận.
+- Theo dõi trạng thái xử lý và thanh toán riêng; hiển thị yêu cầu sửa thiết kế; gửi email xác nhận đơn.
+- Yêu cầu hủy/hoàn và các ngoại lệ được xử lý theo chính sách nhóm chốt, không tự áp dụng một mốc hủy chưa được thống nhất.
 
-### 3.3. Các chức năng thương mại điện tử mở rộng bắt buộc
+### 3.6. Vận chuyển, voucher và Admin
 
-Theo yêu cầu đồ án, hệ thống dự kiến triển khai:
+- Lưu địa chỉ, tính/lưu phí và cập nhật thông tin/trạng thái giao; phương án API hay quy tắc phí được chốt trong giai đoạn thiết kế.
+- Voucher/khuyến mãi có kiểm tra mã, hiệu lực, điều kiện đơn, mức giảm, lượt dùng và đối tượng nếu áp dụng; tính lại tổng tiền tại server.
+- Admin quản lý danh mục, nhóm sản phẩm, sản phẩm, biến thể, phụ kiện, giá, template, khung/sticker, tài khoản, đơn, voucher và khuyến mãi.
+- Duyệt thiết kế hoặc yêu cầu sửa kèm lý do; bản sửa phải được duyệt lại trước khi đưa vào in.
+- Dashboard có doanh thu theo định nghĩa được chốt, số đơn/trạng thái, số lượng sản phẩm chờ giao, số khách và sản phẩm bán chạy; phân biệt số liệu thử nghiệm và tiền thực thu.
 
-Payment – Thanh toán
+### 3.7. Chất lượng hệ thống và giới hạn
 
-- Tích hợp tối thiểu một phương thức thanh toán hoặc môi trường thanh toán thử nghiệm (sandbox).
-- Xử lý kết quả giao dịch thành công, thất bại hoặc hủy.
-- Cập nhật trạng thái thanh toán tương ứng với đơn hàng.
+- Responsive, kiểm tra ít nhất tại **390 px và 1366 px**; tối thiểu ba tương tác có mục đích UX: cập nhật giá, preview và phản hồi thêm giỏ.
+- Kiểm tra đầu vào, loại file thực, quyền vai trò và quyền sở hữu; bảo vệ secret, tài khoản, ảnh và dữ liệu đơn.
+- Kiểm thử luồng chính, dữ liệu biên, lỗi, quyền truy cập, thanh toán lặp và tính nhất quán phiên bản.
+- Tổ chức mã nguồn theo module, có hướng dẫn chạy, lịch sử commit và đóng góp kiểm chứng được.
+- Ưu tiên các yêu cầu Must; Should được cân nhắc theo nguồn lực. Chưa đưa 3D, NFC, AI thiết kế, cộng tác thời gian thực hoặc tự động kết nối máy in vào phiên bản đầu.
 
-Shipping – Vận chuyển
-
-- Thu thập địa chỉ nhận hàng.
-- Tính phí vận chuyển dựa trên quy tắc hoặc dịch vụ phù hợp.
-- Lưu thông tin vận chuyển và trạng thái giao hàng.
-
-Voucher/Promotion – Khuyến mãi
-
-- Nhập và áp dụng mã giảm giá.
-- Kiểm tra hiệu lực và điều kiện sử dụng.
-- Tính lại tổng tiền đơn hàng.
-
-Admin – Quản trị
-
-- Quản lý danh mục, sản phẩm và tài khoản người dùng.
-- Quản lý đơn hàng, chương trình khuyến mãi và voucher.
-- Theo dõi một số thống kê kinh doanh như doanh thu, số đơn hàng và sản phẩm bán chạy.
-
-### 3.4. Các chức năng đề xuất, chưa cam kết triển khai
-
-Photo Booth
-
-Cho phép khách hàng tạo bố cục ảnh theo phong cách Photo Booth, kết hợp nhiều bức ảnh vào một dải ảnh hoặc mẫu trình bày để sử dụng trong scrapbook và quà tặng.
-
-Đây là đề xuất đang được nhóm xem xét, chưa được xác định là chức năng bắt buộc.
-
-Digital Scrapbook và mã QR
-
-Định hướng liên kết sản phẩm quà tặng với trang kỷ niệm số để người nhận có thể truy cập hình ảnh hoặc lời nhắn qua mã QR.
-
-Phạm vi dữ liệu đa phương tiện và khả năng triển khai sẽ được nhóm đánh giá trong giai đoạn phân tích yêu cầu.
-
-Các định hướng nâng cao khác
-
-- Live Preview 3D.
-- Tích hợp NFC.
-- Các chức năng hỗ trợ thiết kế bằng AI.
-- Công cụ xuất file in chất lượng chuyên nghiệp.
-
-Những tính năng trên sẽ chỉ được bổ sung khi phù hợp với thời gian, công nghệ và năng lực thực tế của nhóm.
-
-### 3.5. Yêu cầu chất lượng hệ thống
-
-Ngoài chức năng nghiệp vụ, dự án hướng tới:
-
-- Giao diện responsive trên máy tính và điện thoại.
-- Kiểm tra và xác thực dữ liệu đầu vào.
-- Phân quyền giữa khách hàng và quản trị viên.
-- Bảo vệ thông tin tài khoản, dữ liệu đơn hàng và hình ảnh cá nhân.
-- Kiểm thử các chức năng chính, bao gồm trường hợp lỗi.
-- Tổ chức mã nguồn rõ ràng và có lịch sử phát triển trên GitHub.
+Mã chức năng, tiêu chí nghiệm thu và các chính sách/thông số chờ xác nhận được quản lý trong [REQUIREMENTS.md](REQUIREMENTS.md).
 
 ## 4. Thành viên
 
-Nhóm gồm 08 thành viên, trong đó có 01 nhóm trưởng và 07 thành viên.
+Nhóm gồm 8 thành viên. Phân công chi tiết, nhiệm vụ và tiến độ nằm trong [PROJECT_PLAN.md](PROJECT_PLAN.md).
 
-Bảng dưới đây mô tả vai trò và trách nhiệm trong giai đoạn khởi tạo dự án – Chương 1.
+| STT | Thành viên | Trách nhiệm Chương 1 | Trách nhiệm phát triển |
+|---|---|---|---|
+| 1 | Trần Lâm Huy | Điều phối, thống nhất đề tài, tạo repository, viết README, kiểm tra và nộp bài. | Phụ trách chính QR/trang kỷ niệm; tích hợp, quản lý repository, triển khai và tài liệu kỹ thuật. |
+| 2 | Phạm Đình Quang | Phân tích khách hàng, phạm vi, vai trò, chức năng/NFR và REQUIREMENTS. | Tài khoản, quyền và khu vực khách hàng; điều phối kiểm thử/QA. |
+| 3 | Nguyễn Ngọc Thúy Quyên | Phụ trách chính khảo sát và tổng hợp phân tích ba website. | Giỏ hàng, checkout, đơn/trạng thái và sửa thiết kế; UI/UX chung. |
+| 4 | Nguyễn Hoàng Kim Anh | Khảo sát website, phối hợp bảng so sánh và đề xuất. | Giao diện cửa hàng, danh mục/tìm/lọc/chi tiết, giá, liên quan và review. |
+| 5 | Vương Thị Anh | AI thứ nhất phân tích; tổng hợp sử dụng AI và quyết định của nhóm. | Web Photobooth, Custom Studio, lưu/mở thiết kế và file in; hỗ trợ chèn QR. |
+| 6 | Vũ Hà Phi Yến | AI khác phản biện; xây dựng AGENTS. | Backend/CSDL nền tảng, API contract, lưu file và bảo mật; hỗ trợ dữ liệu/quyền QR. |
+| 7 | Vũ Trọng Huy | Mô tả và cập nhật workflow. | VNPay Sandbox, COD, phí/thông tin giao hàng và đối soát trạng thái. |
+| 8 | Lâm Phú Cường | Lập kế hoạch và quản lý GitHub Issues. | Voucher, Admin, duyệt/tài nguyên/Dashboard và hướng dẫn sử dụng. |
 
-| **STT** | **Thành viên** | **Vai trò**                       | **Trách nhiệm**                                                                                                                    |
-| ------- | -------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 1       | **THuy**       | Nhóm trưởng / Project Coordinator | Điều phối nhóm, thống nhất đề tài, quản lý tiến độ, xây dựng README, trực tiếp tạo GitHub repository, kiểm tra và nộp bài.         |
-| 2       | **Quang**      | Business Analyst                  | Phân tích khách hàng, phạm vi, vai trò người dùng, yêu cầu chức năng và phi chức năng; xây dựng REQUIREMENTS.md.                   |
-| 3       | **Quyên**      | Competitor Research Lead          | Chịu trách nhiệm chính khảo sát và tổng hợp phân tích tối thiểu ba website tương tự; hoàn thiện docs/competitor-analysis.md.       |
-| 4       | **Kim Anh**    | Competitor Research               | Khảo sát website tham khảo, phân tích giao diện, chức năng và trải nghiệm người dùng; phối hợp cùng Quyên hoàn thiện tài liệu.     |
-| 5       | **Vanh**       | AI Requirement Analysis           | Sử dụng AI thứ nhất để phân tích yêu cầu; tổng hợp quá trình sử dụng hai AI và quyết định của nhóm vào AI_USAGE_LOG.md.            |
-| 6       | **Yến**        | AI Review / Project AI Guidelines | Sử dụng AI thứ hai phản biện yêu cầu; xây dựng quy tắc sử dụng AI trong AGENTS.md.                                                 |
-| 7       | **VHuy**       | Business Workflow Analyst         | Xác định và mô tả quy trình nghiệp vụ chính, xây dựng docs/business-workflow\.md.                                                  |
-| 8       | **Cường**      | Project Planning / GitHub Issues  | Lập kế hoạch thực hiện dự án, phân công và tiến độ trong PROJECT_PLAN.md; tạo, quản lý GitHub Issues theo phân công đã thống nhất. |
-
-Việc phân công trên áp dụng cho Chương 1. Khi chuyển sang các giai đoạn thiết kế và lập trình, nhóm sẽ xác định lại các module frontend, backend, cơ sở dữ liệu, kiểm thử và triển khai dựa trên năng lực thực tế của từng thành viên.
-
-Các thành viên có trách nhiệm phối hợp, kiểm tra kết quả và giải thích được phần việc mình thực hiện.
+Mỗi công việc có một người phụ trách chính và kết quả bàn giao. Các thành viên phối hợp review, tích hợp, kiểm thử và giải thích phần mình thực hiện.
 
 ## 5. Công nghệ dự kiến
 
-Dự án dự kiến sử dụng những công nghệ phù hợp với mô hình thương mại điện tử có tích hợp công cụ thiết kế scrapbook tương tác.
+| Thành phần | Công nghệ hoặc phương án | Mục đích | Trạng thái |
+|---|---|---|---|
+| Frontend | React, HTML, CSS, JavaScript | Giao diện cửa hàng, tài khoản, Studio và Admin. | Dự kiến; xác nhận cùng stack tại Q02. |
+| Canvas/Studio | HTML5 Canvas; Fabric.js hoặc Konva.js | Đối tượng thiết kế, kéo thả, lớp, lưu cấu hình và xuất ảnh. | Chưa chốt thư viện; thử kỹ thuật trong GĐ2. |
+| Photobooth | API camera của trình duyệt; cân nhắc react-webcam | Webcam, khung ảnh và chụp; có đường tải ảnh dự phòng. | Chưa chốt thư viện triển khai. |
+| Backend | Node.js; Express.js hoặc NestJS | API, xử lý nghiệp vụ, xác thực, file, đơn và tích hợp. | Chưa chốt framework tại Q02. |
+| Cơ sở dữ liệu | MySQL là phương án hiện có | Tài khoản, sản phẩm, thiết kế/phiên bản, kỷ niệm, đơn và giao dịch. | Cần xác nhận CSDL và ORM tại Q02. |
+| QR | Thư viện sinh QR phù hợp, dự kiến qrcode hoặc qrcode.react | Tạo mã liên kết trang kỷ niệm và chèn vào thiết kế. | Chưa chốt thư viện. |
+| Thanh toán | VNPay Sandbox; COD | Giao dịch thử có xác thực và ghi nhận thu COD riêng. | Đã thống nhất phương thức; COD áp dụng cả hàng cá nhân hóa. |
+| Vận chuyển | Quy tắc tính phí hoặc dịch vụ/API phù hợp | Phí, thông tin và trạng thái giao. | Chờ Q10; chưa xác nhận dịch vụ cụ thể. |
+| Lưu trữ file | Dịch vụ hỗ trợ ảnh, file in và quyền truy cập phù hợp | Lưu ảnh/tài nguyên/PNG; bảo vệ file riêng và nội dung QR. | Chờ Q02/Q07; chưa chốt nhà cung cấp/gói lưu trữ. |
+| Email | SMTP hoặc dịch vụ email phù hợp | Xác nhận đơn và thông báo được duyệt. | Chờ Q02/Q13. |
+| Triển khai | Hosting/backend/CSDL và domain phù hợp | Website, callback và QR truy cập được. | Chờ Q02. |
+| Quản lý mã nguồn | Git, GitHub và GitHub Issues | Lưu lịch sử, phân công, review và tích hợp. | Sử dụng trong dự án. |
 
-| **Thành phần**   | **Công nghệ dự kiến**                         | **Mục đích sử dụng**                                                                |
-| ---------------- | --------------------------------------------- | ----------------------------------------------------------------------------------- |
-| Frontend         | React, HTML, CSS, JavaScript                  | Xây dựng giao diện website, quản lý trạng thái và xử lý tương tác.                  |
-| Công cụ thiết kế | Fabric.js, HTML5 Canvas                       | Hỗ trợ kéo thả, thay đổi hình ảnh, văn bản và xem trước thiết kế 2D.                |
-| Backend          | Node.js, Express.js                           | Xây dựng API và xử lý các nghiệp vụ tài khoản, sản phẩm, thiết kế và đơn hàng.      |
-| Cơ sở dữ liệu    | MySQL                                         | Quản lý tài khoản, sản phẩm, cấu hình thiết kế, đơn hàng, thanh toán và khuyến mãi. |
-| Thanh toán       | VNPay Sandbox (đề xuất nghiên cứu)            | Kiểm thử quy trình thanh toán và xử lý kết quả giao dịch.                           |
-| Vận chuyển       | Cơ chế tính phí theo quy tắc hoặc API phù hợp | Tính phí và quản lý thông tin vận chuyển.                                           |
-| Quản lý mã nguồn | Git và GitHub                                 | Lưu trữ mã nguồn, theo dõi lịch sử phát triển và phối hợp công việc.                |
+Lựa chọn kỹ thuật còn mở được chốt trong GĐ2 và cập nhật đồng bộ với REQUIREMENTS, PROJECT_PLAN.
 
 ## 6. Kế hoạch thực hiện
 
-Dự án Memoria Craft dự kiến triển khai theo sáu giai đoạn xuyên suốt học phần.
+**Thời gian dự kiến:** 19/10/2026–10/12/2026. Mốc kết thúc điều chỉnh theo lịch học phần và quyết định của nhóm.
 
-| **Giai đoạn**                                         | **Nội dung thực hiện**                                                                                                                                             | **Kết quả dự kiến**                                                    |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
-| **Giai đoạn 1 – Khảo sát và xác định yêu cầu**        | Lựa chọn đề tài, xác định vấn đề kinh doanh, khảo sát website tương tự, phân tích yêu cầu bằng AI, phản biện, xác định vai trò và quy trình nghiệp vụ.             | Bộ tài liệu khởi tạo dự án và GitHub repository.                       |
-| **Giai đoạn 2 – Thiết kế giao diện**                  | Xác định cấu trúc website, bố cục trang chủ, danh mục, chi tiết sản phẩm, trình thiết kế scrapbook và các trang giao dịch.                                         | Wireframe, thiết kế giao diện và định hướng trải nghiệm người dùng.    |
-| **Giai đoạn 3 – Phát triển frontend**                 | Xây dựng giao diện và xử lý tương tác của các trang, bước đầu phát triển công cụ tùy chỉnh scrapbook.                                                              | Giao diện website có khả năng tương tác.                               |
-| **Giai đoạn 4 – Phát triển backend và cơ sở dữ liệu** | Xây dựng API, quản lý dữ liệu và các nghiệp vụ tài khoản, sản phẩm, thiết kế, đơn hàng; triển khai các chức năng thanh toán, vận chuyển, khuyến mãi theo kế hoạch. | Backend, cơ sở dữ liệu và các chức năng nghiệp vụ.                     |
-| **Giai đoạn 5 – Tích hợp và kiểm thử**                | Kết nối frontend, backend và cơ sở dữ liệu; kiểm tra các chức năng chính, xử lý lỗi, kiểm thử bảo mật và giao dịch.                                                | Hệ thống tích hợp có thể thực hiện quy trình thương mại điện tử.       |
-| **Giai đoạn 6 – Triển khai và hoàn thiện**            | Triển khai ứng dụng, kiểm tra hoạt động, hoàn thiện tài liệu kỹ thuật, minh chứng và báo cáo đồ án.                                                                | Website chạy được, mã nguồn, tài liệu hướng dẫn và báo cáo hoàn chỉnh. |
+| Giai đoạn | Thời gian dự kiến | Nội dung chính | Kết quả |
+|---|---|---|---|
+| 1. Khảo sát và xác định yêu cầu | 19–25/10 | Chọn đề tài, khảo sát ba website, phân tích/phản biện, phạm vi, workflow, phân công và repository. | Bộ tài liệu Chương 1 và GitHub Issues. |
+| 2. Thiết kế giao diện | 26–30/10 | Sitemap/wireframe, Photobooth/Studio/QR, ERD/API, thử kỹ thuật và chốt các quyết định cần thiết. | Thiết kế, dữ liệu và giao tiếp module được duyệt. |
+| 3. Phát triển frontend | 2–15/11 | Trang khách/Admin, Photobooth, Studio và trang kỷ niệm; nối API đã có. | Giao diện có tương tác, chạy được luồng chính. |
+| 4. Backend và CSDL | 9–29/11 | API, phiên bản thiết kế/QR, giỏ/đơn, payment/COD, shipping, voucher và quản trị. | Nghiệp vụ và dữ liệu liên kết. |
+| 5. Tích hợp và kiểm thử | 23/11–4/12 | Test chức năng, biên/lỗi/quyền/payment, QR và PNG; sửa lỗi và hồi quy. | Kết quả kiểm thử, minh chứng và bản khóa bổ sung chức năng. |
+| 6. Triển khai và hoàn thiện | 5–10/12 | Cấu hình triển khai, kiểm tra lại, hướng dẫn, báo cáo và tập demo. | Website, mã nguồn, tài liệu và báo cáo bàn giao. |
 
-Kế hoạch - Chương 1
+Các giai đoạn có phần thời gian chồng nhau; module được tích hợp từng phần khi có đầu ra, không chờ tới cuối mới kết nối.
 
-- Ngày 19/10/2026: Thống nhất đề tài Memoria Craft, phân công nhóm và khởi tạo GitHub.
-- Ngày 20/10/2026: Thực hiện khảo sát website, phân tích yêu cầu và phản biện bằng hai công cụ AI; hoàn thiện các tài liệu được phân công.
-- Trước 12:00 ngày 21/10/2026: Hoàn tất bàn giao nội bộ và kiểm tra các tài liệu trên GitHub.
-- Trước 21:00 ngày 21/10/2026: Mục tiêu nộp bài chính thức.
-- 23:00 ngày 21/10/2026: Hạn nộp theo thông tin đã thống nhất của nhóm.
+### Mốc Chương 1
+
+- **19/10/2026:** lựa chọn đề tài, phân công và khởi tạo repository.
+- **20/10/2026:** khảo sát, phân tích/phản biện và hoàn thiện tài liệu theo phân công.
+- **Trước 12:00 ngày 21/10/2026:** mốc kiểm tra nội bộ tài liệu, Issues và quyền truy cập.
+- **Trước 21:00 ngày 21/10/2026:** mục tiêu nộp sớm của nhóm.
+- **23:00 ngày 21/10/2026:** hạn nộp Chương 1.
+
+Task, người phụ trách, trạng thái và rủi ro được theo dõi trong [PROJECT_PLAN.md](PROJECT_PLAN.md) và [GitHub Issues](https://github.com/huytran31241023748-code/memoria-craft/issues).
 
 ## 7. Liên kết
 
-Các liên kết tài liệu và sản phẩm dự án sẽ được cập nhật khi hoàn thành.
+### 7.1. Tài liệu dự án
 
-### 7.1. Tài liệu khởi tạo dự án
+| Tài liệu | Nội dung |
+|---|---|
+| [REQUIREMENTS.md](REQUIREMENTS.md) | Mục tiêu, phạm vi, vai trò/quyền, FR/NFR, nghiệm thu và quyết định cần chốt. |
+| [PROJECT_PLAN.md](PROJECT_PLAN.md) | Thành viên, sáu giai đoạn, công việc, tiến độ và rủi ro. |
+| [docs/competitor-analysis.md](docs/competitor-analysis.md) | Phân tích ít nhất ba website, bảng so sánh và đề xuất áp dụng. |
+| [docs/business-workflow.md](docs/business-workflow.md) | Quy trình chính BW-01, sơ đồ, dữ liệu, ngoại lệ và truy vết yêu cầu. |
+| [AGENTS.md](AGENTS.md) | Nguyên tắc AI hỗ trợ trong phạm vi, quy trình, bảo mật và giao tiếp. |
+| [AI_USAGE_LOG.md](AI_USAGE_LOG.md) | Ghi nhận công cụ, mục đích, prompt, phản biện và quyết định của nhóm. |
 
-- Bảng yêu cầu: REQUIREMENTS.md — Sẽ bổ sung liên kết.
-- Kế hoạch dự án: PROJECT_PLAN.md — Sẽ bổ sung liên kết.
-- Phân tích website tương tự: docs/competitor-analysis.md — Sẽ bổ sung liên kết.
-- Quy trình nghiệp vụ: docs/business-workflow\.md — Sẽ bổ sung liên kết.
-- Quy tắc sử dụng AI: AGENTS.md — Sẽ bổ sung liên kết.
-- Nhật ký sử dụng AI: AI_USAGE_LOG.md — Sẽ bổ sung liên kết.
+### 7.2. Repository và sản phẩm
 
-### 7.2. Các liên kết khác
+- [GitHub Repository](https://github.com/huytran31241023748-code/memoria-craft)
+- [GitHub Issues](https://github.com/huytran31241023748-code/memoria-craft/issues)
+- **Website demo và hướng dẫn cài đặt/sử dụng:** cập nhật trong giai đoạn triển khai và hoàn thiện.
 
-- GitHub Repository: Sẽ bổ sung.
-- Website Demo: Sẽ bổ sung khi triển khai.
-- Tài liệu hướng dẫn cài đặt và sử dụng: Sẽ bổ sung trong giai đoạn phát triển.
 
-*Tài liệu README khởi tạo dự án – Chương 1, môn Phát triển ứng dụng thương mại điện tử.*
