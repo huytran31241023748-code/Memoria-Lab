@@ -336,6 +336,46 @@ Lưu giữ những khoảnh khắc đáng nhớ trong một dải ảnh nhỏ xi
 
 ## Phụ lục – Hình ảnh phác thảo giao diện
 
-Các hình ảnh dưới đây được trích từ file DOCX gốc và đặt trong thư mục `images/`. GitHub sẽ hiển thị ảnh trực tiếp khi giữ nguyên cấu trúc thư mục.
+### Website wireframe overview
 
-### Website wireframe overview\n\n![Website wireframe overview](images/website-wireframe-overview.png)\n\n### Wireframe mobile long\n\n![Wireframe mobile long](images/wireframe-mobile-long.png)\n\n### Wireframe photostrip 01\n\n![Wireframe photostrip 01](images/wireframe-photostrip-01.jpg)\n\n### Wireframe photostrip 02\n\n![Wireframe photostrip 02](images/wireframe-photostrip-02.jpg)\n\n### Wireframe product layout 01\n\n![Wireframe product layout 01](images/wireframe-product-layout-01.jpg)\n\n### Wireframe product grid\n\n![Wireframe product grid](images/wireframe-product-grid.jpg)\n\n### Wireframe framed product\n\n![Wireframe framed product](images/wireframe-framed-product.jpg)\n\n### Wireframe product detail\n\n![Wireframe product detail](images/wireframe-product-detail.jpg)\n\n### Wireframe two column layout\n\n![Wireframe two column layout](images/wireframe-two-column-layout.jpg)\n\n### Wireframe combination layout\n\n![Wireframe combination layout](images/wireframe-combination-layout.jpg)\n\n### Wireframe photostrip screen\n\n![Wireframe photostrip screen](images/wireframe-photostrip-screen.jpg)\n\n
+![Website wireframe overview](images/website-wireframe-overview.png)
+
+### Wireframe mobile long
+
+![Wireframe mobile long](images/wireframe-mobile-long.png)
+
+### Wireframe photostrip 01
+
+![Wireframe photostrip 01](images/wireframe-photostrip-01.jpg)
+
+### Wireframe photostrip 02
+
+![Wireframe photostrip 02](images/wireframe-photostrip-02.jpg)
+
+### Wireframe product layout 01
+
+![Wireframe product layout 01](images/wireframe-product-layout-01.jpg)
+
+### Wireframe product grid
+
+![Wireframe product grid](images/wireframe-product-grid.jpg)
+
+### Wireframe framed product
+
+![Wireframe framed product](images/wireframe-framed-product.jpg)
+
+### Wireframe product detail
+
+![Wireframe product detail](images/wireframe-product-detail.jpg)
+
+### Wireframe two column layout
+
+![Wireframe two column layout](images/wireframe-two-column-layout.jpg)
+
+### Wireframe combination layout
+
+![Wireframe combination layout](images/wireframe-combination-layout.jpg)
+
+### Wireframe photostrip screen
+
+![Wireframe photostrip screen](images/wireframe-photostrip-screen.jpg)
