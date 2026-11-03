@@ -2,7 +2,9 @@ MEMORIA LAB
 
 ĐẶC TẢ GIAO DIỆN WEBSITE – 4 TRANG
 
-Link:  ảnh
+Link: [Xem phác thảo giao diện](images/website-wireframe-overview.png)
+
+![Tổng quan phác thảo giao diện Memoria Lab](images/website-wireframe-overview.png)
 
 1. Mục tiêu và nguyên tắc thiết kế
 
@@ -329,3 +331,11 @@ Lưu giữ những khoảnh khắc đáng nhớ trong một dải ảnh nhỏ xi
 | Giới thiệu | about-hero, about-story, value-grid |
 | Điều hướng | breadcrumb, nav-link |
 
+
+---
+
+## Phụ lục – Hình ảnh phác thảo giao diện
+
+Các hình ảnh dưới đây được trích từ file DOCX gốc và đặt trong thư mục `images/`. GitHub sẽ hiển thị ảnh trực tiếp khi giữ nguyên cấu trúc thư mục.
+
+### Website wireframe overview\n\n![Website wireframe overview](images/website-wireframe-overview.png)\n\n### Wireframe mobile long\n\n![Wireframe mobile long](images/wireframe-mobile-long.png)\n\n### Wireframe photostrip 01\n\n![Wireframe photostrip 01](images/wireframe-photostrip-01.jpg)\n\n### Wireframe photostrip 02\n\n![Wireframe photostrip 02](images/wireframe-photostrip-02.jpg)\n\n### Wireframe product layout 01\n\n![Wireframe product layout 01](images/wireframe-product-layout-01.jpg)\n\n### Wireframe product grid\n\n![Wireframe product grid](images/wireframe-product-grid.jpg)\n\n### Wireframe framed product\n\n![Wireframe framed product](images/wireframe-framed-product.jpg)\n\n### Wireframe product detail\n\n![Wireframe product detail](images/wireframe-product-detail.jpg)\n\n### Wireframe two column layout\n\n![Wireframe two column layout](images/wireframe-two-column-layout.jpg)\n\n### Wireframe combination layout\n\n![Wireframe combination layout](images/wireframe-combination-layout.jpg)\n\n### Wireframe photostrip screen\n\n![Wireframe photostrip screen](images/wireframe-photostrip-screen.jpg)\n\n
