@@ -6,7 +6,7 @@
 - **Kiểm thử thủ công:** ngày 03/11/2026 VHuy đã tự kiểm tra trên Chrome/Edge 5 nhóm (4 trang, điều hướng và 8 sản phẩm, responsive 1366/768/390px, hover, focus bằng Tab). Kết quả cụ thể từng tiêu chí: **Chưa xác nhận** (xem mục 4B), trừ header/menu ở 390/768/1366px và viền focus của menu: VHuy đã kiểm thử lại sau TH-20 và xác nhận đạt.
 - **Phương án:** PA-B, gồm một CSS nền dùng chung (`css/style.css`) và một CSS riêng cho từng trang.
 - **Nền tích hợp:** bản sao `03_GITHUB_HIEN_TAI`. Các thư mục `01_…`, `02_…`, `03_…` không bị chỉnh sửa.
-- **Trạng thái GitHub:** chưa commit, chưa push, chưa tạo nhánh.
+- **Trạng thái GitHub:** bản tích hợp (24 file) đã được đưa lên qua Pull Request #9 và merge vào nhánh `main` (VHuy xác nhận); website đã mở được trên GitHub Pages. Chi tiết ở mục 6.
 
 Quy ước trạng thái:
 
@@ -507,3 +507,47 @@ Mở bằng Live Server hoặc mở trực tiếp `index.html`, rồi `F12` → 
 - [ ] Ghi lại lỗi (nếu có) để chuyển Yến.
 
 Ghi kết quả vào cột "Kết quả thực tế" cho từng mục khi VHuy kiểm tra; không ghi trước khi kiểm.
+
+---
+
+## 6. Cập nhật GitHub và kiểm thử thủ công trên GitHub Pages
+
+### 6.1. Cập nhật repository
+- **Kiểm tra trước khi upload:** bản ZIP mới nhất của repository (tải ngày 03/11/2026) giống hệt từng byte với bản `03_GITHUB_HIEN_TAI` dùng làm nền tích hợp (52/52 file, `diff -rq` không có khác biệt). Không có thay đổi mới của thành viên khác trên nhánh mặc định.
+- **Nội dung đưa lên:** 24 file, gồm 6 file sửa (`index.html`, `products.html`, `product-detail.html`, `about.html`, `css/style.css`, `README.md`) và 18 file thêm (`css/products.css`, `css/product-detail.css`, `css/about.css`, `product-detail-02…08.html`, 7 ảnh trang giới thiệu, `INTEGRATION_LOG.md`). Không xóa file nào. Trước khi upload, cả 24 file đã được so khớp SHA-256 với bản tích hợp.
+- **Pull Request:** [#9](https://github.com/huytran31241023748-code/Memoria-Lab/pull/9). VHuy xác nhận đã **merge vào `main`**.
+- **Website:** <https://huytran31241023748-code.github.io/Memoria-Lab/>. VHuy xác nhận đã mở được trực tuyến.
+- **Ghi chú:** bản `INTEGRATION_LOG.md` trong PR #9 chưa có mục 6 này. Mục 6 được thêm sau khi merge và cần cập nhật riêng lên GitHub.
+
+### 6.2. Kết quả kiểm thử thủ công trên GitHub Pages — 🧑 VHUY-ĐÃ-KIỂM
+
+- **Người kiểm tra:** VHuy (Vũ Trọng Huy).
+- **Ngày:** 04/11/2026.
+- **Môi trường:** website trực tuyến tại link GitHub Pages ở trên.
+
+| # | Nhóm kiểm tra | Kết quả VHuy xác nhận |
+|---|---|---|
+| 1 | Trang chủ hiển thị đúng | ✅ Đạt |
+| 2 | Trang Sản phẩm có đủ 8 sản phẩm | ✅ Đạt |
+| 3 | Các nút "Xem chi tiết" dẫn đúng trang sản phẩm | ✅ Đạt |
+| 4 | Trang Giới thiệu hiển thị đúng | ✅ Đạt |
+| 5 | Menu mobile ở 390px hoạt động | ✅ Đạt |
+| 6 | Không quan sát thấy ảnh vỡ, lỗi CSS hoặc tràn ngang | ✅ Đạt (theo quan sát của VHuy) |
+
+**Minh chứng:** link Pull Request #9 và link GitHub Pages ở mục 6.1.
+
+**Chưa có minh chứng hoặc kết quả riêng:**
+- Ảnh chụp màn hình trên GitHub Pages: VHuy chưa cung cấp tên file.
+- Kết quả tab Network của DevTools (lỗi 404): chưa được cung cấp.
+- Thông tin độ rộng nào được dùng cho nhóm 1–4 và 6: chưa được ghi.
+- Các tiêu chí khác ở mục 4B và mục 5 vẫn giữ trạng thái đã ghi trước đó (ví dụ: hover, thứ tự Tab, các thành phần ngoài menu): **Chưa xác nhận**.
+
+### 6.3. Vấn đề còn tồn tại sau khi đưa lên GitHub
+Kết quả kiểm thử ở 6.2 **không** đóng các vấn đề V2–V12 ở mục 3. Các vấn đề này vẫn giữ nguyên trạng thái và người phụ trách đã ghi, đặc biệt:
+- **V2:** banner và khu vực Photobooth/Studio chưa có ảnh.
+- **V3:** trang giới thiệu chưa có khu vực liên hệ riêng.
+- **V4:** ảnh trang giới thiệu chưa ghi nguồn và có dung lượng lớn.
+- **V11:** ở 1366/768px, dòng eyebrow của `#how-it-works` bị header che khi mở liên kết neo.
+- **V12:** ở viewport hẹp hơn 390px, menu xuống 2 hàng.
+
+Chỉ V1 đã được khắc phục (TH-20, VHuy kiểm thử lại ngày 03/11/2026; menu mobile tiếp tục đạt trên GitHub Pages ngày 04/11/2026).
