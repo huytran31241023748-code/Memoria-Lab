@@ -483,31 +483,38 @@
   width: min(1200px, calc(100% - 64px));
   margin-inline: auto;
 }
-/* Responsive: điều chỉnh Our Story trên mobile */
-@media (max-width: 767px) {
+/* FIX: OUR STORY - MOBILE RESPONSIVE */
+@media screen and (max-width: 767px) {
     .about-story__grid {
-        display: flex;
-        flex-direction: column;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 24px;
+        width: calc(100% - 40px);
+        margin-inline: auto;
     }
 
     .about-story__content {
-        order: 1;
+        grid-column: 1;
+        grid-row: 1;
         width: 100%;
     }
 
     .about-story__content p:not(.eyebrow) {
         text-align: justify;
+        line-height: 1.6;
     }
 
     .about-story__image {
-        order: 2;
+        grid-column: 1;
+        grid-row: 2;
         width: 100%;
-        margin: 0 auto;
     }
 
     .about-story__image img {
         display: block;
         width: 100%;
-        height: auto;
+        max-height: none;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
     }
 }
