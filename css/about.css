@@ -483,3 +483,31 @@
   width: min(1200px, calc(100% - 64px));
   margin-inline: auto;
 }
+/* Responsive: điều chỉnh Our Story trên mobile */
+@media (max-width: 767px) {
+    .about-story__grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-story__content {
+        order: 1;
+        width: 100%;
+    }
+
+    .about-story__content p:not(.eyebrow) {
+        text-align: justify;
+    }
+
+    .about-story__image {
+        order: 2;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .about-story__image img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
