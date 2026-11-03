@@ -1,1 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memoria Lab – Sản phẩm</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/products.css">
+</head>
+<body>
 
+  <!-- HEADER DÙNG CHUNG -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Memoria Lab - Trang chủ">
+        <span class="brand__name">Memoria Lab</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Điều hướng chính">
+        <a class="nav-link" href="index.html">Trang chủ</a>
+        <a class="nav-link nav-link--active" href="products.html">Sản phẩm</a>
+        <a class="nav-link" href="product-detail.html">Chi tiết sản phẩm</a>
+        <a class="nav-link" href="about.html">Về chúng tôi</a>
+      </nav>
+
+      <div class="header-actions" aria-label="Tiện ích">
+        <button class="icon-button" type="button" aria-label="Tìm kiếm">⌕</button>
+        <button class="icon-button" type="button" aria-label="Giỏ hàng">🛒</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 1. TIÊU ĐỀ TRANG -->
+    <section class="page-title">
+      <div class="container">
+        <p class="breadcrumb">
+          <a href="index.html">Trang chủ</a> / <span>Sản phẩm</span>
+        </p>
+        <h1>Tạo nên món quà mang dấu ấn của bạn</h1>
+        <p class="page-title__text">
+          Chọn một mẫu dải ảnh, bưu thiếp, khung tranh hay thiệp, rồi thêm ảnh,
+          lời nhắn và sticker để tạo món quà của riêng bạn.
+        </p>
+        <p class="page-title__note">Giá hiển thị là giá minh họa.</p>
+      </div>
+    </section>
+
+    <!-- 2. DANH SÁCH SẢN PHẨM -->
+    <section class="section section--products">
+      <div class="container">
+
+        <!-- Thanh danh mục: chỉ là giao diện, chưa lọc được -->
+        <div class="product-toolbar">
+          <h2>Tất cả sản phẩm</h2>
+          <div class="category-list">
+            <button class="category-btn category-btn--active" type="button">Tất cả</button>
+            <button class="category-btn" type="button">Photostrip</button>
+            <button class="category-btn" type="button">Scrapbook</button>
+            <button class="category-btn" type="button">Thiệp</button>
+            <button class="category-btn" type="button">Combo</button>
+          </div>
+        </div>
+
+        <!-- Lưới 8 sản phẩm -->
+        <div class="product-grid product-grid--list">
+
+          <article class="product-card">
+            <div class="product-card__img-box">
+              <img class="product-card__image" src="images/products/product-01.jpg" alt="Photostrip 1×3 – Hàn Quốc">
+            </div>
+            <h3 class="product-card__title">Photostrip 1×3 – Hàn Quốc</h3>
+            <p class="product-card__price">89.000 đ</p>
+            <a class="btn product-card__btn" href="product-detail.html">Xem chi tiết</a>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__img-box">
+              <img class="product-card__image" src="images/products/product-02.jpg" alt="Photostrip 1×4 – Vintage">
+            </div>
+            <h3 class="product-card__title">Photostrip 1×4 – Vintage</h3>
+            <p class="product-card__price">99.000 đ</p>
+            <a class="btn product-card__btn" href="product-detail-02.html">Xem chi tiết</a>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__img-box">
+              <img class="product-card__image" src="images/products/product-03.jpg" alt="Postcard 2×2 – Y2K">
+            </div>
+            <h3 class="product-card__title">Postcard 2×2 – Y2K</h3>
+            <p class="product-card__price">129.000 đ</p>
+            <a class="btn product-card__btn" href="product-detail-03.html">Xem chi tiết</a>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__img-box">
+              <img class="product-card__image" src="images/products/product-04.jpg" alt="Khung tranh Desktop Custom">
+            </div>
+            <h3 class="product-card__title">Khung tranh Desktop Custom</h3>
+            <p class="product-card__price">159.000 đ</p>
+            <a class="btn product-card__btn" href="product-detail-04.html">Xem chi tiết</a>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__img-box">
+              <img class="product-card__image" src="images/products/product-05.jpg" alt="Thiệp kỷ niệm cá nhân hóa">
+            </div>
+            <h3 class="product-card__title">Thiệp kỷ niệm cá nhân hóa</h3>
+            <p class="product-card__price">69.000 đ</p>
+            <a class="btn product-card__btn" href="product-detail-05.html">Xem chi tiết</a>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__img-box">
+              <img class="product-card__image" src="images/products/product-06.jpg" alt="Scrapbook để bàn">
+            </div>
+            <h3 class="product-card__title">Scrapbook để bàn</h3>
+            <p class="product-card__price">149.000 đ</p>
+            <a class="btn product-card__btn" href="product-detail-06.html">Xem chi tiết</a>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__img-box">
+              <img class="product-card__image" src="images/products/product-07.jpg" alt="Dải ảnh + QR Digital Keepsake">
+            </div>
+            <h3 class="product-card__title">Dải ảnh + QR Digital Keepsake</h3>
+            <p class="product-card__price">119.000 đ</p>
+            <a class="btn product-card__btn" href="product-detail-07.html">Xem chi tiết</a>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__img-box">
+              <img class="product-card__image" src="images/products/product-08.jpg" alt="Set quà combo Photostrip + Frame">
+            </div>
+            <h3 class="product-card__title">Set quà combo Photostrip + Frame</h3>
+            <p class="product-card__price">249.000 đ</p>
+            <a class="btn product-card__btn" href="product-detail-08.html">Xem chi tiết</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. KHỐI GỢI Ý CUỐI TRANG -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="product-cta">
+          <div>
+            <h2>Chưa có mẫu phù hợp?</h2>
+            <p>Tự tạo thiết kế của bạn: chụp ảnh, thêm chữ và sticker, xem trước rồi đặt in.</p>
+          </div>
+          <a class="btn btn--primary" href="index.html#how-it-works">Xem cách hoạt động</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER DÙNG CHUNG -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <a class="brand brand--footer" href="index.html" aria-label="Memoria Lab - Quay về trang chủ">
+            Memoria Lab
+          </a>
+          <p class="site-footer__tagline">
+            Capture Moments · Design Memories · Print Your Story
+          </p>
+          <p class="site-footer__desc">
+            Nền tảng thương mại điện tử quà tặng kỷ niệm cá nhân hóa, kết hợp
+            Web Photobooth, Custom Studio, trang kỷ niệm QR và dịch vụ đặt in.
+          </p>
+        </div>
+
+        <div class="site-footer__nav">
+          <h3 class="site-footer__title">Liên kết nhanh</h3>
+          <nav class="footer-links" aria-label="Liên kết chân trang">
+            <a class="footer-link" href="index.html">Trang chủ</a>
+            <a class="footer-link footer-link--active" href="products.html">Sản phẩm</a>
+            <a class="footer-link" href="product-detail.html">Chi tiết sản phẩm</a>
+            <a class="footer-link" href="about.html">Về chúng tôi</a>
+          </nav>
+        </div>
+
+        <div class="site-footer__contact">
+          <h3 class="site-footer__title">Thông tin liên hệ</h3>
+          <p class="site-footer__text">
+            Email, số điện thoại và mạng xã hội chính thức sẽ được cập nhật
+            sau khi nhóm xác nhận.
+          </p>
+          <div class="footer-meta">
+            <a class="footer-link" href="about.html">Tìm hiểu câu chuyện Memoria Lab →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">
+          © 2026 Memoria Lab. Lưu giữ khoảnh khắc, tự tay thiết kế kỷ niệm.
+        </p>
+        <div class="site-footer__quick">
+          <a class="footer-link" href="products.html">Danh sách sản phẩm</a>
+          <a class="footer-link" href="about.html">Về chúng tôi</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

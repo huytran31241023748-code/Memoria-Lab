@@ -89,42 +89,129 @@
       </div>
     </section>
 
-    <!-- CHỖ GHÉP SẢN PHẨM TỪ BƯỚC 5 -->
-    <section class="section section--soft" id="featured-products">
+    <!-- THUY: BAT DAU KHU VUC SAN PHAM NOI BAT -->
+    <section class="section section--soft featured-products" id="featured-products"
+             aria-labelledby="featured-products-title">
       <div class="container">
-        <div class="section-heading section-heading--row">
-          <div>
-            <p class="eyebrow">FEATURED</p>
-            <h2>Sản phẩm nổi bật</h2>
+        <div class="featured-products__heading">
+          <div class="featured-products__intro">
+            <p class="featured-products__eyebrow">Một món quà, một câu chuyện</p>
+            <h2 class="featured-products__title" id="featured-products-title">Sản phẩm nổi bật</h2>
+            <p class="featured-products__description">
+              Chọn một thiết kế bạn yêu thích, rồi thêm những khoảnh khắc
+              và lời nhắn của riêng mình.
+            </p>
           </div>
-          <a class="text-link" href="products.html">Xem tất cả sản phẩm →</a>
+          <a class="featured-products__all" href="products.html">
+            <span>Khám phá tất cả sản phẩm</span>
+            <svg class="featured-products__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                  <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+          </a>
         </div>
 
-        <div class="product-grid product-grid--featured">
-          <!-- Kim Anh chừa sẵn 4 vị trí để ghép product card ở bước 5 -->
-          <article class="product-slot">
-            <div class="product-slot__image">Product 01</div>
-            <h3>Photostrip 1×3 – Hàn Quốc</h3>
-            <p>89.000 đ</p>
+        <div class="product-grid product-grid--featured featured-products__grid">
+          <article class="product-card" aria-labelledby="featured-product-01-title">
+            <div class="product-card__img-box">
+              <img class="product-card__image"
+                   src="images/products/product-01.jpg"
+                   alt="Minh họa Photostrip 1×3 – Hàn Quốc"
+                   width="800" height="1000" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__body">
+              <p class="product-card__category">Dải ảnh</p>
+              <h3 class="product-card__title" id="featured-product-01-title">Photostrip 1×3 – Hàn Quốc</h3>
+              <p class="product-card__summary">Ba khoảnh khắc, một dải ảnh nhỏ xinh.</p>
+              <div class="product-card__purchase">
+                <p class="product-card__price">89.000 đ</p>
+                <a class="btn product-card__btn" href="product-detail.html"
+                   aria-label="Xem chi tiết Photostrip 1×3 – Hàn Quốc">
+                  <span>Xem chi tiết</span>
+                  <svg class="featured-products__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                  <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                </a>
+              </div>
+            </div>
           </article>
-          <article class="product-slot">
-            <div class="product-slot__image">Product 02</div>
-            <h3>Photostrip 1×4 – Vintage</h3>
-            <p>99.000 đ</p>
+
+          <article class="product-card" aria-labelledby="featured-product-02-title">
+            <div class="product-card__img-box">
+              <img class="product-card__image"
+                   src="images/products/product-02.jpg"
+                   alt="Minh họa Photostrip 1×4 – Vintage"
+                   width="800" height="1000" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__body">
+              <p class="product-card__category">Dải ảnh</p>
+              <h3 class="product-card__title" id="featured-product-02-title">Photostrip 1×4 – Vintage</h3>
+              <p class="product-card__summary">Một chút hoài niệm cho những bức ảnh yêu thích.</p>
+              <div class="product-card__purchase">
+                <p class="product-card__price">99.000 đ</p>
+                <a class="btn product-card__btn" href="product-detail-02.html"
+                   aria-label="Xem chi tiết Photostrip 1×4 – Vintage">
+                  <span>Xem chi tiết</span>
+                  <svg class="featured-products__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                  <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                </a>
+              </div>
+            </div>
           </article>
-          <article class="product-slot">
-            <div class="product-slot__image">Product 03</div>
-            <h3>Postcard 2×2 – Y2K</h3>
-            <p>129.000 đ</p>
+
+          <article class="product-card" aria-labelledby="featured-product-03-title">
+            <div class="product-card__img-box">
+              <img class="product-card__image"
+                   src="images/products/product-03.jpg"
+                   alt="Minh họa Postcard 2×2 – Y2K"
+                   width="800" height="1000" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__body">
+              <p class="product-card__category">Bưu thiếp</p>
+              <h3 class="product-card__title" id="featured-product-03-title">Postcard 2×2 – Y2K</h3>
+              <p class="product-card__summary">Gửi một lời nhắn, giữ một khoảnh khắc.</p>
+              <div class="product-card__purchase">
+                <p class="product-card__price">129.000 đ</p>
+                <a class="btn product-card__btn" href="product-detail-03.html"
+                   aria-label="Xem chi tiết Postcard 2×2 – Y2K">
+                  <span>Xem chi tiết</span>
+                  <svg class="featured-products__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                  <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                </a>
+              </div>
+            </div>
           </article>
-          <article class="product-slot">
-            <div class="product-slot__image">Product 04</div>
-            <h3>Khung tranh Desktop Custom</h3>
-            <p>159.000 đ</p>
+
+          <article class="product-card" aria-labelledby="featured-product-04-title">
+            <div class="product-card__img-box">
+              <img class="product-card__image"
+                   src="images/products/product-04.jpg"
+                   alt="Minh họa Khung tranh Desktop Custom"
+                   width="800" height="1000" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__body">
+              <p class="product-card__category">Khung tranh</p>
+              <h3 class="product-card__title" id="featured-product-04-title">Khung tranh Desktop Custom</h3>
+              <p class="product-card__summary">Một góc bàn nhỏ cho những kỷ niệm của riêng bạn.</p>
+              <div class="product-card__purchase">
+                <p class="product-card__price">159.000 đ</p>
+                <a class="btn product-card__btn" href="product-detail-04.html"
+                   aria-label="Xem chi tiết Khung tranh Desktop Custom">
+                  <span>Xem chi tiết</span>
+                  <svg class="featured-products__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                  <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                </a>
+              </div>
+            </div>
           </article>
         </div>
+
+        <p class="featured-products__note">Giá hiển thị là giá minh họa.</p>
       </div>
     </section>
+    <!-- THUY: KET THUC KHU VUC SAN PHAM NOI BAT -->
 
     <!-- PHOTOBOOTH / CUSTOM STUDIO -->
     <section class="section">
@@ -135,7 +222,8 @@
             <p class="eyebrow">PHOTOBOOTH</p>
             <h2>Chụp khoảnh khắc của bạn</h2>
             <p>Chụp bằng webcam hoặc tải ảnh để bắt đầu tạo kỷ niệm.</p>
-            <a class="btn btn--primary" href="products.html">Bắt đầu sáng tạo</a>
+            <p>Giao diện minh họa – chức năng Photobooth chưa triển khai trong Buổi 2.</p>
+            <a class="btn btn--primary" aria-disabled="true">Bắt đầu sáng tạo</a>
           </div>
         </article>
 
@@ -145,7 +233,8 @@
             <p class="eyebrow">CUSTOM STUDIO</p>
             <h2>Tự tay thiết kế</h2>
             <p>Thêm chữ, sticker, khung và xem trước thành phẩm.</p>
-            <a class="btn btn--secondary" href="products.html">Khám phá Studio</a>
+            <p>Giao diện minh họa – chức năng Custom Studio chưa triển khai trong Buổi 2.</p>
+            <a class="btn btn--secondary" aria-disabled="true">Khám phá Studio</a>
           </div>
         </article>
       </div>
