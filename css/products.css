@@ -1,0 +1,237 @@
+/* Nguồn: Quyên – css/style.css dòng 667–902 (phần riêng trang products.html), chép nguyên văn. VHuy tách theo PA-B. */
+
+/* =========================================
+   TRANG DANH SÁCH SẢN PHẨM (products.html)
+   ========================================= */
+
+/* 1. Tiêu đề trang */
+.page-title {
+  padding: 40px 0 0;
+}
+
+.breadcrumb {
+  margin: 0 0 16px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.page-title h1 {
+  font-size: 36px;
+}
+
+.page-title__text {
+  max-width: 640px;
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+.page-title__note {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* 2. Thanh danh mục */
+.section--products {
+  padding-top: 32px;
+}
+
+.product-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;           /* hết chỗ thì tự xuống dòng */
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.product-toolbar h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.category-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.category-btn:hover {
+  border-color: var(--primary);
+  color: var(--accent);
+}
+
+/* Nút đang chọn: cùng kiểu với nút "Xem chi tiết" */
+.category-btn--active {
+  background: #FBE9EE;
+  border-color: var(--primary);
+  color: var(--accent);
+}
+
+/* 3. Lưới sản phẩm: 4 cột bằng nhau */
+.product-grid--list {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* 4. Thẻ sản phẩm */
+.product-card {
+  display: flex;
+  flex-direction: column;    /* xếp ảnh, tên, giá, nút theo chiều dọc */
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+/* Rê chuột hoặc bấm Tab vào nút trong thẻ: thẻ nâng lên, có viền và bóng nhẹ */
+.product-card:hover,
+.product-card:focus-within {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px rgba(57, 47, 50, .08);
+}
+
+/* Khung ảnh: che phần ảnh phóng to bị tràn ra ngoài */
+.product-card__img-box {
+  overflow: hidden;
+  border-radius: var(--radius-image);
+}
+
+/* Ảnh luôn theo tỉ lệ 4:5, không bị méo */
+.product-card__image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+
+/* Rê chuột vào thẻ: ảnh phóng to nhẹ */
+.product-card:hover .product-card__image {
+  transform: scale(1.05);
+}
+
+/* Tên luôn chiếm đúng 2 dòng, nên giá và nút không bị lệch giữa các thẻ */
+.product-card__title {
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.4;
+  min-height: 2.8em;         /* 2 dòng x 1.4 = 2.8 */
+}
+
+.product-card__price {
+  margin: 8px 0 16px;
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Nút "Xem chi tiết": nền hồng phấn, viền Dusty Rose, chữ Deep Rose */
+.product-card__btn {
+  margin-top: auto;          /* đẩy nút xuống đáy thẻ */
+  width: 100%;
+  background: #FBE9EE;       /* hồng phấn: Dusty Rose pha rất nhạt */
+  border: 1px solid var(--primary);
+  color: var(--accent);
+  transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+/* Rê chuột vào nút: tô Deep Rose, chữ trắng (giống nút chính khi rê chuột) */
+.product-card__btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* Viền khi dùng phím Tab */
+.breadcrumb a:focus-visible,
+.category-btn:focus-visible {
+  outline: 3px solid var(--lavender);
+  outline-offset: 3px;
+}
+
+/* 5. Khối gợi ý cuối trang */
+.product-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+}
+
+.product-cta p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Máy tính bảng: 3 cột */
+@media (max-width: 1023px) {
+  .product-grid--list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .product-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Điện thoại: 2 cột */
+@media (max-width: 767px) {
+  .page-title {
+    padding-top: 24px;
+  }
+
+  .page-title h1 {
+    font-size: 26px;
+  }
+
+  .product-grid--list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .product-card {
+    padding: 12px;
+  }
+
+  .product-card__title {
+    font-size: 14px;
+  }
+
+  .product-card__price {
+    font-size: 16px;
+  }
+
+  .product-cta {
+    padding: 24px 16px;
+  }
+}

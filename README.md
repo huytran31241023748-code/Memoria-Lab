@@ -2,6 +2,81 @@
 
 Nền tảng thương mại điện tử quà tặng kỷ niệm cá nhân hóa, kết hợp Web Photobooth, Custom Studio, QR kỷ niệm và đặt in sản phẩm.
 
+## Buổi 2 – Giao diện website HTML5/CSS3
+
+> Phần này mô tả phiên bản giao diện tĩnh của Buổi 2. Các mục 1–7 phía sau là nội dung Chương 1, mô tả định hướng của toàn đồ án; các chức năng ở đó (tài khoản, giỏ hàng, thanh toán, Photobooth, Studio, QR…) **chưa được triển khai** trong Buổi 2.
+
+### B2.1. Giới thiệu
+
+Website giới thiệu cửa hàng quà tặng kỷ niệm cá nhân hóa Memoria Lab, xây dựng bằng HTML5 và CSS3 theo đặc tả giao diện trong [docs/sketching.md](docs/sketching.md). Bốn trang dùng chung header, footer, bảng màu (Dusty Rose, Deep Rose, Lavender, Warm Cream), font Playfair Display/Poppins và kiểu thẻ sản phẩm. Danh mục gồm 8 sản phẩm minh họa; giá chỉ mang tính minh họa.
+
+### B2.2. Cấu trúc thư mục
+
+```text
+├── index.html                 Trang chủ
+├── products.html              Danh sách 8 sản phẩm
+├── product-detail.html        Chi tiết Photostrip 1×3 – Hàn Quốc (trang chi tiết chính)
+├── product-detail-02.html … product-detail-08.html   Chi tiết 7 sản phẩm còn lại
+├── about.html                 Giới thiệu cửa hàng
+├── css/
+│   ├── style.css              CSS nền dùng chung: biến màu, header, footer, nút, trang chủ, sản phẩm nổi bật
+│   ├── products.css           CSS riêng trang danh sách
+│   ├── product-detail.css     CSS riêng các trang chi tiết
+│   └── about.css              CSS riêng trang giới thiệu
+├── images/
+│   ├── products/              product-01.jpg … product-08.jpg (mockup sản phẩm)
+│   └── …                      Ảnh minh họa trang giới thiệu
+├── docs/                      Tài liệu Chương 1, đặc tả giao diện và wireframe
+└── README.md
+```
+
+Mỗi trang nạp `css/style.css` trước, sau đó nạp file CSS riêng của trang (nếu có).
+
+### B2.3. Danh sách trang
+
+| Trang | Nội dung chính | Thực hiện |
+|---|---|---|
+| `index.html` | Header, menu, banner, quy trình 4 bước, 4 sản phẩm nổi bật, khu vực Photobooth/Studio (minh họa), quà tặng theo dịp, footer | Kim Anh (header, trang chủ), Yến (footer), Trần Lâm Huy (sản phẩm nổi bật) |
+| `products.html` | Tiêu đề, thanh danh mục dạng giao diện, lưới 8 sản phẩm có ảnh, tên, giá và nút xem chi tiết | Quyên |
+| `product-detail.html`, `product-detail-02…08.html` | Ảnh, tên, giá, mô tả, thuộc tính, tùy chọn dạng giao diện, nút mua minh họa, liên kết quay lại danh sách, sản phẩm liên quan | Quang |
+| `about.html` | Giới thiệu thương hiệu, câu chuyện, giá trị, quy trình, khách hàng mục tiêu, lời kêu gọi | Vương Thị Anh |
+
+Tích hợp bốn trang, header/footer và CSS: Vũ Trọng Huy. Nhật ký tích hợp được ghi trong `INTEGRATION_LOG.md` của bản tích hợp.
+
+### B2.4. Công nghệ sử dụng
+
+- HTML5 với các thẻ ngữ nghĩa `header`, `nav`, `main`, `section`, `article`, `footer`.
+- CSS3: biến CSS (`:root`), CSS Grid cho các lưới sản phẩm/khối nội dung, Flexbox cho header, footer và nội dung thẻ.
+- Responsive bằng media query tại `max-width: 1023px` (máy tính bảng) và `max-width: 767px` (điện thoại).
+- Trạng thái `:hover`, `:focus-visible`, `transition`.
+- Google Fonts (Playfair Display, Poppins); khi không có Internet, trình duyệt dùng font dự phòng Georgia/Arial.
+- Không dùng JavaScript, framework CSS, backend hay cơ sở dữ liệu.
+
+### B2.5. Cách mở và chạy website
+
+1. Tải hoặc clone repository về máy.
+2. Mở trực tiếp file `index.html` bằng Chrome/Edge, hoặc mở thư mục bằng VS Code và chạy extension Live Server.
+3. Dùng menu, footer và các nút "Xem chi tiết" để di chuyển giữa các trang.
+
+Không cần cài đặt thư viện. Giữ nguyên cấu trúc thư mục vì CSS và ảnh dùng đường dẫn tương đối.
+
+### B2.6. Cách kiểm tra giao diện responsive
+
+1. Mở trang bằng Chrome/Edge, nhấn `F12`, bật Toggle device toolbar (`Ctrl + Shift + M`).
+2. Chọn Responsive và nhập lần lượt độ rộng **1366 px**, **768 px**, **390 px**.
+3. Với từng trang, kiểm tra: không có thanh cuộn ngang; ảnh không méo; số cột sản phẩm thay đổi (danh sách: 4 → 3 → 2 cột; nổi bật: 4 → 2 → 1 cột); menu không chồng lấn; nút đủ lớn để bấm.
+4. Kiểm tra tràn ngang nhanh: mở tab Console và gõ `document.documentElement.scrollWidth > document.documentElement.clientWidth` – kết quả `false` là không tràn.
+5. Kiểm tra hover bằng chuột và focus bằng phím `Tab` trên menu, nút và thẻ sản phẩm.
+
+### B2.7. Hạn chế hiện tại
+
+- Website là giao diện tĩnh: chưa có tìm kiếm, lọc danh mục, giỏ hàng, đăng nhập, thanh toán hoặc backend. Nút tìm kiếm, giỏ hàng, "Thêm vào giỏ", "Tùy chỉnh thiết kế" và các tùy chọn trên trang chi tiết chỉ là giao diện minh họa.
+- Photobooth và Custom Studio chưa được triển khai; các nút ở trang chủ chỉ là minh họa.
+- Ảnh sản phẩm là mockup minh họa; giá là giá minh họa. Ảnh lớn của banner trang chủ và ảnh khu vực Photobooth/Studio đang là khung giữ chỗ.
+- Thông tin liên hệ (email, số điện thoại, mạng xã hội) chưa được nhóm xác nhận nên chưa hiển thị.
+- Trên màn hình điện thoại (≤ 767 px), menu chính đã được điều chỉnh bằng CSS để hiển thị thành một hàng dưới logo (không dùng JavaScript hay menu burger). Ở màn hình hẹp hơn 390 px, menu có thể xuống 2 hàng.
+- Một số ảnh minh họa trang giới thiệu chưa ghi nguồn và có dung lượng lớn.
+
 ## 1. Giới thiệu
 
 ### 1.1. Tổng quan dự án

@@ -1,0 +1,485 @@
+/* Nguồn: Vanh – css/style.css dòng 667–1150 (phần riêng trang about.html), chép nguyên văn. VHuy tách theo PA-B. */
+
+/* =========================================
+   ABOUT PAGE - MEMORIA LAB
+========================================= */
+
+/* ABOUT HERO */
+.about-hero {
+    padding: 64px 0;
+}
+
+.about-hero__grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 48px;
+}
+
+.about-hero__content h1 {
+    max-width: 560px;
+}
+
+.about-hero__text {
+    max-width: 540px;
+    margin: 0 0 28px;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.about-hero__image img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-card);
+}
+
+
+/* OUR STORY */
+.about-story__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 56px;
+}
+
+.about-story__image img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--radius-card);
+}
+
+.about-story__content p:not(.eyebrow) {
+    margin: 0 0 16px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+/* SECTION HEADING */
+.about-section-heading {
+    max-width: 680px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.about-section-heading h2 {
+    margin-bottom: 14px;
+}
+
+.about-section-heading p:last-child {
+    max-width: 600px;
+    margin-inline: auto;
+    color: var(--muted);
+}
+
+
+/* OUR VALUES */
+.about-values__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.about-value-card {
+    padding: 24px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.about-value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(57, 47, 50, 0.07);
+}
+
+.about-value-card__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background: #F8E3E9;
+    color: var(--accent);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.about-value-card h3 {
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.about-value-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* OUR PROCESS */
+.about-process__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.about-process-card {
+    position: relative;
+    padding: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+}
+
+.about-process-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-image);
+    margin-bottom: 18px;
+}
+
+.about-process-card__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 12px;
+    background: #F8E3E9;
+    color: var(--accent);
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.about-process-card h3 {
+    margin-bottom: 8px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 21px;
+    color: var(--accent);
+}
+
+.about-process-card p {
+    margin: 0 0 8px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* OUR AUDIENCE */
+.about-audience__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 56px;
+}
+
+.about-audience__content h2 {
+    max-width: 520px;
+    margin-bottom: 18px;
+}
+
+.about-audience__content > p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.about-audience__list {
+    display: grid;
+    gap: 12px;
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.about-audience__list li {
+    position: relative;
+    padding: 12px 16px 12px 42px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.about-audience__list li::before {
+    content: "♥";
+    position: absolute;
+    left: 16px;
+    color: var(--primary);
+}
+
+.about-audience__image img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-card);
+}
+
+
+/* CALL TO ACTION */
+.about-cta {
+    padding: 72px 0;
+    background: #F2DDE4;
+    text-align: center;
+}
+
+.about-cta__content {
+    max-width: 760px;
+}
+
+.about-cta h2 {
+    margin-bottom: 16px;
+    font-size: 36px;
+}
+
+.about-cta p:not(.eyebrow) {
+    max-width: 600px;
+    margin: 0 auto 28px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.about-cta .eyebrow {
+    margin-bottom: 12px;
+}
+
+
+/* TABLET */
+@media (max-width: 1023px) {
+
+    .about-hero__grid {
+        gap: 28px;
+    }
+
+    .about-story__grid,
+    .about-audience__grid {
+        gap: 32px;
+    }
+
+    .about-values__grid,
+    .about-process__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-hero h1 {
+        font-size: 34px;
+    }
+
+    .about-cta h2 {
+        font-size: 30px;
+    }
+}
+
+
+/* MOBILE */
+@media (max-width: 767px) {
+
+    .about-hero {
+        padding: 36px 0;
+    }
+
+    .about-hero__grid,
+    .about-story__grid,
+    .about-audience__grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .about-hero__content {
+        order: 1;
+    }
+
+    .about-hero__image {
+        order: 2;
+    }
+
+    .about-hero__content h1 {
+        font-size: 28px;
+    }
+
+    .about-hero__text {
+        font-size: 14px;
+    }
+
+    .about-hero__image img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .about-story__image {
+        order: 2;
+    }
+
+    .about-story__content {
+        order: 1;
+    }
+
+    .about-values__grid,
+    .about-process__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .about-section-heading {
+        margin-bottom: 28px;
+        text-align: left;
+    }
+
+    .about-section-heading p:last-child {
+        margin-inline: 0;
+    }
+
+    .about-value-card {
+        padding: 20px;
+    }
+
+    .about-process-card {
+        padding: 14px;
+    }
+
+    .about-process-card img {
+        aspect-ratio: 16 / 9;
+    }
+
+    .about-audience__image {
+        order: 2;
+    }
+
+    .about-audience__content {
+        order: 1;
+    }
+
+    .about-cta {
+        padding: 48px 0;
+    }
+
+    .about-cta h2 {
+        font-size: 26px;
+    }
+
+    .about-cta p:not(.eyebrow) {
+        font-size: 14px;
+    }
+}
+/* =========================================
+   FIX LỖI HERO TRÀO MÀN HÌNH (FIRST VIEW)
+========================================= */
+
+/* 1. Giảm padding và căn giữa Hero theo chiều cao màn hình */
+.hero, 
+.about-hero {
+  padding: 24px 0;
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+}
+
+/* 2. Khống chế chiều cao ảnh Hero không bị tràn xuống dưới */
+.hero__image,
+.about-hero__image {
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__image img,
+.about-hero__image img {
+  width: 100%;
+  max-height: calc(100vh - 140px);
+  object-fit: contain;
+  border-radius: var(--radius-card);
+}
+
+.image-placeholder {
+  min-height: 320px;
+}
+
+/* 3. Đảm bảo giao diện cân đối trên Laptop màn hình nhỏ */
+@media (max-height: 750px) {
+  .hero, 
+  .about-hero {
+    padding: 16px 0;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+  
+  .hero__text {
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+}
+/* =========================================
+   FIX TRỌN VẸN SECTION 2 (OUR STORY) VỪA IN MÀN HÌNH
+========================================= */
+
+/* 1. Đặt mốc scroll-margin để khi bấm button cuộn tới không bị che mất tiêu đề */
+#our-story,
+.about-story {
+  scroll-margin-top: 76px;
+}
+
+/* 2. Cấu hình chiều cao section vừa khít 1 màn hình máy tính */
+.about-story,
+.section:has(.about-story__grid) {
+  min-height: calc(100vh - 76px);
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+}
+
+/* 3. Căn giữa khung lưới và đồng bộ chiều cao hai bên */
+.about-story__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+/* 4. Khống chế ảnh tự động co giãn cân xứng theo chiều cao màn hình */
+.about-story__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-story__image img {
+  width: 100%;
+  max-height: calc(100vh - 160px); /* Tự co nhỏ lại nếu màn hình thấp */
+  aspect-ratio: 1 / 1;             /* Đổi sang tỉ lệ 1:1 vuông hoặc 4/3 cho cân đối */
+  object-fit: cover;
+  border-radius: var(--radius-card);
+}
+
+/* 5. Căn chỉnh lại phông chữ để khối nội dung bên phải cân bằng với ảnh */
+.about-story__content h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.about-story__content p:not(.eyebrow) {
+  font-size: 14px;
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+/* =========================================
+   SỬA LỖI DÍ SÁT LỀ TRÁI CỦA SECTION 2
+========================================= */
+
+/* Tự động ôm khung giới hạn lề lề hai bên cân đối với Header */
+.about-story__grid {
+  width: min(1200px, calc(100% - 64px));
+  margin-inline: auto;
+}
