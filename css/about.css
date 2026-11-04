@@ -518,3 +518,293 @@
         object-fit: cover;
     }
 }
+
+
+
+/* ==========================================================================
+   CSS RIÊNG CHO TRANG VỀ CHÚNG TÔI (ER-06)
+   - Cô lập phạm vi (Scoped CSS): Chỉ tác động lên Trang Về Chúng Tôi,
+     không ảnh hưởng hay xung đột với Trang Chủ, Trang Cửa Hàng hay Chi Tiết SP.
+   - Cách dùng:
+     1. Nhúng trực tiếp vào trang Về chúng tôi (about.html), HOẶC
+     2. Dán vào cuối css/style.css và thêm class="page-about" vào thẻ <body>
+        (hoặc CSS sẽ tự động nhận diện qua menu đang active / khối nội dung .about).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   ER-06: NÚT CTA 'CÂU CHUYỆN CỦA CHÚNG TÔI' (TRANG VỀ CHÚNG TÔI)
+   - Tăng độ tương phản chữ/nền chuẩn WCAG AA (>= 4.5:1)
+   - Bổ sung hiệu ứng hover nâng (-2px), chuyển màu nền sang tông đậm #7d2e49
+     kèm đổ bóng đa tầng nổi bật
+   - Bổ sung focus-visible rõ ràng khi điều hướng bằng bàn phím
+   - Cố định độ dày viền 1.5px để triệt tiêu tình trạng xê dịch bố cục
+   -------------------------------------------------------------------------- */
+:is(
+  body.page-about,
+  .about-page,
+  .about,
+  body:has(.about),
+  body:has(.about-hero),
+  body:has(.about-story),
+  body:has(.site-nav .nav-link--active[href*="about"]),
+  body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
+) :is(
+  .about-cta,
+  .btn--story,
+  .about-hero__cta,
+  .about-story__cta,
+  .about-section .btn,
+  .about__content .btn
+) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 11px 26px;
+  border: 1.5px solid var(--accent, #A84868);
+  border-radius: var(--radius-button, 999px);
+  background-color: var(--accent, #A84868);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(168, 72, 104, 0.24);
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+/* Trường hợp nút CTA Câu chuyện dùng kiểu nền phụ (.btn--secondary) */
+:is(
+  body.page-about,
+  .about-page,
+  .about,
+  body:has(.about),
+  body:has(.about-hero),
+  body:has(.about-story),
+  body:has(.site-nav .nav-link--active[href*="about"]),
+  body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
+) :is(
+  .about-cta.btn--secondary,
+  .btn--story.btn--secondary,
+  .about-section .btn--secondary,
+  .about__content .btn--secondary
+) {
+  background-color: var(--surface, #FFFFFF);
+  border-color: var(--accent, #A84868);
+  color: var(--accent, #A84868);
+  box-shadow: 0 2px 8px rgba(57, 47, 50, 0.06);
+}
+
+/* Hiệu ứng HOVER nổi bật cho nút CTA chính */
+:is(
+  body.page-about,
+  .about-page,
+  .about,
+  body:has(.about),
+  body:has(.about-hero),
+  body:has(.about-story),
+  body:has(.site-nav .nav-link--active[href*="about"]),
+  body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
+) :is(
+  .about-cta,
+  .btn--story,
+  .about-hero__cta,
+  .about-story__cta,
+  .about-section .btn,
+  .about__content .btn
+):hover {
+  transform: translateY(-2px);
+  background-color: #7d2e49;
+  border-color: #7d2e49;
+  color: #ffffff;
+  box-shadow: 0 8px 22px rgba(125, 46, 73, 0.34);
+}
+
+/* Hiệu ứng HOVER cho nút CTA dạng thứ cấp (lấp đầy nền để bắt mắt) */
+:is(
+  body.page-about,
+  .about-page,
+  .about,
+  body:has(.about),
+  body:has(.about-hero),
+  body:has(.about-story),
+  body:has(.site-nav .nav-link--active[href*="about"]),
+  body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
+) :is(
+  .about-cta.btn--secondary,
+  .btn--story.btn--secondary,
+  .about-section .btn--secondary,
+  .about__content .btn--secondary
+):hover {
+  transform: translateY(-2px);
+  background-color: var(--accent, #A84868);
+  border-color: var(--accent, #A84868);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(168, 72, 104, 0.28);
+}
+
+/* Trạng thái ACTIVE (khi người dùng nhấp giữ chuột) */
+:is(
+  body.page-about,
+  .about-page,
+  .about,
+  body:has(.about),
+  body:has(.about-hero),
+  body:has(.about-story),
+  body:has(.site-nav .nav-link--active[href*="about"]),
+  body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
+) :is(
+  .about-cta,
+  .btn--story,
+  .about-hero__cta,
+  .about-story__cta,
+  .about-section .btn,
+  .about__content .btn
+):active {
+  transform: translateY(0);
+  background-color: #66233b;
+  border-color: #66233b;
+  box-shadow: 0 3px 10px rgba(125, 46, 73, 0.24);
+}
+
+/* Trạng thái FOCUS-VISIBLE rõ nét khi điều hướng bằng bàn phím */
+:is(
+  body.page-about,
+  .about-page,
+  .about,
+  body:has(.about),
+  body:has(.about-hero),
+  body:has(.about-story),
+  body:has(.site-nav .nav-link--active[href*="about"]),
+  body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
+) :is(
+  .about-cta,
+  .btn--story,
+  .about-hero__cta,
+  .about-story__cta,
+  .about-section .btn,
+  .about__content .btn
+):focus-visible {
+  outline: 3px solid var(--text, #392F32);
+  outline-offset: 4px;
+}
+
+/* Hiệu ứng dịch chuyển mũi tên / icon đi kèm nút CTA (nếu có) */
+:is(
+  body.page-about,
+  .about-page,
+  .about,
+  body:has(.about),
+  body:has(.about-hero),
+  body:has(.about-story),
+  body:has(.site-nav .nav-link--active[href*="about"]),
+  body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
+) :is(
+  .about-cta,
+  .btn--story,
+  .about-hero__cta,
+  .about-story__cta,
+  .about-section .btn,
+  .about__content .btn
+) :is(.arrow, .btn__icon, svg) {
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+:is(
+  body.page-about,
+  .about-page,
+  .about,
+  body:has(.about),
+  body:has(.about-hero),
+  body:has(.about-story),
+  body:has(.site-nav .nav-link--active[href*="about"]),
+  body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
+) :is(
+  .about-cta,
+  .btn--story,
+  .about-hero__cta,
+  .about-story__cta,
+  .about-section .btn,
+  .about__content .btn
+):is(:hover, :focus-visible) :is(.arrow, .btn__icon, svg) {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   TỐI ƯU MOBILE & HỖ TRỢ GIẢM CHUYỂN ĐỘNG TRÊN TRANG VỀ CHÚNG TÔI
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  :is(
+    body.page-about,
+    .about-page,
+    .about,
+    body:has(.about),
+    body:has(.about-hero),
+    body:has(.about-story),
+    body:has(.site-nav .nav-link--active[href*="about"]),
+    body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
+  ) :is(
+    .about-cta,
+    .btn--story,
+    .about-hero__cta,
+    .about-story__cta,
+    .about-section .btn,
+    .about__content .btn
+  ) {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(
+    body.page-about,
+    .about-page,
+    .about,
+    body:has(.about),
+    body:has(.about-hero),
+    body:has(.about-story),
+    body:has(.site-nav .nav-link--active[href*="about"]),
+    body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
+  ) :is(
+    .about-cta,
+    .btn--story,
+    .about-hero__cta,
+    .about-story__cta,
+    .about-section .btn,
+    .about__content .btn,
+    .arrow,
+    .btn__icon,
+    svg
+  ) {
+    transition: none;
+  }
+
+  :is(
+    body.page-about,
+    .about-page,
+    .about,
+    body:has(.about),
+    body:has(.about-hero),
+    body:has(.about-story),
+    body:has(.site-nav .nav-link--active[href*="about"]),
+    body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
+  ) :is(
+    .about-cta:hover,
+    .btn--story:hover,
+    .about-hero__cta:hover,
+    .about-story__cta:hover,
+    .about-section .btn:hover,
+    .about__content .btn:hover
+  ) {
+    transform: none;
+  }
+}
