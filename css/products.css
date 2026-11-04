@@ -457,3 +457,17 @@
     transform: none;
   }
 }
+
+
+/* Bộ lọc danh mục: giữ thẻ không khớp ẩn dù thẻ dùng display: flex. */
+[data-product-filters][hidden],
+.product-filter-status[hidden],
+#product-list > .product-card[hidden] {
+  display: none;
+}
+
+.product-filter-status {
+  margin: -8px 0 20px;
+  color: var(--muted);
+  font-size: 14px;
+}
