@@ -522,39 +522,39 @@
 
 
 /* ==========================================================================
-   CSS RIÊNG CHO TRANG VỀ CHÚNG TÔI (ER-06)
-   - Cô lập phạm vi (Scoped CSS): Chỉ tác động lên Trang Về Chúng Tôi,
-     không ảnh hưởng hay xung đột với Trang Chủ, Trang Cửa Hàng hay Chi Tiết SP.
-   - Cách dùng:
-     1. Nhúng trực tiếp vào trang Về chúng tôi (about.html), HOẶC
-     2. Dán vào cuối css/style.css và thêm class="page-about" vào thẻ <body>
-        (hoặc CSS sẽ tự động nhận diện qua menu đang active / khối nội dung .about).
+   CSS RIÊNG CHO TRANG VỀ CHÚNG TÔI (ER-06) - ĐÃ SỬA LỖI BỐ CỤC .about-cta
+   - Nguyên nhân lỗi trước đó: Trong HTML của trang Về chúng tôi, class
+     `.about-cta` được đặt cho cả thẻ <section> / <div> bao ngoài khối
+     "Let's Make Memories Tangible", không phải thẻ <a>/<button>. Việc áp
+     display: inline-flex, border-radius: 999px và background: --accent trực
+     tiếp lên `.about-cta` đã biến cả khung section thành hình viên thuốc
+     màu tím hồng và làm chìm chữ tiêu đề/mô tả.
+   - Giải pháp: Chỉ chọn đúng phần tử tương tác <a> hoặc <button> (ví dụ:
+     `a.btn`, `button.btn`, `.about-cta a`, `.about-cta button`), giữ nguyên
+     100% bố cục và màu nền gốc của thẻ <section class="about-cta">.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   ER-06: NÚT CTA 'CÂU CHUYỆN CỦA CHÚNG TÔI' (TRANG VỀ CHÚNG TÔI)
-   - Tăng độ tương phản chữ/nền chuẩn WCAG AA (>= 4.5:1)
-   - Bổ sung hiệu ứng hover nâng (-2px), chuyển màu nền sang tông đậm #7d2e49
-     kèm đổ bóng đa tầng nổi bật
-   - Bổ sung focus-visible rõ ràng khi điều hướng bằng bàn phím
-   - Cố định độ dày viền 1.5px để triệt tiêu tình trạng xê dịch bố cục
+   ER-06: NÚT CTA TRÊN TRANG VỀ CHÚNG TÔI
+   - Chỉ tác động vào thẻ <a> và <button> đóng vai trò là nút CTA
+   - Không bao giờ tác động vào thẻ <section> hoặc <div> chứa nội dung
    -------------------------------------------------------------------------- */
 :is(
   body.page-about,
   .about-page,
   .about,
-  body:has(.about),
+  body:has(.about-cta),
   body:has(.about-hero),
   body:has(.about-story),
   body:has(.site-nav .nav-link--active[href*="about"]),
   body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
 ) :is(
-  .about-cta,
-  .btn--story,
-  .about-hero__cta,
-  .about-story__cta,
-  .about-section .btn,
-  .about__content .btn
+  a.btn,
+  button.btn,
+  .about-cta a,
+  .about-cta button,
+  a.btn--story,
+  button.btn--story
 ) {
   display: inline-flex;
   align-items: center;
@@ -581,21 +581,21 @@
     box-shadow 220ms ease;
 }
 
-/* Trường hợp nút CTA Câu chuyện dùng kiểu nền phụ (.btn--secondary) */
+/* Trường hợp nút CTA dùng class .btn--secondary (nền sáng, viền đậm) */
 :is(
   body.page-about,
   .about-page,
   .about,
-  body:has(.about),
+  body:has(.about-cta),
   body:has(.about-hero),
   body:has(.about-story),
   body:has(.site-nav .nav-link--active[href*="about"]),
   body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
 ) :is(
-  .about-cta.btn--secondary,
-  .btn--story.btn--secondary,
-  .about-section .btn--secondary,
-  .about__content .btn--secondary
+  a.btn.btn--secondary,
+  button.btn.btn--secondary,
+  .about-cta a.btn--secondary,
+  .about-cta button.btn--secondary
 ) {
   background-color: var(--surface, #FFFFFF);
   border-color: var(--accent, #A84868);
@@ -608,18 +608,18 @@
   body.page-about,
   .about-page,
   .about,
-  body:has(.about),
+  body:has(.about-cta),
   body:has(.about-hero),
   body:has(.about-story),
   body:has(.site-nav .nav-link--active[href*="about"]),
   body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
 ) :is(
-  .about-cta,
-  .btn--story,
-  .about-hero__cta,
-  .about-story__cta,
-  .about-section .btn,
-  .about__content .btn
+  a.btn,
+  button.btn,
+  .about-cta a,
+  .about-cta button,
+  a.btn--story,
+  button.btn--story
 ):hover {
   transform: translateY(-2px);
   background-color: #7d2e49;
@@ -628,21 +628,21 @@
   box-shadow: 0 8px 22px rgba(125, 46, 73, 0.34);
 }
 
-/* Hiệu ứng HOVER cho nút CTA dạng thứ cấp (lấp đầy nền để bắt mắt) */
+/* Hiệu ứng HOVER cho nút .btn--secondary (lấp đầy nền --accent chữ trắng) */
 :is(
   body.page-about,
   .about-page,
   .about,
-  body:has(.about),
+  body:has(.about-cta),
   body:has(.about-hero),
   body:has(.about-story),
   body:has(.site-nav .nav-link--active[href*="about"]),
   body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
 ) :is(
-  .about-cta.btn--secondary,
-  .btn--story.btn--secondary,
-  .about-section .btn--secondary,
-  .about__content .btn--secondary
+  a.btn.btn--secondary,
+  button.btn.btn--secondary,
+  .about-cta a.btn--secondary,
+  .about-cta button.btn--secondary
 ):hover {
   transform: translateY(-2px);
   background-color: var(--accent, #A84868);
@@ -651,23 +651,23 @@
   box-shadow: 0 8px 20px rgba(168, 72, 104, 0.28);
 }
 
-/* Trạng thái ACTIVE (khi người dùng nhấp giữ chuột) */
+/* Trạng thái ACTIVE (khi nhấp chuột) */
 :is(
   body.page-about,
   .about-page,
   .about,
-  body:has(.about),
+  body:has(.about-cta),
   body:has(.about-hero),
   body:has(.about-story),
   body:has(.site-nav .nav-link--active[href*="about"]),
   body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
 ) :is(
-  .about-cta,
-  .btn--story,
-  .about-hero__cta,
-  .about-story__cta,
-  .about-section .btn,
-  .about__content .btn
+  a.btn,
+  button.btn,
+  .about-cta a,
+  .about-cta button,
+  a.btn--story,
+  button.btn--story
 ):active {
   transform: translateY(0);
   background-color: #66233b;
@@ -675,68 +675,26 @@
   box-shadow: 0 3px 10px rgba(125, 46, 73, 0.24);
 }
 
-/* Trạng thái FOCUS-VISIBLE rõ nét khi điều hướng bằng bàn phím */
+/* Trạng thái FOCUS-VISIBLE rõ nét khi điều hướng bằng bàn phím (phím Tab) */
 :is(
   body.page-about,
   .about-page,
   .about,
-  body:has(.about),
+  body:has(.about-cta),
   body:has(.about-hero),
   body:has(.about-story),
   body:has(.site-nav .nav-link--active[href*="about"]),
   body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
 ) :is(
-  .about-cta,
-  .btn--story,
-  .about-hero__cta,
-  .about-story__cta,
-  .about-section .btn,
-  .about__content .btn
+  a.btn,
+  button.btn,
+  .about-cta a,
+  .about-cta button,
+  a.btn--story,
+  button.btn--story
 ):focus-visible {
   outline: 3px solid var(--text, #392F32);
   outline-offset: 4px;
-}
-
-/* Hiệu ứng dịch chuyển mũi tên / icon đi kèm nút CTA (nếu có) */
-:is(
-  body.page-about,
-  .about-page,
-  .about,
-  body:has(.about),
-  body:has(.about-hero),
-  body:has(.about-story),
-  body:has(.site-nav .nav-link--active[href*="about"]),
-  body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
-) :is(
-  .about-cta,
-  .btn--story,
-  .about-hero__cta,
-  .about-story__cta,
-  .about-section .btn,
-  .about__content .btn
-) :is(.arrow, .btn__icon, svg) {
-  display: inline-block;
-  transition: transform 200ms ease;
-}
-
-:is(
-  body.page-about,
-  .about-page,
-  .about,
-  body:has(.about),
-  body:has(.about-hero),
-  body:has(.about-story),
-  body:has(.site-nav .nav-link--active[href*="about"]),
-  body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
-) :is(
-  .about-cta,
-  .btn--story,
-  .about-hero__cta,
-  .about-story__cta,
-  .about-section .btn,
-  .about__content .btn
-):is(:hover, :focus-visible) :is(.arrow, .btn__icon, svg) {
-  transform: translateX(4px);
 }
 
 /* --------------------------------------------------------------------------
@@ -747,18 +705,18 @@
     body.page-about,
     .about-page,
     .about,
-    body:has(.about),
+    body:has(.about-cta),
     body:has(.about-hero),
     body:has(.about-story),
     body:has(.site-nav .nav-link--active[href*="about"]),
     body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
   ) :is(
-    .about-cta,
-    .btn--story,
-    .about-hero__cta,
-    .about-story__cta,
-    .about-section .btn,
-    .about__content .btn
+    a.btn,
+    button.btn,
+    .about-cta a,
+    .about-cta button,
+    a.btn--story,
+    button.btn--story
   ) {
     width: 100%;
   }
@@ -769,21 +727,18 @@
     body.page-about,
     .about-page,
     .about,
-    body:has(.about),
+    body:has(.about-cta),
     body:has(.about-hero),
     body:has(.about-story),
     body:has(.site-nav .nav-link--active[href*="about"]),
     body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
   ) :is(
-    .about-cta,
-    .btn--story,
-    .about-hero__cta,
-    .about-story__cta,
-    .about-section .btn,
-    .about__content .btn,
-    .arrow,
-    .btn__icon,
-    svg
+    a.btn,
+    button.btn,
+    .about-cta a,
+    .about-cta button,
+    a.btn--story,
+    button.btn--story
   ) {
     transition: none;
   }
@@ -792,18 +747,18 @@
     body.page-about,
     .about-page,
     .about,
-    body:has(.about),
+    body:has(.about-cta),
     body:has(.about-hero),
     body:has(.about-story),
     body:has(.site-nav .nav-link--active[href*="about"]),
     body:has(.site-nav .nav-link--active[href*="ve-chung-toi"])
   ) :is(
-    .about-cta:hover,
-    .btn--story:hover,
-    .about-hero__cta:hover,
-    .about-story__cta:hover,
-    .about-section .btn:hover,
-    .about__content .btn:hover
+    a.btn:hover,
+    button.btn:hover,
+    .about-cta a:hover,
+    .about-cta button:hover,
+    a.btn--story:hover,
+    button.btn--story:hover
   ) {
     transform: none;
   }
