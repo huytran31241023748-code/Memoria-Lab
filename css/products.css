@@ -235,3 +235,225 @@
     padding: 24px 16px;
   }
 }
+
+
+) .header-actions .icon-button:hover {
+  background-color: #fbe9ee;
+  border-color: var(--accent, #A84868);
+  color: var(--accent, #A84868);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(168, 72, 104, 0.18);
+}
+
+:is(
+  body.page-shop,
+  .shop-page,
+  body:has(.site-nav .nav-link--active[href*="shop"]),
+  body:has(.site-nav .nav-link--active[href*="cua-hang"]),
+  body:has(.site-nav .nav-link--active[href*="product"])
+) .header-actions .icon-button:active {
+  transform: translateY(0);
+  background-color: #f4d5df;
+}
+
+:is(
+  body.page-shop,
+  .shop-page,
+  body:has(.site-nav .nav-link--active[href*="shop"]),
+  body:has(.site-nav .nav-link--active[href*="cua-hang"]),
+  body:has(.site-nav .nav-link--active[href*="product"])
+) .header-actions .icon-button:focus-visible {
+  outline: 3px solid var(--accent, #A84868);
+  outline-offset: 3px;
+  background-color: #fbe9ee;
+  border-color: var(--accent, #A84868);
+  color: var(--accent, #A84868);
+}
+
+/* --------------------------------------------------------------------------
+   ER-05: TRANG CỬA HÀNG - CHUẨN HÓA NÚT 'XEM CHI TIẾT' ĐỒNG BỘ VỚI TRANG CHỦ
+   - Chuẩn hóa kích thước (min-height: 46px), bo tròn (999px), nền hồng phấn (#fbe9ee),
+     viền (1.5px solid --accent) và chữ đậm đồng nhất với thẻ sản phẩm ở Trang chủ
+   - Bổ sung hiệu ứng nâng (-2px), đổ bóng và đổi nền sang --accent chữ trắng khi hover/focus
+   -------------------------------------------------------------------------- */
+:is(
+  body.page-shop,
+  .shop-page,
+  body:has(.site-nav .nav-link--active[href*="shop"]),
+  body:has(.site-nav .nav-link--active[href*="cua-hang"]),
+  body:has(.site-nav .nav-link--active[href*="product"])
+) :is(
+  .product-card__btn,
+  .product-slot__btn,
+  .product-slot .btn,
+  .shop-card__btn
+) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 46px;
+  margin-top: auto;
+  padding: 10px 14px;
+  border: 1.5px solid var(--accent, #A84868);
+  border-radius: var(--radius-button, 999px);
+  background-color: #fbe9ee;
+  color: var(--accent, #A84868);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+:is(
+  body.page-shop,
+  .shop-page,
+  body:has(.site-nav .nav-link--active[href*="shop"]),
+  body:has(.site-nav .nav-link--active[href*="cua-hang"]),
+  body:has(.site-nav .nav-link--active[href*="product"])
+) :is(
+  .product-card__btn,
+  .product-slot__btn,
+  .product-slot .btn,
+  .shop-card__btn
+):hover {
+  transform: translateY(-2px);
+  background-color: var(--accent, #A84868);
+  border-color: var(--accent, #A84868);
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(168, 72, 104, 0.28);
+}
+
+:is(
+  body.page-shop,
+  .shop-page,
+  body:has(.site-nav .nav-link--active[href*="shop"]),
+  body:has(.site-nav .nav-link--active[href*="cua-hang"]),
+  body:has(.site-nav .nav-link--active[href*="product"])
+) :is(
+  .product-card__btn,
+  .product-slot__btn,
+  .product-slot .btn,
+  .shop-card__btn
+):active {
+  transform: translateY(0);
+  background-color: #7d2e49;
+  border-color: #7d2e49;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(125, 46, 73, 0.22);
+}
+
+:is(
+  body.page-shop,
+  .shop-page,
+  body:has(.site-nav .nav-link--active[href*="shop"]),
+  body:has(.site-nav .nav-link--active[href*="cua-hang"]),
+  body:has(.site-nav .nav-link--active[href*="product"])
+) :is(
+  .product-card__btn,
+  .product-slot__btn,
+  .product-slot .btn,
+  .shop-card__btn
+):focus-visible {
+  outline: 3px solid var(--text, #392F32);
+  outline-offset: 3px;
+  background-color: var(--accent, #A84868);
+  border-color: var(--accent, #A84868);
+  color: #ffffff;
+}
+
+/* Hiệu ứng dịch chuyển mũi tên bên trong nút Xem chi tiết (nếu có) */
+:is(
+  body.page-shop,
+  .shop-page,
+  body:has(.site-nav .nav-link--active[href*="shop"]),
+  body:has(.site-nav .nav-link--active[href*="cua-hang"]),
+  body:has(.site-nav .nav-link--active[href*="product"])
+) :is(
+  .product-card__btn,
+  .product-slot__btn,
+  .product-slot .btn,
+  .shop-card__btn
+) .featured-products__arrow {
+  flex-shrink: 0;
+  transition: transform 180ms ease;
+}
+
+:is(
+  body.page-shop,
+  .shop-page,
+  body:has(.site-nav .nav-link--active[href*="shop"]),
+  body:has(.site-nav .nav-link--active[href*="cua-hang"]),
+  body:has(.site-nav .nav-link--active[href*="product"])
+) :is(
+  .product-card__btn,
+  .product-slot__btn,
+  .product-slot .btn,
+  .shop-card__btn
+):is(:hover, :focus-visible) .featured-products__arrow {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   TỐI ƯU MOBILE & HỖ TRỢ GIẢM CHUYỂN ĐỘNG TRÊN TRANG CỬA HÀNG
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  :is(
+    body.page-shop,
+    .shop-page,
+    body:has(.site-nav .nav-link--active[href*="shop"]),
+    body:has(.site-nav .nav-link--active[href*="cua-hang"]),
+    body:has(.site-nav .nav-link--active[href*="product"])
+  ) .site-nav .nav-link::after {
+    bottom: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(
+    body.page-shop,
+    .shop-page,
+    body:has(.site-nav .nav-link--active[href*="shop"]),
+    body:has(.site-nav .nav-link--active[href*="cua-hang"]),
+    body:has(.site-nav .nav-link--active[href*="product"])
+  ) :is(
+    .site-nav .nav-link,
+    .site-nav .nav-link::after,
+    .header-actions .icon-button,
+    .product-card__btn,
+    .product-slot__btn,
+    .product-slot .btn,
+    .shop-card__btn,
+    .featured-products__arrow
+  ) {
+    transition: none;
+  }
+
+  :is(
+    body.page-shop,
+    .shop-page,
+    body:has(.site-nav .nav-link--active[href*="shop"]),
+    body:has(.site-nav .nav-link--active[href*="cua-hang"]),
+    body:has(.site-nav .nav-link--active[href*="product"])
+  ) :is(
+    .header-actions .icon-button:hover,
+    .product-card__btn:hover,
+    .product-slot__btn:hover,
+    .product-slot .btn:hover,
+    .shop-card__btn:hover,
+    .product-card__btn:hover .featured-products__arrow,
+    .shop-card__btn:hover .featured-products__arrow
+  ) {
+    transform: none;
+  }
+}
