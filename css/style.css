@@ -1248,3 +1248,21 @@ h3 {
     transform: none;
   }
 }
+/* Ảnh banner và khu vực khám phá trên trang chủ */
+.hero .hero__image {
+  min-height: 0;
+}
+
+.home-hero-photo,
+.home-explore-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
+.home-hero-photo {
+  border-radius: var(--radius-image);
+}
