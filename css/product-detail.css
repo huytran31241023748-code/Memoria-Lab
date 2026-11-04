@@ -24,3 +24,452 @@ a,button,input,select,textarea,label{touch-action:manipulation}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 /* Gallery variations use the same supplied mockup, without inventing additional product photos. */
 .gallery-stage figure{overflow:hidden}.gallery-stage .view-2 img{transform:scale(1.2)}.gallery-stage .view-3 img{transform:scale(1.45)}.gallery-thumbs span{display:block;text-align:center;font-size:11px;padding-top:4px}.fixed-option{max-width:100%;overflow-wrap:anywhere}.option-grid>*{min-width:0}.product-card__image{object-fit:contain}.product-grid--list{grid-template-columns:repeat(4,minmax(0,1fr))}.product-card{min-width:0}.product-info h1{overflow-wrap:anywhere}
+
+
+/* ==========================================================================
+   CSS RIÊNG CHO TRANG CHI TIẾT SẢN PHẨM (ER-07 & ER-08)
+   - Cô lập phạm vi (Scoped CSS): Chỉ tác động lên Trang Chi Tiết Sản Phẩm,
+     không xung đột với Trang Chủ, Trang Cửa Hàng hay Trang Về Chúng Tôi.
+   - Cách dùng:
+     1. Nhúng trực tiếp vào trang chi tiết sản phẩm, HOẶC
+     2. Dán vào cuối css/style.css và thêm class="page-product-detail" vào
+        thẻ <body> (hoặc CSS sẽ tự nhận diện qua khối .product-detail).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   ER-07: NÚT 'THÊM VÀO GIỎ HÀNG' & NÚT 'TÙY CHỈNH THIẾT KẾ'
+   - Làm nổi bật nút 'Tùy chỉnh thiết kế' (nền hồng phấn #fbe9ee + viền 2px đậm)
+     để không bị chìm vào nền trang (#F7EEE8)
+   - Bổ sung hiệu ứng hover nâng (-2px), đổ bóng sâu và focus-visible tương phản cao
+   - Hỗ trợ trạng thái phản hồi thêm giỏ hàng thuần CSS3 (:target hoặc checkbox)
+   -------------------------------------------------------------------------- */
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.product-detail__actions)
+) :is(.product-detail__actions, .product-actions) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-top: 24px;
+}
+
+/* Nút CTA chính: 'Thêm vào giỏ hàng' */
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.product-detail__actions)
+) :is(
+  .btn--add-to-cart,
+  .product-detail__actions .btn--primary,
+  .product-actions .btn--primary
+) {
+  display: inline-flex;
+  flex: 1 1 220px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 2px solid var(--accent, #A84868);
+  border-radius: var(--radius-button, 999px);
+  background-color: var(--accent, #A84868);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(168, 72, 104, 0.26);
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.product-detail__actions)
+) :is(
+  .btn--add-to-cart,
+  .product-detail__actions .btn--primary,
+  .product-actions .btn--primary
+):hover {
+  background-color: #7d2e49;
+  border-color: #7d2e49;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(125, 46, 73, 0.34);
+}
+
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.product-detail__actions)
+) :is(
+  .btn--add-to-cart,
+  .product-detail__actions .btn--primary,
+  .product-actions .btn--primary
+):active {
+  transform: translateY(0);
+  background-color: #66233b;
+  border-color: #66233b;
+  box-shadow: 0 3px 10px rgba(125, 46, 73, 0.24);
+}
+
+/* Nút CTA phụ: 'Tùy chỉnh thiết kế' (Tách nền #fbe9ee + viền 2px để không bị chìm) */
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.product-detail__actions)
+) :is(
+  .btn--customize,
+  .product-detail__actions .btn--secondary,
+  .product-actions .btn--secondary
+) {
+  display: inline-flex;
+  flex: 1 1 200px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 2px solid var(--accent, #A84868);
+  border-radius: var(--radius-button, 999px);
+  background-color: #fbe9ee;
+  color: var(--accent, #A84868);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(168, 72, 104, 0.14);
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.product-detail__actions)
+) :is(
+  .btn--customize,
+  .product-detail__actions .btn--secondary,
+  .product-actions .btn--secondary
+):hover {
+  background-color: var(--accent, #A84868);
+  border-color: var(--accent, #A84868);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(168, 72, 104, 0.28);
+}
+
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.product-detail__actions)
+) :is(
+  .btn--customize,
+  .product-detail__actions .btn--secondary,
+  .product-actions .btn--secondary
+):active {
+  transform: translateY(0);
+  background-color: #7d2e49;
+  border-color: #7d2e49;
+  color: #ffffff;
+  box-shadow: 0 3px 8px rgba(125, 46, 73, 0.22);
+}
+
+/* Trạng thái Focus bàn phím rõ nét cho cả 2 nút CTA */
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.product-detail__actions)
+) :is(
+  .btn--add-to-cart,
+  .btn--customize,
+  .product-detail__actions .btn,
+  .product-actions .btn
+):focus-visible {
+  outline: 3px solid var(--text, #392F32);
+  outline-offset: 4px;
+}
+
+/* Phản hồi chức năng Thêm vào giỏ hàng thuần CSS3 (không dùng JS) */
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.product-detail__actions)
+) :is(.cart-feedback, #cart-added-notice, #cart-toast) {
+  display: none;
+  margin-top: 14px;
+  padding: 12px 18px;
+  border: 1.5px solid var(--accent, #A84868);
+  border-radius: var(--radius-image, 12px);
+  background-color: #fbe9ee;
+  color: var(--text, #392F32);
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(168, 72, 104, 0.12);
+}
+
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.product-detail__actions)
+) :is(
+  #cart-toggle:checked ~ .cart-feedback,
+  #cart-added-notice:target,
+  #cart-toast:target
+) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Đổi trạng thái nút khi kích hoạt qua checkbox #cart-toggle */
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.product-detail__actions)
+) #cart-toggle:checked + .btn--add-to-cart {
+  background-color: #7d2e49;
+  border-color: #7d2e49;
+}
+
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.product-detail__actions)
+) #cart-toggle:checked + .btn--add-to-cart::after {
+  content: " ✓ Đã thêm";
+}
+
+/* --------------------------------------------------------------------------
+   ER-08: LỰA CHỌN THUỘC TÍNH / CHẤT LIỆU (ĐIỀU HƯỚNG BÀN PHÍM PHÍM TAB)
+   - Giữ các lựa chọn trong luồng điều hướng Tab (không dùng display: none)
+   - Hiển thị rõ trạng thái hover, checked/active và focus-visible / focus-within
+   - Cố định độ dày viền 1.5px để không gây xê dịch bố cục khi chuyển trạng thái
+   -------------------------------------------------------------------------- */
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.material-options),
+  body:has(.attribute-group)
+) :is(.attribute-group, .material-options, .variant-options) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-block: 12px;
+}
+
+/* Ẩn trực quan input nhưng vẫn giữ tiêu điểm khi nhấn phím Tab */
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.material-options),
+  body:has(.attribute-group)
+) :is(
+  .attribute-option input[type="radio"],
+  .attribute-option input[type="checkbox"],
+  .material-option input[type="radio"],
+  .material-option input[type="checkbox"]
+) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.material-options),
+  body:has(.attribute-group)
+) :is(.attribute-option, .material-option, .variant-btn) {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 18px;
+  border: 1.5px solid var(--border, #EAD7D5);
+  border-radius: var(--radius-button, 999px);
+  background-color: var(--surface, #FFFFFF);
+  color: var(--text, #392F32);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.material-options),
+  body:has(.attribute-group)
+) :is(.attribute-option, .material-option, .variant-btn):hover {
+  border-color: var(--accent, #A84868);
+  background-color: #fbe9ee;
+  color: var(--accent, #A84868);
+  transform: translateY(-1px);
+}
+
+/* Trạng thái thuộc tính Chất liệu đang được chọn */
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.material-options),
+  body:has(.attribute-group)
+) :is(
+  .attribute-option:has(input:checked),
+  .material-option:has(input:checked),
+  .variant-btn--active,
+  .variant-btn[aria-pressed="true"],
+  .variant-btn[aria-checked="true"]
+) {
+  border-color: var(--accent, #A84868);
+  background-color: var(--accent, #A84868);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(168, 72, 104, 0.22);
+}
+
+/* Khung viền Focus dễ nhận biết khi nhấn phím Tab qua từng chất liệu A -> B -> C */
+:is(
+  body.page-product-detail,
+  .product-detail-page,
+  .product-detail,
+  body:has(.product-detail),
+  body:has(.material-options),
+  body:has(.attribute-group)
+) :is(
+  .attribute-option:focus-within,
+  .material-option:focus-within,
+  .attribute-option:focus-visible,
+  .material-option:focus-visible,
+  .variant-btn:focus-visible
+) {
+  outline: 3px solid var(--accent, #A84868);
+  outline-offset: 3px;
+  border-color: var(--accent, #A84868);
+}
+
+/* --------------------------------------------------------------------------
+   TỐI ƯU MOBILE & HỖ TRỢ GIẢM CHUYỂN ĐỘNG TRÊN TRANG CHI TIẾT SẢN PHẨM
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  :is(
+    body.page-product-detail,
+    .product-detail-page,
+    .product-detail,
+    body:has(.product-detail),
+    body:has(.product-detail__actions)
+  ) :is(
+    .product-detail__actions .btn,
+    .product-actions .btn,
+    .btn--add-to-cart,
+    .btn--customize
+  ) {
+    width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(
+    body.page-product-detail,
+    .product-detail-page,
+    .product-detail,
+    body:has(.product-detail),
+    body:has(.product-detail__actions),
+    body:has(.material-options),
+    body:has(.attribute-group)
+  ) :is(
+    .btn--add-to-cart,
+    .btn--customize,
+    .product-detail__actions .btn,
+    .product-actions .btn,
+    .attribute-option,
+    .material-option,
+    .variant-btn
+  ) {
+    transition: none;
+  }
+
+  :is(
+    body.page-product-detail,
+    .product-detail-page,
+    .product-detail,
+    body:has(.product-detail),
+    body:has(.product-detail__actions),
+    body:has(.material-options),
+    body:has(.attribute-group)
+  ) :is(
+    .btn--add-to-cart:hover,
+    .btn--customize:hover,
+    .product-detail__actions .btn:hover,
+    .product-actions .btn:hover,
+    .attribute-option:hover,
+    .material-option:hover,
+    .variant-btn:hover
+  ) {
+    transform: none;
+  }
+}
