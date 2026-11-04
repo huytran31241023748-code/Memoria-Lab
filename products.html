@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Memoria Lab – Sản phẩm</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/products.css?v=category-filter-1">
+  <script src="js/product-filters.js" defer></script>
 </head>
 <body>
 
@@ -51,22 +52,25 @@
     <section class="section section--products">
       <div class="container">
 
-        <!-- Thanh danh mục: chỉ là giao diện, chưa lọc được -->
+        <!-- Lọc sản phẩm theo danh mục -->
         <div class="product-toolbar">
-          <h2>Tất cả sản phẩm</h2>
-          <div class="category-list">
-            <button class="category-btn category-btn--active" type="button">Tất cả</button>
-            <button class="category-btn" type="button">Photostrip</button>
-            <button class="category-btn" type="button">Scrapbook</button>
-            <button class="category-btn" type="button">Thiệp</button>
-            <button class="category-btn" type="button">Combo</button>
+          <h2 id="product-list-title">Tất cả sản phẩm</h2>
+          <div class="category-list" data-product-filters role="group"
+               aria-label="Lọc sản phẩm theo danh mục" hidden>
+            <button class="category-btn category-btn--active" type="button" data-filter="all" aria-pressed="true" aria-controls="product-list">Tất cả</button>
+            <button class="category-btn" type="button" data-filter="photostrip" aria-pressed="false" aria-controls="product-list">Photostrip</button>
+            <button class="category-btn" type="button" data-filter="cards" aria-pressed="false" aria-controls="product-list">Thiệp &amp; Postcard</button>
+            <button class="category-btn" type="button" data-filter="frames" aria-pressed="false" aria-controls="product-list">Khung tranh &amp; Scrapbook</button>
+            <button class="category-btn" type="button" data-filter="combo" aria-pressed="false" aria-controls="product-list">Combo</button>
           </div>
         </div>
+        <p class="product-filter-status" id="product-filter-status"
+           role="status" aria-live="polite" aria-atomic="true" hidden></p>
 
         <!-- Lưới 8 sản phẩm -->
-        <div class="product-grid product-grid--list">
+        <div class="product-grid product-grid--list" id="product-list" aria-labelledby="product-list-title">
 
-          <article class="product-card">
+          <article class="product-card" data-category="photostrip">
             <div class="product-card__img-box">
               <img class="product-card__image" src="images/products/product-01.jpg" alt="Photostrip 1×3 – Hàn Quốc">
             </div>
@@ -75,7 +79,7 @@
             <a class="btn product-card__btn" href="product-detail.html">Xem chi tiết</a>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-category="photostrip">
             <div class="product-card__img-box">
               <img class="product-card__image" src="images/products/product-02.jpg" alt="Photostrip 1×4 – Vintage">
             </div>
@@ -84,7 +88,7 @@
             <a class="btn product-card__btn" href="product-detail-02.html">Xem chi tiết</a>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-category="cards">
             <div class="product-card__img-box">
               <img class="product-card__image" src="images/products/product-03.jpg" alt="Postcard 2×2 – Y2K">
             </div>
@@ -93,7 +97,7 @@
             <a class="btn product-card__btn" href="product-detail-03.html">Xem chi tiết</a>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-category="frames">
             <div class="product-card__img-box">
               <img class="product-card__image" src="images/products/product-04.jpg" alt="Khung tranh Desktop Custom">
             </div>
@@ -102,7 +106,7 @@
             <a class="btn product-card__btn" href="product-detail-04.html">Xem chi tiết</a>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-category="cards">
             <div class="product-card__img-box">
               <img class="product-card__image" src="images/products/product-05.jpg" alt="Thiệp kỷ niệm cá nhân hóa">
             </div>
@@ -111,7 +115,7 @@
             <a class="btn product-card__btn" href="product-detail-05.html">Xem chi tiết</a>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-category="frames">
             <div class="product-card__img-box">
               <img class="product-card__image" src="images/products/product-06.jpg" alt="Scrapbook để bàn">
             </div>
@@ -120,7 +124,7 @@
             <a class="btn product-card__btn" href="product-detail-06.html">Xem chi tiết</a>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-category="photostrip">
             <div class="product-card__img-box">
               <img class="product-card__image" src="images/products/product-07.jpg" alt="Dải ảnh + QR Digital Keepsake">
             </div>
@@ -129,7 +133,7 @@
             <a class="btn product-card__btn" href="product-detail-07.html">Xem chi tiết</a>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-category="combo">
             <div class="product-card__img-box">
               <img class="product-card__image" src="images/products/product-08.jpg" alt="Set quà combo Photostrip + Frame">
             </div>
