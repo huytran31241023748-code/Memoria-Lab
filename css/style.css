@@ -974,3 +974,277 @@ h3 {
     transform: none;
   }
 }
+
+
+/* ==========================================================================
+   BỔ SUNG CSS CẢI THIỆN UX (ER-01, ER-02, ER-03)
+   Dán vào cuối file css/style.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   ER-01: MENU ĐIỀU HƯỚNG & NÚT ICON (TÌM KIẾM, GIỎ HÀNG)
+   - Bổ sung gạch chân chuyển động (scaleX) cho .nav-link, không làm xê dịch bố cục
+   - Bổ sung trạng thái hover, active và focus-visible rõ ràng cho .icon-button
+   -------------------------------------------------------------------------- */
+.nav-link {
+  position: relative;
+  padding-block: 6px;
+  border-radius: 6px;
+  transition: color 200ms ease, background-color 200ms ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2.5px;
+  border-radius: 999px;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 220ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link--active {
+  color: var(--accent);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link--active::after {
+  transform: scaleX(1);
+}
+
+.nav-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+  background-color: rgba(224, 122, 155, 0.14);
+}
+
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.icon-button:hover {
+  background-color: #fbe9ee;
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(168, 72, 104, 0.18);
+}
+
+.icon-button:active {
+  transform: translateY(0);
+  background-color: #f4d5df;
+  box-shadow: 0 2px 6px rgba(168, 72, 104, 0.12);
+}
+
+.icon-button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  background-color: #fbe9ee;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   ER-02: BANNER CHÍNH / CÁC NÚT CTA (.btn, .btn--primary, .btn--secondary)
+   - Tăng độ tương phản chữ/nền chuẩn WCAG AA (>= 4.5:1)
+   - Đồng bộ biên độ nâng (-2px), đổ bóng và chuyển màu rõ nét khi hover/focus
+   -------------------------------------------------------------------------- */
+.btn {
+  border: 1.5px solid transparent;
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Nút 'Khám phá sản phẩm' */
+.btn--primary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(168, 72, 104, 0.22);
+}
+
+.btn--primary:hover {
+  background-color: #7d2e49;
+  border-color: #7d2e49;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(125, 46, 73, 0.32);
+}
+
+.btn--primary:active {
+  background-color: #66233b;
+  border-color: #66233b;
+  box-shadow: 0 3px 8px rgba(125, 46, 73, 0.24);
+}
+
+/* Nút 'Về Memoria Lab' */
+.btn--secondary {
+  background-color: var(--surface);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 2px 8px rgba(57, 47, 50, 0.05);
+}
+
+.btn--secondary:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(168, 72, 104, 0.26);
+}
+
+.btn--secondary:active {
+  background-color: #7d2e49;
+  border-color: #7d2e49;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   ER-03: NÚT & LIÊN KẾT XEM CHI TIẾT (.text-link, .product-card__btn, .featured-products__all)
+   - Bổ sung hiệu ứng hover/focus nổi bật, đồng bộ với hệ thống nút CTA
+   -------------------------------------------------------------------------- */
+.text-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding-block: 4px;
+  border-radius: 4px;
+  color: var(--accent);
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+.text-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 999px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  color: #7d2e49;
+}
+
+.text-link:hover::after,
+.text-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.text-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Nút 'Xem chi tiết sản phẩm' trong thẻ sản phẩm & nút 'Xem tất cả' */
+.featured-products .product-card__btn,
+.featured-products .featured-products__all {
+  border: 1.5px solid var(--featured-accent);
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.featured-products .product-card__btn:hover,
+.featured-products .featured-products__all:hover {
+  transform: translateY(-2px);
+  background-color: var(--featured-accent);
+  border-color: var(--featured-accent);
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(168, 72, 104, 0.28);
+}
+
+.featured-products .product-card__btn:active,
+.featured-products .featured-products__all:active {
+  transform: translateY(0);
+  background-color: #7d2e49;
+  border-color: #7d2e49;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(125, 46, 73, 0.22);
+}
+
+.featured-products .product-card__btn:focus-visible,
+.featured-products .featured-products__all:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 3px;
+  background-color: var(--featured-accent);
+  border-color: var(--featured-accent);
+  color: #ffffff;
+}
+
+.featured-products .featured-products__all:hover .featured-products__arrow,
+.featured-products .product-card__btn:hover .featured-products__arrow,
+.featured-products .featured-products__all:focus-visible .featured-products__arrow,
+.featured-products .product-card__btn:focus-visible .featured-products__arrow {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   TỐI ƯU HIỂN THỊ MOBILE & HỖ TRỢ GIẢM CHUYỂN ĐỘNG (ACCESSIBILITY)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .nav-link::after {
+    bottom: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link,
+  .nav-link::after,
+  .icon-button,
+  .btn,
+  .text-link,
+  .text-link::after,
+  .featured-products .product-card__btn,
+  .featured-products .featured-products__all {
+    transition: none;
+  }
+
+  .icon-button:hover,
+  .btn:hover,
+  .featured-products .product-card__btn:hover,
+  .featured-products .featured-products__all:hover {
+    transform: none;
+  }
+}
