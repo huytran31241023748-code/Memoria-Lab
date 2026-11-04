@@ -121,7 +121,7 @@ a {
 
 .hero__grid {
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: minmax(0, 9fr) minmax(0, 11fr);
   align-items: center;
   gap: 32px;
 }
