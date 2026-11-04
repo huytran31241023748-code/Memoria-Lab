@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Memoria Lab – Sản phẩm</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/products.css?v=category-filter-1">
-  <script src="js/product-filters.js" defer></script>
+  <link rel="stylesheet" href="css/products.css?v=search-1">
+<script src="js/product-filters.js?v=search-1" defer></script>
 </head>
 <body>
 
@@ -51,7 +51,25 @@
     <!-- 2. DANH SÁCH SẢN PHẨM -->
     <section class="section section--products">
       <div class="container">
+<form class="product-search" id="product-search-form" role="search"
+      action="products.html" method="get">
+  <label for="product-search">Tìm sản phẩm</label>
 
+  <div class="product-search__fields">
+    <input type="search" id="product-search" name="q"
+           placeholder="Nhập tên sản phẩm…" maxlength="100"
+           aria-controls="product-list" autocomplete="off">
+
+    <button class="btn btn--primary" type="submit">
+      Tìm kiếm
+    </button>
+
+    <button class="btn btn--secondary" id="clear-product-search"
+            type="button" hidden>
+      Xóa từ khóa
+    </button>
+  </div>
+</form>
         <!-- Lọc sản phẩm theo danh mục -->
         <div class="product-toolbar">
           <h2 id="product-list-title">Tất cả sản phẩm</h2>
