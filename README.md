@@ -285,3 +285,4 @@ Task, người phụ trách, trạng thái và rủi ro được theo dõi trong
 - [GitHub Repository](https://github.com/huytran31241023748-code/memoria-craft)
 - [GitHub Issues](https://github.com/huytran31241023748-code/memoria-craft/issues)
 - **Website demo và hướng dẫn cài đặt/sử dụng:** cập nhật trong giai đoạn triển khai và hoàn thiện.
+Buổi 2
