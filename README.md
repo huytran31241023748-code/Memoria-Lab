@@ -2,6 +2,27 @@
 
 Nền tảng thương mại điện tử quà tặng kỷ niệm cá nhân hóa, kết hợp Web Photobooth, Custom Studio, QR kỷ niệm và đặt in sản phẩm.
 
+## Buổi 3 – JavaScript
+
+Nhánh bài tập [buoi-3/Javascript](https://github.com/huytran31241023748-code/Memoria-Lab/tree/buoi-3/Javascript) dùng HTML, CSS và JavaScript để kết nối danh sách, chi tiết và giỏ hàng của Memoria Lab.
+
+- **THuy** chuẩn bị dữ liệu chung và tích hợp bản bàn giao. `js/products.js` giữ tám mã sản phẩm và bổ sung thông tin chi tiết từ bản Quang.
+- **KAnh** dựng thẻ sản phẩm và khu vực nổi bật trong `js/render-products.js`. **Quyên** thực hiện tìm kiếm, lọc và sắp xếp trong `js/product-filters.js`.
+- **Quang** thực hiện trang chi tiết theo id trong `js/product-detail.js`. **Vanh** thực hiện logic thêm, đổi số lượng, xóa và tính tổng trong `js/cart.js`.
+- **Yến** thực hiện `cart.html`, `css/cart.css` và phần kết nối giao diện trong `js/cart-ui.js`. **VHuy** xử lý khôi phục và kiểm tra dữ liệu lưu trong `js/cart-storage.js`.
+- **Cường** phụ trách báo cáo kiểm thử theo bảng phân công. AI hỗ trợ đối chiếu các bản bàn giao, tích hợp và kiểm thử trên trình duyệt.
+
+### Chạy và kiểm thử
+
+Mở thư mục dự án bằng Live Server và truy cập `index.html`. Có thể chạy `python -m http.server 8000` từ thư mục gốc rồi mở http://localhost:8000.
+
+1. Mở danh sách để kiểm tra tám sản phẩm, tìm `ky niem`, lọc danh mục và sắp xếp theo giá.
+2. Mở chi tiết theo `id=8` và thử `id=999` để kiểm tra thông báo lỗi và đường quay lại.
+3. Thêm cùng một sản phẩm hai lần, mở giỏ rồi tăng, giảm và xóa. Biểu tượng giỏ hiển thị tổng số món.
+4. Tải lại trang để kiểm tra dữ liệu khôi phục từ khóa `memoria_cart` trong `localStorage`.
+
+Phần tích hợp giao thao tác thêm sản phẩm cho trang danh sách và trang chi tiết, còn giao diện giỏ xử lý thao tác trên các dòng hàng. Danh sách được dựng lần đầu từ bộ lọc để áp dụng ngay từ khóa trên URL.
+
 ## Buổi 2 – Giao diện website HTML5/CSS3
 
 > Phần này mô tả phiên bản giao diện tĩnh của Buổi 2. Các mục 1–7 phía sau là nội dung Chương 1, mô tả định hướng của toàn đồ án; các chức năng ở đó (tài khoản, giỏ hàng, thanh toán, Photobooth, Studio, QR…) **chưa được triển khai** trong Buổi 2.
