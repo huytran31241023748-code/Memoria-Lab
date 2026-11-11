@@ -1333,3 +1333,46 @@ h3 {
 .cart-badge[hidden] {
   display: none !important;
 }
+
+.site-footer__contact .site-footer__title {
+  color: #f2bdcf;
+}
+
+.footer-contact {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #eadfdf;
+  font-size: 14px;
+}
+
+.footer-contact li {
+  display: grid;
+  grid-template-columns: 19px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  overflow-wrap: anywhere;
+}
+
+.footer-contact svg {
+  width: 19px;
+  height: 19px;
+  margin-top: 2px;
+  color: #f2bdcf;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer-contact__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
