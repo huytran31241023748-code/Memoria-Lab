@@ -212,3 +212,10 @@ Gộp thành AI_USAGE_LOG.md; bỏ yêu cầu nộp các file phụ. Tên hiện
 **Trần Lâm Huy — chờ rà soát bản tổng hợp này trước khi nộp.**
 
 Nội dung đang được cập nhật bởi Vanh (TV5).
+
+## Lần sử dụng 4 – Hoàn thiện giao diện Buổi 3
+
+- **Công cụ:** Codex hỗ trợ rà soát, chỉnh sửa và kiểm thử website.
+- **Yêu cầu:** Cho phép nhập số lượng trên trang chi tiết, thống nhất quy trình thiết kế, cập nhật quy cách sản phẩm và thêm trang Liên hệ.
+- **Kết quả:** Giỏ hàng tiếp tục nhận số lượng qua API hiện có. Hai trang giới thiệu dùng chung nội dung bốn bước. Dữ liệu quy cách được cập nhật tập trung trong `js/products.js`. Trang Liên hệ sử dụng ảnh sẵn có, có mục câu hỏi thường gặp và liên kết góp ý kỹ thuật.
+- **Nội dung cần nhóm rà soát:** Một số thông số về chất liệu và phụ kiện được điền tạm để hoàn thiện danh mục. Nhóm cập nhật lại theo thông số thực tế và bổ sung kênh liên hệ chính thức khi có thông tin.
