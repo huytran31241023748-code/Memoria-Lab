@@ -1,94 +1,156 @@
-/* Tìm tên sản phẩm và lọc danh mục trên cùng danh sách. */
-(() => {
+/* Tìm kiếm, lọc theo danh mục và sắp xếp giá trên trang danh sách sản phẩm.
+ * Dữ liệu lấy từ window.products (js/products.js).
+ * Danh sách được vẽ lại bằng window.renderProducts (js/render-products.js).
+ * Mảng window.products ban đầu không bị thay đổi.
+ */
+document.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
-  const controls = document.querySelector("[data-product-filters]");
-  const grid = document.getElementById("product-list");
+  const allProducts = Array.isArray(window.products) ? window.products : [];
+  const listId = "product-list";
+
+  const filterGroup = document.querySelector("[data-product-filters]");
+  const categoryButtons = filterGroup
+    ? Array.from(filterGroup.querySelectorAll("button[data-filter]"))
+    : [];
+  const searchForm = document.getElementById("product-search-form");
+  const searchInput = document.getElementById("product-search");
+  const clearButton = document.getElementById("clear-product-search");
+  const sortSelect = document.getElementById("product-sort");
   const heading = document.getElementById("product-list-title");
   const status = document.getElementById("product-filter-status");
 
-  if (!controls || !grid || !heading || !status) return;
+  // Không phải trang danh sách hoặc chưa nạp hàm render thì dừng
+  if (!document.getElementById(listId) || typeof window.renderProducts !== "function") return;
 
-  const buttons = Array.from(controls.querySelectorAll("button[data-filter]"));
-  const cards = Array.from(grid.querySelectorAll(".product-card[data-category]"));
-  const input = document.getElementById("product-search");
-  const form = document.getElementById("product-search-form");
-  const clear = document.getElementById("clear-product-search");
+  // Danh mục đang chọn: "all", "photostrip", "cards", "frames", "combo"
+  let currentCategory = "all";
 
-  if (!buttons.length || !cards.length) return;
-
-  let selected = buttons.find((button) => button.dataset.filter === "all") || buttons[0];
-
+  // Chuẩn hóa chữ để tìm kiếm không phân biệt hoa thường và dấu tiếng Việt
   function normalize(text) {
-    return text.toLowerCase().normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/đ/g, "d").replace(/×/g, "x").trim();
+    return String(text || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[̀-ͯ]/g, "")
+      .replace(/đ/g, "d")
+      .replace(/×/g, "x")
+      .trim();
   }
 
-  const products = cards.map((card) => ({
-    card,
-    name: normalize(card.querySelector(".product-card__title")?.textContent || "")
-  }));
+  // Trả về danh sách sản phẩm thỏa mãn cả 3 điều kiện: danh mục, từ khóa, sắp xếp
+  function getVisibleProducts() {
+    const words = normalize(searchInput ? searchInput.value : "")
+      .split(/\s+/)
+      .filter(Boolean);
 
-  function render() {
-    const query = (input?.value || "").trim();
-    const words = normalize(query).split(/\s+/).filter(Boolean);
-    let count = 0;
+    // Bước 1: lọc theo danh mục (filter tạo mảng mới, không sửa mảng gốc)
+    let result = allProducts.filter(function (product) {
+      return currentCategory === "all" || product.category === currentCategory;
+    });
 
-    for (const { card, name } of products) {
-      const inCategory = selected.dataset.filter === "all"
-        || card.dataset.category === selected.dataset.filter;
+    // Bước 2: lọc theo từ khóa, tên phải chứa đủ các từ đã nhập
+    result = result.filter(function (product) {
+      const name = normalize(product.name);
+      return words.every(function (word) {
+        return name.includes(word);
+      });
+    });
 
-      const matches = inCategory && words.every((word) => name.includes(word));
-      card.hidden = !matches;
-
-      if (matches) count += 1;
+    // Bước 3: sắp xếp trên bản sao, vì sort() làm thay đổi mảng nó xử lý
+    const sortValue = sortSelect ? sortSelect.value : "default";
+    if (sortValue === "price-asc") {
+      result = [...result].sort(function (a, b) {
+        return a.price - b.price;
+      });
+    } else if (sortValue === "price-desc") {
+      result = [...result].sort(function (a, b) {
+        return b.price - a.price;
+      });
     }
 
-    for (const button of buttons) {
-      button.classList.toggle("category-btn--active", button === selected);
-      button.setAttribute("aria-pressed", String(button === selected));
-    }
-
-    heading.textContent = selected.dataset.filter === "all"
-      ? "Tất cả sản phẩm" : selected.textContent.trim();
-
-    status.textContent = count === 0
-      ? "Không tìm thấy sản phẩm phù hợp. Hãy đổi từ khóa hoặc chọn danh mục Tất cả."
-      : `Hiển thị ${count} sản phẩm${query ? ` cho “${query}”` : ""}.`;
-
-    if (clear) clear.hidden = !input?.value;
+    return result;
   }
 
-  for (const button of buttons) {
-    button.addEventListener("click", () => {
-      selected = button;
-      render();
+  // Cập nhật nút danh mục, tiêu đề, thông báo và vẽ lại danh sách
+  function updateList() {
+    const list = getVisibleProducts();
+    const keyword = searchInput ? searchInput.value.trim() : "";
+
+    window.renderProducts(list, listId);
+
+    categoryButtons.forEach(function (button) {
+      const isActive = button.dataset.filter === currentCategory;
+      button.classList.toggle("category-btn--active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+
+    if (heading) {
+      const activeButton = categoryButtons.find(function (button) {
+        return button.dataset.filter === currentCategory;
+      });
+      heading.textContent = currentCategory === "all" || !activeButton
+        ? "Tất cả sản phẩm"
+        : activeButton.textContent.trim();
+    }
+
+    if (list.length === 0) {
+      // Thay câu thông báo chung bằng câu gợi ý cụ thể hơn
+      const message = document.querySelector("#" + listId + " .product-render-message");
+      if (message) {
+        message.textContent = "Không tìm thấy sản phẩm phù hợp. Hãy đổi từ khóa hoặc chọn danh mục Tất cả.";
+      }
+      if (status) status.hidden = true;
+    } else if (status) {
+      status.hidden = false;
+      status.textContent = "Hiển thị " + list.length + " sản phẩm" +
+        (keyword ? " cho “" + keyword + "”" : "") + ".";
+    }
+
+    if (clearButton) clearButton.hidden = keyword === "";
+  }
+
+  // Bấm nút danh mục
+  categoryButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      currentCategory = button.dataset.filter;
+      updateList();
+    });
+  });
+
+  // Gõ từ khóa thì lọc ngay
+  if (searchInput) searchInput.addEventListener("input", updateList);
+
+  // Bấm "Tìm kiếm" hoặc Enter: không tải lại trang
+  if (searchForm) {
+    searchForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      updateList();
     });
   }
 
-  input?.addEventListener("input", render);
-
-  form?.addEventListener("submit", (event) => {
-    event.preventDefault();
-    render();
-  });
-
-  clear?.addEventListener("click", () => {
-    input.value = "";
-    render();
-    input.focus();
-  });
-
-  if (input) {
-    input.value = new URLSearchParams(location.search).get("q")?.slice(0, 100) || "";
+  // Xóa từ khóa
+  if (clearButton) {
+    clearButton.addEventListener("click", function () {
+      searchInput.value = "";
+      updateList();
+      searchInput.focus();
+    });
   }
 
-  render();
-  controls.hidden = false;
-  status.hidden = false;
+  // Đổi cách sắp xếp
+  if (sortSelect) sortSelect.addEventListener("change", updateList);
 
-  if (location.hash === "#product-search") {
-    input?.focus({ preventScroll: true });
+  // Đọc từ khóa trên đường dẫn, ví dụ products.html?q=photostrip
+  if (searchInput) {
+    const q = new URLSearchParams(window.location.search).get("q");
+    searchInput.value = q ? q.slice(0, 100) : "";
   }
-})();
+
+  if (filterGroup) filterGroup.hidden = false;
+  updateList();
+
+  // Bấm kính lúp trên header (products.html#product-search) thì đưa con trỏ vào ô tìm kiếm
+  if (window.location.hash === "#product-search" && searchInput) {
+    searchInput.focus({ preventScroll: true });
+  }
+});
