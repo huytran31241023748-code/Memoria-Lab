@@ -126,6 +126,22 @@
     const featuredContainer = document.getElementById("featured-product-list");
 
     if (featuredContainer) renderProducts(products.slice(0, 4), featuredContainer, { featured: true });
+
+    const spotlight = document.querySelector("[data-spotlight-product]");
+    if (!spotlight) return;
+    const product = products.find((item) => String(item.id) === spotlight.dataset.spotlightProduct);
+    if (!product) return;
+
+    const spec = product.specs?.["Kích thước / quy cách"];
+    if (spec) {
+      const specElement = spotlight.querySelector("[data-spotlight-spec]");
+      specElement.textContent = spec;
+      specElement.hidden = false;
+    }
+
+    const priceElement = spotlight.querySelector("[data-spotlight-price]");
+    priceElement.textContent = money.format(Number(product.price));
+    priceElement.hidden = false;
   });
 
   // Dùng event delegation để các nút vẫn hoạt động sau mỗi lần render lại.

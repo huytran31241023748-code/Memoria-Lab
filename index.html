@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Memoria Lab – Trang chủ</title>
   <link rel="stylesheet" href="css/style.css">
-      <script src="js/products.js" defer></script>
+  <link rel="stylesheet" href="css/home.css">
+  <script src="js/products.js" defer></script>
   <script src="js/cart.js" defer></script>
   <script src="js/cart-storage.js" defer></script>
   <script src="js/cart-ui.js" defer></script>
@@ -38,32 +39,50 @@
 
   <main>
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero home-hero" aria-labelledby="home-title">
       <div class="container hero__grid">
         <div class="hero__content">
-          <p class="eyebrow">MEMORIA LAB</p>
-          <h1>Capture Moments.<br>Design Memories.<br>Print Your Story.</h1>
+          <h1 id="home-title">Biến ảnh của bạn thành <em>món quà kỷ niệm</em></h1>
           <p class="hero__text">
-            Lưu giữ khoảnh khắc, tự tay thiết kế kỷ niệm và biến chúng
-            thành món quà có thể chạm tới.
+            Chọn ảnh và lời nhắn của riêng bạn để tạo dải ảnh, thiệp hoặc
+            khung ảnh tặng người thân và bạn bè.
           </p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="products.html">Khám phá sản phẩm</a>
-            <a class="btn btn--secondary" href="about.html">Về Memoria Lab</a>
+            <a class="btn btn--secondary" href="#bo-qua-noi-bat">Xem bộ quà nổi bật</a>
           </div>
         </div>
 
         <div class="hero__image">
-  <img
-    class="home-hero-photo"
-    src="images/hero-memoria.jpg"
-    alt="Bộ quà tặng kỷ niệm cá nhân hóa Memoria Lab"
-    width="1600"
-    height="900"
-    fetchpriority="high"
-    decoding="async"
-  >
-</div>
+          <img
+            class="home-hero-photo"
+            src="images/hero-memoria.jpg"
+            alt="Khung ảnh để bàn, dải ảnh và scrapbook lưu lại những khoảnh khắc cùng bạn bè"
+            width="1672"
+            height="941"
+            fetchpriority="high"
+            decoding="async"
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="container home-spotlight" id="bo-qua-noi-bat"
+             aria-labelledby="home-spotlight-title" data-spotlight-product="8">
+      <div class="home-spotlight__content">
+        <p class="eyebrow">Bộ quà nổi bật</p>
+        <h2 id="home-spotlight-title">Dải ảnh &amp; khung để bàn</h2>
+        <p class="home-spotlight__description">Chọn một bức ảnh cho khung để bàn và in thêm những khoảnh khắc yêu thích thành dải ảnh để tặng cùng.</p>
+        <p class="home-spotlight__spec" data-spotlight-spec hidden></p>
+        <div class="home-spotlight__actions">
+          <p class="home-spotlight__price" data-spotlight-price hidden></p>
+          <a class="btn btn--primary" href="product-detail.html?id=8">Xem chi tiết bộ quà</a>
+        </div>
+      </div>
+      <div class="home-spotlight__visual">
+        <img src="images/products/product-08.jpg" width="800" height="1000"
+             alt="Minh họa bộ quà gồm một dải ảnh dọc và một khung ảnh để bàn"
+             loading="lazy" decoding="async">
       </div>
     </section>
 

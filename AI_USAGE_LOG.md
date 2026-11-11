@@ -219,3 +219,8 @@ Nội dung đang được cập nhật bởi Vanh (TV5).
 - **Yêu cầu:** Cho phép nhập số lượng trên trang chi tiết, thống nhất quy trình thiết kế, cập nhật quy cách sản phẩm và thêm trang Liên hệ.
 - **Kết quả:** Giỏ hàng tiếp tục nhận số lượng qua API hiện có. Hai trang giới thiệu dùng chung nội dung bốn bước. Dữ liệu quy cách được cập nhật tập trung trong `js/products.js`. Trang Liên hệ sử dụng ảnh sẵn có, có mục câu hỏi thường gặp và liên kết góp ý kỹ thuật.
 - **Nội dung cần nhóm rà soát:** Một số thông số về chất liệu và phụ kiện được điền tạm để hoàn thiện danh mục. Nhóm cập nhật lại theo thông số thực tế và bổ sung kênh liên hệ chính thức khi có thông tin.
+
+## Lần sử dụng 5 – Cải tiến Trang chủ đợt 1
+
+- **Công cụ:** Codex hỗ trợ đối chiếu bố cục của Nook Ký, chỉnh sửa và kiểm thử Trang chủ Memoria Lab.
+- **Kết quả:** Banner có tiêu đề tiếng Việt và hai hướng điều hướng. Khối bộ quà ngay sau banner dùng ảnh hiện có và đọc giá, quy cách từ danh mục chung. Các liên kết và bố cục được kiểm tra trên Chromium.
