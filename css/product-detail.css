@@ -608,3 +608,101 @@ body.lightbox-open { overflow: hidden; }
 }
 
 /* Căn giữa dải ảnh theo chiều dọc với cột thông tin sản phẩm trên desktop. */
+
+
+/* Bố cục chi tiết: ảnh và thông tin nằm thành hai cột cân đối; phần tải ảnh nằm nguyên hàng bên dưới. */
+.product-detail {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  align-items: start;
+  gap: clamp(22px, 3vw, 40px);
+}
+.product-gallery, .product-info { align-self: start; }
+.photostrip-customizer {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 22px 0 0;
+  padding: clamp(16px, 2.2vw, 24px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: rgba(255,255,255,.76);
+}
+.photostrip-customizer > h2 { margin: 0 0 6px; font-size: 22px; }
+.photostrip-customizer__help { margin: 0 0 18px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+.photostrip-customizer__groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 16px;
+}
+.photostrip-upload-group {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+}
+.photostrip-upload-group h3 { margin: 0 0 12px; font-size: 15px; }
+.photostrip-upload-grid { display: grid; gap: 10px; align-items: start; }
+.photostrip-upload-grid[data-layout="strip-3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.photostrip-upload-grid[data-layout="strip-4"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.photostrip-upload-grid[data-layout="grid-2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 520px; }
+.photostrip-upload-grid[data-layout="single"] { grid-template-columns: minmax(0, 190px); }
+.photostrip-upload-slot { min-width: 0; text-align: center; }
+.photostrip-upload-slot__picker {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px dashed var(--accent);
+  border-radius: 10px;
+  background: #fbf4f0;
+  color: var(--accent);
+  cursor: pointer;
+}
+.photostrip-upload-grid[data-layout="strip-3"] .photostrip-upload-slot__picker,
+.photostrip-upload-grid[data-layout="strip-4"] .photostrip-upload-slot__picker { aspect-ratio: 3 / 4; }
+.photostrip-upload-grid[data-layout="grid-2"] .photostrip-upload-slot__picker { aspect-ratio: 1 / 1; }
+.photostrip-upload-slot__image { width: 100%; height: 100%; object-fit: cover; }
+.photostrip-upload-slot__prompt { padding: 8px; font-size: 12px; font-weight: 600; }
+.photostrip-upload-slot__picker input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.photostrip-upload-slot__caption { display: block; margin-top: 6px; color: var(--text); font-size: 12px; }
+.photostrip-upload-slot__remove {
+  margin-top: 5px;
+  padding: 3px 8px;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-size: 11px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.photostrip-upload-slot__remove[hidden] { display: none; }
+.photostrip-upload-group__add {
+  margin-top: 12px;
+  padding: 8px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--accent);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.photostrip-customizer__status { min-height: 18px; margin: 12px 0 0; color: var(--muted); font-size: 12px; }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .product-detail { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; }
+}
+@media (max-width: 767px) {
+  .product-detail { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .photostrip-customizer { margin-top: 16px; }
+  .photostrip-customizer__groups { grid-template-columns: minmax(0, 1fr); }
+}

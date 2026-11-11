@@ -89,72 +89,142 @@
   });
   choiceGrid.hidden = choiceGrid.childElementCount === 0;
 
-  // Photostrip 1×3: xem trước ba ảnh tải từ thiết bị, không gửi ảnh lên máy chủ.
-  if (String(product.id) === "1") {
+  // Khu tải ảnh chung: cấu hình số ô và bố cục lấy từ dữ liệu của từng sản phẩm.
+  function buildPhotoUploader() {
+    const groups = Array.isArray(product.photoUploadGroups) ? product.photoUploadGroups : [];
+    if (!groups.length) return;
+
     const uploadSection = document.createElement("section");
     uploadSection.className = "photostrip-customizer";
-    uploadSection.setAttribute("aria-labelledby", "photostrip-customizer-title");
-    const uploadHeading = document.createElement("h2");
-    uploadHeading.id = "photostrip-customizer-title";
-    uploadHeading.textContent = "Thử bố cục Photostrip 1×3";
-    const uploadHelp = document.createElement("p");
-    uploadHelp.className = "photostrip-customizer__help";
-    uploadHelp.textContent = "Chọn ba ảnh từ thiết bị để xem thử thứ tự ảnh trên dải. Ảnh chỉ hiển thị trong phiên xem trước này.";
-    const uploadGrid = document.createElement("div");
-    uploadGrid.className = "photostrip-upload-grid";
-    const previewUrls = [null, null, null];
+    uploadSection.setAttribute("aria-labelledby", "photo-customizer-title");
 
-    for (let index = 0; index < 3; index += 1) {
-      const slot = document.createElement("label");
-      slot.className = "photostrip-upload-slot";
-      const preview = document.createElement("img");
-      preview.className = "photostrip-upload-slot__image";
-      preview.alt = `Ảnh xem trước ô ${index + 1}`;
-      preview.hidden = true;
-      const prompt = document.createElement("span");
-      prompt.className = "photostrip-upload-slot__prompt";
-      prompt.textContent = `+ Chọn ảnh ${index + 1}`;
-      const input = document.createElement("input");
-      input.type = "file";
-      input.accept = "image/jpeg,image/png,image/webp";
-      input.setAttribute("aria-label", `Tải ảnh ${index + 1} cho Photostrip`);
-      input.addEventListener("change", () => {
-        const file = input.files && input.files[0];
-        if (!file) return;
-        if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
+    const heading = document.createElement("h2");
+    heading.id = "photo-customizer-title";
+    heading.textContent = "Tải ảnh cá nhân hóa";
+
+    const help = document.createElement("p");
+    help.className = "photostrip-customizer__help";
+    help.textContent = "Chọn ảnh từ thiết bị cho từng vị trí. Bạn có thể thay ảnh trước khi thêm sản phẩm vào giỏ.";
+
+    const groupsContainer = document.createElement("div");
+    groupsContainer.className = "photostrip-customizer__groups";
+    const temporaryUrls = new Set();
+    const status = document.createElement("p");
+    status.className = "photostrip-customizer__status";
+    status.setAttribute("role", "status");
+
+    groups.forEach((group, groupIndex) => {
+      const groupCard = document.createElement("section");
+      groupCard.className = "photostrip-upload-group";
+
+      const groupHeading = document.createElement("h3");
+      groupHeading.textContent = group.label || `Nhóm ảnh ${groupIndex + 1}`;
+
+      const grid = document.createElement("div");
+      grid.className = "photostrip-upload-grid";
+      grid.dataset.layout = group.layout || "grid-2";
+      const groupState = { nextIndex: 0 };
+
+      function addPhotoSlot() {
+        groupState.nextIndex += 1;
+        const slotNumber = groupState.nextIndex;
+        const slot = document.createElement("div");
+        slot.className = "photostrip-upload-slot";
+
+        const picker = document.createElement("label");
+        picker.className = "photostrip-upload-slot__picker";
+        const preview = document.createElement("img");
+        preview.className = "photostrip-upload-slot__image";
+        preview.alt = `Ảnh xem trước ${slotNumber}`;
+        preview.hidden = true;
+
+        const prompt = document.createElement("span");
+        prompt.className = "photostrip-upload-slot__prompt";
+        prompt.textContent = "＋ Chọn ảnh";
+
+        const input = document.createElement("input");
+        input.type = "file";
+        input.accept = "image/jpeg,image/png,image/webp";
+        input.setAttribute("aria-label", `${group.label || "Ảnh"} – vị trí ${slotNumber}`);
+
+        const caption = document.createElement("span");
+        caption.className = "photostrip-upload-slot__caption";
+        caption.textContent = `Ảnh ${slotNumber}`;
+
+        const removeButton = document.createElement("button");
+        removeButton.type = "button";
+        removeButton.className = "photostrip-upload-slot__remove";
+        removeButton.textContent = "Gỡ ảnh";
+        removeButton.hidden = true;
+
+        let objectUrl = null;
+        function clearSlot() {
+          if (objectUrl) {
+            URL.revokeObjectURL(objectUrl);
+            temporaryUrls.delete(objectUrl);
+            objectUrl = null;
+          }
           input.value = "";
-          uploadStatus.textContent = "Vui lòng chọn ảnh JPG, PNG hoặc WebP.";
-          return;
+          preview.removeAttribute("src");
+          preview.hidden = true;
+          prompt.hidden = false;
+          removeButton.hidden = true;
+          slot.classList.remove("has-image");
         }
-        if (previewUrls[index]) URL.revokeObjectURL(previewUrls[index]);
-        previewUrls[index] = URL.createObjectURL(file);
-        preview.src = previewUrls[index];
-        preview.hidden = false;
-        prompt.hidden = true;
-        slot.classList.add("has-image");
-        uploadStatus.textContent = `Đã chọn ảnh ${index + 1}.`;
-      });
-      slot.append(preview, prompt, input);
-      uploadGrid.append(slot);
-    }
 
-    const uploadStatus = document.createElement("p");
-    uploadStatus.className = "photostrip-customizer__status";
-    uploadStatus.setAttribute("role", "status");
-    uploadSection.append(uploadHeading, uploadHelp, uploadGrid, uploadStatus);
-    choiceGrid.after(uploadSection);
-    window.addEventListener("beforeunload", () => {
-      previewUrls.forEach((url) => { if (url) URL.revokeObjectURL(url); });
+        input.addEventListener("change", () => {
+          const file = input.files && input.files[0];
+          if (!file) return;
+          if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
+            clearSlot();
+            status.textContent = "Vui lòng chọn ảnh JPG, PNG hoặc WebP.";
+            return;
+          }
+          if (objectUrl) {
+            URL.revokeObjectURL(objectUrl);
+            temporaryUrls.delete(objectUrl);
+          }
+          objectUrl = URL.createObjectURL(file);
+          temporaryUrls.add(objectUrl);
+          preview.src = objectUrl;
+          preview.hidden = false;
+          prompt.hidden = true;
+          removeButton.hidden = false;
+          slot.classList.add("has-image");
+          status.textContent = `Đã chọn ${file.name} cho vị trí ${slotNumber}.`;
+        });
+
+        removeButton.addEventListener("click", clearSlot);
+        picker.append(preview, prompt, input);
+        slot.append(picker, caption, removeButton);
+        grid.append(slot);
+      }
+
+      const initialCount = Number.isSafeInteger(group.count) && group.count > 0 ? group.count : 1;
+      for (let index = 0; index < initialCount; index += 1) addPhotoSlot();
+
+      groupCard.append(groupHeading, grid);
+      if (group.allowMore === true) {
+        const addButton = document.createElement("button");
+        addButton.type = "button";
+        addButton.className = "photostrip-upload-group__add";
+        addButton.textContent = "＋ Thêm ảnh";
+        addButton.addEventListener("click", addPhotoSlot);
+        groupCard.append(addButton);
+      }
+      groupsContainer.append(groupCard);
     });
 
-    const noteLabel = $('label[for="personal-note"]');
-    const noteInput = $("#personal-note");
-    if (noteLabel) noteLabel.textContent = "Ghi chú ngắn (không bắt buộc)";
-    if (noteInput) {
-      noteInput.maxLength = 120;
-      noteInput.placeholder = "Ví dụ: Mãi bên nhau nhé!";
-    }
+    uploadSection.append(heading, help, groupsContainer, status);
+    $(".product-detail").after(uploadSection);
+
+    window.addEventListener("beforeunload", () => {
+      temporaryUrls.forEach((url) => URL.revokeObjectURL(url));
+      temporaryUrls.clear();
+    });
   }
+
+  buildPhotoUploader();
 
   const specs = $(".spec-list");
   const info = { "Tên sản phẩm": product.name, "Danh mục": labels[product.category] || product.category, ...(product.specs || {}), "Giá": price };

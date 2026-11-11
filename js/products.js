@@ -5,6 +5,7 @@ window.products = [
     "name": "Photostrip 1×3 – Hàn Quốc",
     "price": 89000,
     "category": "photostrip",
+    "photoUploadGroups": [{"label":"Ảnh cho dải Photostrip (1×3)","count":3,"layout":"strip-3"}],
     "image": "images/products/gallery/photostrip-overview.webp",
     "gallery": [
       "images/products/gallery/photostrip-detail.webp",
@@ -33,6 +34,7 @@ window.products = [
     "name": "Photostrip 1×4 – Vintage",
     "price": 99000,
     "category": "photostrip",
+    "photoUploadGroups": [{"label":"Ảnh cho dải Photostrip (1×4)","count":4,"layout":"strip-4"}],
     "image": "images/products/gallery/vintage-overview.webp",
     "gallery": [
       "images/products/gallery/vintage-detail.webp",
@@ -56,6 +58,7 @@ window.products = [
     "name": "Postcard 2×2 – Y2K",
     "price": 129000,
     "category": "cards",
+    "photoUploadGroups": [{"label":"Ảnh cho Postcard (2×2)","count":4,"layout":"grid-2"}],
     "image": "images/products/gallery/postcard-overview.webp",
     "gallery": [
       "images/products/gallery/postcard-detail.webp",
@@ -79,6 +82,7 @@ window.products = [
     "name": "Khung tranh Desktop Custom",
     "price": 159000,
     "category": "frames",
+    "photoUploadGroups": [{"label":"Ảnh cho khung để bàn","count":1,"layout":"single","allowMore":true}],
     "image": "images/products/gallery/frame-overview.webp",
     "gallery": [
       "images/products/gallery/frame-detail.webp",
@@ -103,6 +107,7 @@ window.products = [
     "name": "Thiệp kỷ niệm cá nhân hóa",
     "price": 69000,
     "category": "cards",
+    "photoUploadGroups": [{"label":"Ảnh mặt trước thiệp","count":1,"layout":"single"}],
     "image": "images/products/gallery/card-overview.webp",
     "gallery": [
       "images/products/gallery/card-detail.webp",
@@ -128,6 +133,7 @@ window.products = [
     "name": "Scrapbook để bàn",
     "price": 149000,
     "category": "frames",
+    "photoUploadGroups": [{"label":"Ảnh cho Scrapbook A5","count":4,"layout":"grid-2","allowMore":true}],
     "image": "images/products/gallery/scrapbook-overview.webp",
     "gallery": [
       "images/products/gallery/scrapbook-detail.webp",
@@ -151,6 +157,7 @@ window.products = [
     "name": "Dải ảnh + QR Digital Keepsake",
     "price": 119000,
     "category": "photostrip",
+    "photoUploadGroups": [{"label":"Ảnh cho dải ảnh + QR","count":3,"layout":"strip-3"}],
     "image": "images/products/gallery/keepsake-overview.webp",
     "gallery": [
       "images/products/gallery/keepsake-detail.webp",
@@ -175,6 +182,7 @@ window.products = [
     "name": "Set quà combo Photostrip + Frame",
     "price": 249000,
     "category": "combo",
+    "photoUploadGroups": [{"label":"Ảnh cho Photostrip (1×3)","count":3,"layout":"strip-3"},{"label":"Ảnh cho khung để bàn","count":1,"layout":"single"}],
     "image": "images/products/gallery/combo-overview.webp",
     "gallery": [
       "images/products/gallery/combo-detail.webp",
