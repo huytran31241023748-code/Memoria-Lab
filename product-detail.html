@@ -15,25 +15,13 @@
 <nav aria-label="Đường dẫn" class="breadcrumb"><a href="index.html">Trang chủ</a><span aria-hidden="true">/</span><a href="products.html">Sản phẩm</a><span aria-hidden="true">/</span><span aria-current="page">Photostrip 1×3 – Hàn Quốc</span></nav>
 <section aria-labelledby="product-title" class="product-detail" hidden=""><div aria-label="Ảnh sản phẩm" class="product-gallery" role="group"><input aria-label="Chọn góc xem ảnh sản phẩm" checked="" class="gallery-input" id="view-1" name="gallery" type="radio"/><input aria-label="Chọn góc xem ảnh sản phẩm" class="gallery-input" id="view-2" name="gallery" type="radio"/><input aria-label="Chọn góc xem ảnh sản phẩm" class="gallery-input" id="view-3" name="gallery" type="radio"/><div class="gallery-stage"><figure class="view-1"><img alt="" height="750" loading="lazy" src="" width="600"/></figure><figure class="view-2"><img alt="" height="750" loading="lazy" src="" width="600"/></figure><figure class="view-3"><img alt="" height="750" loading="lazy" src="" width="600"/></figure></div><div class="gallery-thumbs"><label for="view-1"><img alt="" height="100" loading="lazy" src="" width="100"/><span>Toàn cảnh</span></label><label for="view-2"><img alt="" height="100" loading="lazy" src="" width="100"/><span>Phóng to</span></label><label for="view-3"><img alt="" height="100" loading="lazy" src="" width="100"/><span>Cận bố cục</span></label></div></div><div class="product-info"><span class="product-tag"></span><h1 id="product-title">Đang tải sản phẩm…</h1><p class="product-price"></p><p class="product-summary"></p><div class="product-options" role="group" aria-label="Lựa chọn sản phẩm">
   <dl class="product-quick-specs" aria-label="Quy cách sản phẩm"></dl>
-  <fieldset id="detail-paper-options" hidden>
-    <legend>Chất liệu</legend>
-    <div class="option-row"></div>
-  </fieldset>
-  <div class="option-grid">
-    <div>
-      <label class="field-title" for="quantity">Số lượng</label>
-      <div class="detail-quantity">
-        <button id="detail-quantity-decrease" type="button" aria-label="Giảm số lượng" disabled>−</button>
-        <input id="quantity" name="quantity" type="number" inputmode="numeric" min="1" step="1" value="1" required>
-        <button id="detail-quantity-increase" type="button" aria-label="Tăng số lượng">+</button>
-      </div>
-    </div>
-    <div id="detail-qr-options" hidden>
-      <label class="field-title" for="qr">QR kỷ niệm</label>
-      <select id="qr" name="qr">
-        <option value="no">Không gắn QR</option>
-        <option value="yes">Có gắn QR</option>
-      </select>
+  <div class="option-grid" id="detail-choices" hidden></div>
+  <div>
+    <label class="field-title" for="quantity">Số lượng</label>
+    <div class="detail-quantity">
+      <button id="detail-quantity-decrease" type="button" aria-label="Giảm số lượng" disabled>−</button>
+      <input id="quantity" name="quantity" type="number" inputmode="numeric" min="1" step="1" value="1" required>
+      <button id="detail-quantity-increase" type="button" aria-label="Tăng số lượng">+</button>
     </div>
   </div>
   <div>

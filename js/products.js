@@ -7,11 +7,8 @@ window.products = [
     "category": "photostrip",
     "image": "images/products/product-01.jpg",
     "previewOptions": {
-      "paper": [
-        {"value": "glossy", "label": "Giấy ảnh bóng"},
-        {"value": "matte", "label": "Giấy mỹ thuật nhám"}
-      ],
-      "qr": true
+      "Chất liệu": ["Giấy ảnh bóng", "Giấy mỹ thuật nhám"],
+      "Kỷ niệm số": ["Không gắn mã QR", "Gắn mã QR"]
     },
     "description": "Dải ảnh cá nhân hóa 3 khung, phong cách Hàn Quốc; phù hợp lưu giữ khoảnh khắc cùng bạn bè hoặc người thương.",
     "specs": {
@@ -91,6 +88,7 @@ window.products = [
     "price": 69000,
     "category": "cards",
     "image": "images/products/product-05.jpg",
+    "previewOptions": { "Phong bì": ["Không thêm phong bì", "Thêm phong bì giấy kraft"] },
     "description": "Thêm ảnh và lời chúc để gửi một lời cảm ơn, lời chúc mừng hoặc điều bạn muốn nói.",
     "specs": {
       "Loại sản phẩm": "Thiệp ảnh và lời chúc cá nhân hóa",
@@ -150,6 +148,7 @@ window.products = [
     "price": 249000,
     "category": "combo",
     "image": "images/products/product-08.jpg",
+    "previewOptions": { "Hộp quà": ["Không thêm hộp quà", "Thêm hộp giấy kraft"] },
     "description": "Một photostrip và một khung để bàn, đồng bộ phong cách để trao tặng kỷ niệm.",
     "specs": {
       "Loại sản phẩm": "Bộ quà Photostrip và khung để bàn",

@@ -42,43 +42,39 @@
   const descriptionPanel = $("#description-panel");
   const descHeading = document.createElement("h2");descHeading.textContent = `Về ${product.name}`;descriptionPanel.append(descHeading);
   descriptions.forEach(text => {const p=document.createElement("p");p.textContent=text;descriptionPanel.append(p);});
-  const paperOptions = product.previewOptions?.paper || [];
   const quickSpecs = $(".product-quick-specs");
+  const choiceGrid = $("#detail-choices");
   const quickSpecLabels = ["Kích thước / quy cách", "Bố cục / thành phần", "Chất liệu", "Màu khung", "Phong bì", "Hộp quà", "Kỷ niệm số"];
-  quickSpecLabels.forEach(label => {
-    if (label === "Chất liệu" && paperOptions.length) return;
-    const value = product.specs?.[label];
+
+  quickSpecLabels.forEach((label, index) => {
+    const choices = product.previewOptions?.[label] || [];
+    const value = choices[0] || product.specs?.[label];
     if (!value) return;
+
     const item = document.createElement("div");
+    if (choices.length > 1) {
+      const title = document.createElement("label");
+      const select = document.createElement("select");
+      select.id = `detail-choice-${index}`;
+      select.setAttribute("aria-describedby", "customization-note");
+      title.className = "field-title";
+      title.htmlFor = select.id;
+      title.textContent = label;
+      choices.forEach(choice => select.add(new Option(choice)));
+      item.append(title, select);
+      choiceGrid.append(item);
+      return;
+    }
+
     const term = document.createElement("dt");
     const description = document.createElement("dd");
     term.className = "field-title";
     term.textContent = label;
-    description.className = "fixed-option";
     description.textContent = value;
     item.append(term, description);
     quickSpecs.append(item);
   });
-
-  if (paperOptions.length) {
-    const fieldset = $("#detail-paper-options");
-    const row = $(".option-row", fieldset);
-    paperOptions.forEach((option, index) => {
-      const label = document.createElement("label");
-      const input = document.createElement("input");
-      const text = document.createElement("span");
-      label.className = "option-label";
-      input.type = "radio";
-      input.name = "paper";
-      input.value = option.value;
-      input.checked = index === 0;
-      text.textContent = option.label;
-      label.append(input, text);
-      row.append(label);
-    });
-    fieldset.hidden = false;
-  }
-  $("#detail-qr-options").hidden = product.previewOptions?.qr !== true;
+  choiceGrid.hidden = choiceGrid.childElementCount === 0;
 
   const specs = $(".spec-list");
   const info = {"Tên sản phẩm":product.name,"Danh mục":labels[product.category] || product.category,...(product.specs || {}),"Giá":price};
