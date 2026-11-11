@@ -235,3 +235,9 @@ Nội dung đang được cập nhật bởi Vanh (TV5).
 - **Công cụ:** Codex hỗ trợ tạo ảnh minh họa, tích hợp và kiểm thử.
 - **Yêu cầu tạo ảnh:** Minh họa dải ảnh 5 × 15 cm, thiệp A5 và bộ dải ảnh kèm khung để bàn. Mỗi mẫu có ảnh toàn cảnh, cận chất liệu và ảnh đặt trong không gian sử dụng. Dùng ánh sáng ấm, tông kem và hồng, không thêm logo hay chữ vào ảnh.
 - **Kết quả:** Chín ảnh WebP trong `images/products/gallery/` dùng cho ba mẫu. Trang chi tiết có chú thích ảnh AI và cho phép đổi góc bằng chuột hoặc bàn phím. Năm mẫu chưa có thêm ảnh hiển thị một ảnh chính.
+
+## Lần sử dụng 8 – Hoàn thiện ảnh cho toàn bộ danh mục
+
+- **Công cụ:** Codex hỗ trợ tạo, tích hợp và kiểm thử ảnh minh họa sản phẩm.
+- **Yêu cầu tạo ảnh:** Ba góc cho dải ảnh Vintage bốn ô, postcard Y2K lưới 2 × 2, khung để bàn vân gỗ sáng, scrapbook A5 một mặt và dải ảnh bóng có họa tiết QR minh họa. Ánh sáng ấm, tông kem và hồng, giữ quy cách từng mẫu.
+- **Kết quả:** Thêm 15 ảnh WebP vào `images/products/gallery/`. Cả tám trang chi tiết có ba góc xem và chú thích ảnh minh họa.

@@ -33,7 +33,11 @@ window.products = [
     "name": "Photostrip 1×4 – Vintage",
     "price": 99000,
     "category": "photostrip",
-    "image": "images/products/product-02.jpg",
+    "image": "images/products/gallery/vintage-overview.webp",
+    "gallery": [
+      "images/products/gallery/vintage-detail.webp",
+      "images/products/gallery/vintage-lifestyle.webp"
+    ],
     "description": "Bốn khung ảnh, tông màu hoài cổ và một lời nhắn dành riêng cho người bạn trân quý.",
     "specs": {
       "Loại sản phẩm": "Dải ảnh Photostrip phong cách vintage",
@@ -52,7 +56,11 @@ window.products = [
     "name": "Postcard 2×2 – Y2K",
     "price": 129000,
     "category": "cards",
-    "image": "images/products/product-03.jpg",
+    "image": "images/products/gallery/postcard-overview.webp",
+    "gallery": [
+      "images/products/gallery/postcard-detail.webp",
+      "images/products/gallery/postcard-lifestyle.webp"
+    ],
     "description": "Bốn khoảnh khắc trong một tấm postcard Y2K, kết hợp ảnh và lời nhắn mang dấu ấn riêng.",
     "specs": {
       "Loại sản phẩm": "Bưu thiếp ảnh cá nhân hóa",
@@ -71,7 +79,11 @@ window.products = [
     "name": "Khung tranh Desktop Custom",
     "price": 159000,
     "category": "frames",
-    "image": "images/products/product-04.jpg",
+    "image": "images/products/gallery/frame-overview.webp",
+    "gallery": [
+      "images/products/gallery/frame-detail.webp",
+      "images/products/gallery/frame-lifestyle.webp"
+    ],
     "description": "Mang bộ ảnh hoặc scrapbook ngắn lên chiếc khung để bàn dành cho góc nhỏ của bạn.",
     "specs": {
       "Loại sản phẩm": "Khung tranh để bàn cá nhân hóa",
@@ -116,7 +128,11 @@ window.products = [
     "name": "Scrapbook để bàn",
     "price": 149000,
     "category": "frames",
-    "image": "images/products/product-06.jpg",
+    "image": "images/products/gallery/scrapbook-overview.webp",
+    "gallery": [
+      "images/products/gallery/scrapbook-detail.webp",
+      "images/products/gallery/scrapbook-lifestyle.webp"
+    ],
     "description": "Một trang kỷ niệm khổ A5 kết hợp nhiều ảnh, ghi chú và sticker theo chủ đề của bạn.",
     "specs": {
       "Loại sản phẩm": "Ấn phẩm scrapbook cá nhân hóa",
@@ -135,7 +151,11 @@ window.products = [
     "name": "Dải ảnh + QR Digital Keepsake",
     "price": 119000,
     "category": "photostrip",
-    "image": "images/products/product-07.jpg",
+    "image": "images/products/gallery/keepsake-overview.webp",
+    "gallery": [
+      "images/products/gallery/keepsake-detail.webp",
+      "images/products/gallery/keepsake-lifestyle.webp"
+    ],
     "description": "Một dải ảnh 5 × 15 cm và mã QR kết nối những khoảnh khắc, lời nhắn, nhạc nền.",
     "specs": {
       "Loại sản phẩm": "Dải ảnh kết hợp trang kỷ niệm số",

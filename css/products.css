@@ -122,10 +122,10 @@
   border-radius: var(--radius-image);
 }
 
-/* Ảnh luôn theo tỉ lệ 4:5, không bị méo */
+/* Giữ khung ngang cho ảnh danh mục. */
 .product-card__image {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   transition: transform .3s ease;
 }
