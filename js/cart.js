@@ -18,6 +18,13 @@
     return Number.isSafeInteger(number) && number > 0 ? number : null;
   }
 
+  function isSafeLineTotal(price, quantity) {
+    const unitPrice = Number(price);
+    return Number.isFinite(unitPrice) && unitPrice > 0
+      && Number.isSafeInteger(quantity)
+      && quantity <= Math.floor(Number.MAX_SAFE_INTEGER / unitPrice);
+  }
+
   function normalizeCustomization(customization = {}) {
     const source = customization && typeof customization === "object" ? customization : {};
     const rawOptions = source.options && typeof source.options === "object" ? source.options : {};
@@ -80,6 +87,7 @@
       return false;
     }
 
+    if (!isSafeLineTotal(product.price, addQty)) return false;
     const cleanCustomization = normalizeCustomization(customization);
     const cartItemId = createCartItemId(cleanId, cleanCustomization);
     const cart = getCart();
@@ -89,7 +97,7 @@
 
     if (existing) {
       const nextQuantity = normalizeQuantity(existing.quantity + addQty);
-      if (!nextQuantity) return false;
+      if (!nextQuantity || !isSafeLineTotal(existing.price, nextQuantity)) return false;
       existing.quantity = nextQuantity;
     } else {
       cart.push({
@@ -114,7 +122,7 @@
     if (!quantity || typeof cartItemId !== "string") return false;
     const cart = getCart();
     const item = cart.find((entry) => entry.cartItemId === cartItemId);
-    if (!item) return false;
+    if (!item || !isSafeLineTotal(item.price, quantity)) return false;
     item.quantity = quantity;
     if (!saveCart(cart)) return false;
     notifyCartUpdated(getCart());

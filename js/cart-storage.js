@@ -41,6 +41,13 @@
     return Number.isSafeInteger(number) && number > 0 ? number : null;
   }
 
+  function isSafeLineTotal(price, quantity) {
+    const unitPrice = Number(price);
+    return Number.isFinite(unitPrice) && unitPrice > 0
+      && Number.isSafeInteger(quantity)
+      && quantity <= Math.floor(Number.MAX_SAFE_INTEGER / unitPrice);
+  }
+
   function normalizeCustomization(entry) {
     const rawOptions = entry && entry.options && typeof entry.options === "object" ? entry.options : {};
     const options = {};
@@ -107,12 +114,17 @@
         };
       }
 
+      if (!isSafeLineTotal(item.price, quantity)) {
+        report.invalidQuantity += 1;
+        return;
+      }
+
       const identity = itemIdentity(id, item);
       item.cartItemId = identity;
       if (indexByIdentity.has(identity)) {
         const existing = items[indexByIdentity.get(identity)];
         const total = existing.quantity + quantity;
-        if (!Number.isSafeInteger(total) || total > Math.floor(Number.MAX_SAFE_INTEGER / Math.max(1, Number(existing.price) || 1))) {
+        if (!isSafeLineTotal(existing.price, total)) {
           report.invalidQuantity += 1;
           return;
         }
