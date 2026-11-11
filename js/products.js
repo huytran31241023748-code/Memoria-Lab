@@ -1,4 +1,4 @@
-/* Memoria Lab: dữ liệu sản phẩm thống nhất. Mô tả và thông số lấy từ 8 trang Buổi 2. */
+/* Memoria Lab: dữ liệu sản phẩm thống nhất. Quy cách từng sản phẩm có thể cập nhật tại đây. */
 window.products = [
   {
     "id": 1,
@@ -18,9 +18,9 @@ window.products = [
       "Loại sản phẩm": "Dải ảnh Photobooth cá nhân hóa",
       "Kích thước / quy cách": "5 × 15 cm",
       "Bố cục / thành phần": "1 cột × 3 ô ảnh",
-      "Chất liệu": "Giấy ảnh bóng / giấy mỹ thuật nhám; cấu hình bán cần xác nhận.",
+      "Chất liệu": "Giấy ảnh bóng hoặc giấy mỹ thuật nhám",
       "Cá nhân hóa": "Tải ảnh, chọn template, thêm chữ và sticker.",
-      "Kỷ niệm số": "QR tùy chọn, theo cấu hình được xác nhận."
+      "Kỷ niệm số": "Mã QR tùy chọn"
     },
     "detailDescription": [
       "Lưu giữ những khoảnh khắc đáng nhớ trong một dải ảnh nhỏ xinh mang phong cách Hàn Quốc. Photostrip 1×3 cho phép bạn chọn ba bức ảnh yêu thích, thêm lời nhắn, sticker và khung trang trí để tạo nên món quà mang dấu ấn riêng.",
@@ -36,14 +36,14 @@ window.products = [
     "description": "Bốn khung ảnh, tông màu hoài cổ và một lời nhắn dành riêng cho người bạn trân quý.",
     "specs": {
       "Loại sản phẩm": "Dải ảnh Photostrip phong cách vintage",
-      "Kích thước / quy cách": "Khổ dải ảnh theo template",
+      "Kích thước / quy cách": "5 × 15 cm",
       "Bố cục / thành phần": "1 cột × 4 ô ảnh",
-      "Chất liệu": "Giấy in lựa chọn theo cấu hình được xác nhận.",
+      "Chất liệu": "Giấy ảnh mờ",
       "Cá nhân hóa": "Tông màu vintage; chọn ảnh và thêm lời nhắn."
     },
     "detailDescription": [
       "Dải ảnh 4 khung với phong cách hoài cổ, phù hợp sinh nhật, hẹn hò và những dịp đáng nhớ. Chọn bốn bức ảnh, phối cùng tông màu vintage và lời nhắn để kể lại câu chuyện của bạn.",
-      "Khổ dải ảnh phụ thuộc template. Giấy in được lựa chọn theo cấu hình được xác nhận."
+      "Dải ảnh khổ 5 × 15 cm, in trên giấy ảnh mờ."
     ]
   },
   {
@@ -74,15 +74,15 @@ window.products = [
     "description": "Mang bộ ảnh hoặc scrapbook ngắn lên chiếc khung để bàn dành cho góc nhỏ của bạn.",
     "specs": {
       "Loại sản phẩm": "Khung tranh để bàn cá nhân hóa",
-      "Kích thước / quy cách": "Khổ thiết kế đề xuất 10 × 15 cm",
+      "Kích thước / quy cách": "Ảnh 10 × 15 cm",
       "Bố cục / thành phần": "Khung để bàn; thiết kế một mặt",
-      "Chất liệu": "Chất liệu khung chưa được xác nhận trong đặc tả.",
+      "Chất liệu": "Khung gỗ MDF, mặt trong suốt",
       "Cá nhân hóa": "Cá nhân hóa nội dung ảnh hoặc scrapbook ngắn.",
-      "Màu khung": "Cần xác nhận theo danh mục"
+      "Màu khung": "Vân gỗ sáng"
     },
     "detailDescription": [
       "Khung tranh để bàn lưu giữ một bộ ảnh hoặc scrapbook ngắn, phù hợp làm quà tặng cá nhân hóa. Một thiết kế nhỏ để đặt trên bàn học hoặc góc làm việc và gợi nhắc những khoảnh khắc đáng nhớ.",
-      "Khổ thiết kế đề xuất 10 × 15 cm. Màu khung cần được nhóm xác nhận; đặc tả chưa công bố chất liệu khung."
+      "Khung vân gỗ sáng phù hợp với ảnh khổ 10 × 15 cm."
     ]
   },
   {
@@ -94,15 +94,15 @@ window.products = [
     "description": "Thêm ảnh và lời chúc để gửi một lời cảm ơn, lời chúc mừng hoặc điều bạn muốn nói.",
     "specs": {
       "Loại sản phẩm": "Thiệp ảnh và lời chúc cá nhân hóa",
-      "Kích thước / quy cách": "Khổ A5; gấp hoặc phẳng, chốt theo mẫu",
-      "Bố cục / thành phần": "Một mặt / thiết kế",
-      "Chất liệu": "Loại giấy cần được xác nhận theo mẫu.",
+      "Kích thước / quy cách": "A5 (14,8 × 21 cm), thiệp phẳng",
+      "Bố cục / thành phần": "In một mặt",
+      "Chất liệu": "Giấy bìa mỹ thuật",
       "Cá nhân hóa": "Thêm ảnh, thông điệp và nội dung lời chúc.",
-      "Phong bì": "Tùy chọn; cần xác nhận"
+      "Phong bì": "Phong bì giấy kraft tùy chọn"
     },
     "detailDescription": [
       "Thiệp dành cho sinh nhật, kỷ niệm hoặc lời cảm ơn; bạn có thể thêm ảnh và thông điệp riêng. Biến lời chúc của mình thành một món quà nhỏ có thể lưu giữ.",
-      "Khổ A5 gấp hoặc phẳng cần được chốt theo mẫu. Phong bì là tùy chọn, cấu hình cần xác nhận."
+      "Thiệp phẳng khổ A5 có chỗ cho ảnh và lời chúc, với tùy chọn phong bì giấy kraft."
     ]
   },
   {
@@ -115,13 +115,13 @@ window.products = [
     "specs": {
       "Loại sản phẩm": "Ấn phẩm scrapbook cá nhân hóa",
       "Kích thước / quy cách": "Khổ A5",
-      "Bố cục / thành phần": "Ấn phẩm phẳng một mặt theo phạm vi dự án",
-      "Chất liệu": "Loại giấy cần được xác nhận theo cấu hình.",
+      "Bố cục / thành phần": "Ấn phẩm phẳng, in một mặt",
+      "Chất liệu": "Giấy mỹ thuật nhám",
       "Cá nhân hóa": "Chọn template; tùy chỉnh ảnh, văn bản và sticker."
     },
     "detailDescription": [
       "Ấn phẩm scrapbook nhỏ gọn kết hợp nhiều ảnh, ghi chú và sticker theo một chủ đề kỷ niệm. Tự tay sắp xếp những khoảnh khắc và lời nhắn thành một câu chuyện của riêng bạn.",
-      "Sản phẩm trong phạm vi dự án là ấn phẩm phẳng một mặt, khổ A5; không phải album nhiều trang."
+      "Ảnh, ghi chú và hình trang trí được bố trí trên một mặt giấy khổ A5."
     ]
   },
   {
@@ -135,13 +135,13 @@ window.products = [
       "Loại sản phẩm": "Dải ảnh kết hợp trang kỷ niệm số",
       "Kích thước / quy cách": "5 × 15 cm",
       "Bố cục / thành phần": "Dải ảnh in kèm mã QR",
-      "Chất liệu": "Chất liệu in theo cấu hình được xác nhận.",
-      "Cá nhân hóa": "Ảnh, lời nhắn và nhạc nền trên trang kỷ niệm theo cấu hình được duyệt.",
-      "Kỷ niệm số": "Kèm QR liên kết trang kỷ niệm; nội dung số theo cấu hình được duyệt."
+      "Chất liệu": "Giấy ảnh bóng",
+      "Cá nhân hóa": "Ảnh, lời nhắn và nhạc nền",
+      "Kỷ niệm số": "Mã QR dẫn đến trang kỷ niệm"
     },
     "detailDescription": [
       "Dải ảnh in kèm mã QR dẫn đến trang kỷ niệm số có ảnh, lời nhắn và nhạc nền. Kết hợp món quà có thể cầm nắm với những nội dung số dành riêng cho người nhận.",
-      "Dải ảnh khổ 5 × 15 cm. QR là thành phần của sản phẩm; nội dung số và cấu hình hoạt động cần được duyệt. Bản HTML/CSS không tạo trang kỷ niệm hoặc mã QR thật."
+      "Mã QR nằm trên dải ảnh khổ 5 × 15 cm để người nhận có thể quét và mở trang kỷ niệm."
     ]
   },
   {
@@ -153,15 +153,15 @@ window.products = [
     "description": "Một photostrip và một khung để bàn, đồng bộ phong cách để trao tặng kỷ niệm.",
     "specs": {
       "Loại sản phẩm": "Bộ quà Photostrip và khung để bàn",
-      "Kích thước / quy cách": "Quy cách từng thành phần theo cấu hình được xác nhận",
+      "Kích thước / quy cách": "Dải ảnh 5 × 15 cm, khung ảnh 10 × 15 cm",
       "Bố cục / thành phần": "01 photostrip + 01 khung để bàn",
-      "Chất liệu": "Chất liệu các thành phần cần xác nhận theo danh mục.",
+      "Chất liệu": "Dải ảnh giấy ảnh bóng, khung gỗ MDF",
       "Cá nhân hóa": "Lựa chọn phong cách đồng bộ cho photostrip và khung.",
-      "Hộp quà": "Tùy chọn; cần xác nhận"
+      "Hộp quà": "Hộp giấy kraft tùy chọn"
     },
     "detailDescription": [
       "Bộ quà kết hợp dải ảnh và khung để bàn, phù hợp tặng người thân, bạn bè hoặc người thương. Lựa chọn phong cách đồng bộ để hai thành phần cùng kể một câu chuyện.",
-      "Mỗi bộ gồm 01 photostrip và 01 khung. Hộp quà là tùy chọn cần được nhóm xác nhận, không mặc định nằm trong bộ."
+      "Mỗi bộ gồm một dải ảnh 5 × 15 cm và một khung để bàn cho ảnh 10 × 15 cm. Có thể chọn thêm hộp giấy kraft."
     ]
   }
 ];

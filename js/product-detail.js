@@ -81,7 +81,7 @@
   $("#detail-qr-options").hidden = product.previewOptions?.qr !== true;
 
   const specs = $(".spec-list");
-  const info = {"Tên sản phẩm":product.name,"Danh mục":labels[product.category] || product.category,...(product.specs || {}),"Giá minh họa":price};
+  const info = {"Tên sản phẩm":product.name,"Danh mục":labels[product.category] || product.category,...(product.specs || {}),"Giá":price};
   Object.entries(info).forEach(([label,value]) => {
     const div=document.createElement("div"),dt=document.createElement("dt"),dd=document.createElement("dd");
     dt.textContent=label;dd.textContent=value;div.append(dt,dd);specs.append(div);
@@ -89,7 +89,7 @@
   // Chỉ có một ảnh nguồn cho mỗi sản phẩm; các góc phóng được CSS đảm nhiệm.
   $$(".gallery-stage img, .gallery-thumbs img").forEach(image => {
     image.src=product.image;
-    image.alt=image.closest(".gallery-thumbs") ? "" : `Ảnh minh họa ${product.name}`;
+    image.alt=image.closest(".gallery-thumbs") ? "" : product.name;
     image.addEventListener("error", () => {image.alt="Ảnh sản phẩm hiện chưa tải được";image.removeAttribute("src");}, {once:true});
   });
   $$(".gallery-input").forEach((radio,index) => { radio.setAttribute("aria-label",["Toàn cảnh","Phóng to","Cận bố cục"][index]+": "+product.name);});
