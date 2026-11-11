@@ -22,14 +22,11 @@
   <div class="option-grid">
     <div>
       <label class="field-title" for="quantity">Số lượng</label>
-      <select id="quantity" name="quantity">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="10">10</option>
-      </select>
+      <div class="detail-quantity">
+        <button id="detail-quantity-decrease" type="button" aria-label="Giảm số lượng" disabled>−</button>
+        <input id="quantity" name="quantity" type="number" inputmode="numeric" min="1" step="1" value="1" required>
+        <button id="detail-quantity-increase" type="button" aria-label="Tăng số lượng">+</button>
+      </div>
     </div>
     <div id="detail-qr-options" hidden>
       <label class="field-title" for="qr">QR kỷ niệm</label>

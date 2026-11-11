@@ -110,13 +110,41 @@
   });
   const addButton = $("#detail-add-to-cart");
   const note = $("#purchase-note");
+  const quantityInput = $("#quantity");
+  const decreaseQuantity = $("#detail-quantity-decrease");
+  const increaseQuantity = $("#detail-quantity-increase");
+  quantityInput.max = String(Number.MAX_SAFE_INTEGER);
+
+  function updateQuantityControls() {
+    quantityInput.setCustomValidity("");
+    const quantity = quantityInput.valueAsNumber;
+    decreaseQuantity.disabled = quantity === 1;
+    increaseQuantity.disabled = quantity === Number.MAX_SAFE_INTEGER;
+  }
+
+  function changeQuantity(step) {
+    const quantity = quantityInput.valueAsNumber;
+    const next = Number.isSafeInteger(quantity) && quantity >= 1 ? quantity + step : 1;
+    if (Number.isSafeInteger(next) && next >= 1) {
+      quantityInput.value = String(next);
+    }
+    updateQuantityControls();
+  }
+
+  quantityInput.addEventListener("input", updateQuantityControls);
+  decreaseQuantity.addEventListener("click", () => changeQuantity(-1));
+  increaseQuantity.addEventListener("click", () => changeQuantity(1));
   $("#detail-customize").addEventListener("click", () => {
     $("#personal-note").focus();
     note.textContent = "Bạn có thể thử các lựa chọn và ghi chú thiết kế tại đây. Studio thiết kế chưa mở.";
   });
   addButton.addEventListener("click", () => {
-    const quantity = Number($("#quantity").value);
-    if (!Number.isSafeInteger(quantity) || quantity < 1) {window.alert("Số lượng không hợp lệ.");return;}
+    const quantity = quantityInput.valueAsNumber;
+    if (!Number.isSafeInteger(quantity) || quantity < 1) {
+      quantityInput.setCustomValidity("Vui lòng nhập số nguyên dương hợp lệ.");
+      quantityInput.reportValidity();
+      return;
+    }
     if (typeof window.addToCart !== "function") {
       note.textContent = "Giỏ hàng chưa mở. Sản phẩm chưa được thêm.";
       return;

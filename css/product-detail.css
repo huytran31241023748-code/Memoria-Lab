@@ -501,3 +501,40 @@ a,button,input,select,textarea,label{touch-action:manipulation}
 #purchase-note:empty {
   display: none;
 }
+
+.detail-quantity {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  width: min(100%, 208px);
+}
+
+.detail-quantity input,
+.detail-quantity button {
+  min-height: 44px;
+  min-width: 0;
+  border: 1px solid var(--border);
+  background: #fff;
+  text-align: center;
+}
+
+.detail-quantity input {
+  appearance: textfield;
+  width: 100%;
+  border-inline: 0;
+}
+
+.detail-quantity input::-webkit-inner-spin-button,
+.detail-quantity input::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.detail-quantity button {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.detail-quantity button:first-child { border-radius: 10px 0 0 10px; }
+.detail-quantity button:last-child { border-radius: 0 10px 10px 0; }
+.detail-quantity button:disabled { opacity: .5; cursor: default; }
+.detail-quantity button:hover:not(:disabled) { background: var(--background); }
