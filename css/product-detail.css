@@ -473,3 +473,31 @@ a,button,input,select,textarea,label{touch-action:manipulation}
     transform: none;
   }
 }
+
+/* Buổi 3: giữ trạng thái ẩn cho trang động khi thiếu mã sản phẩm. */
+.product-detail[hidden], .product-tabs[hidden], .related-products[hidden], .purchase-actions [hidden] {display:none !important;}
+.product-detail-notice:not([hidden]) {margin:2rem auto;padding:1.5rem;border-radius:12px;background:#F7EEE8;color:#65334b;}
+.product-detail-notice a {display:inline-block;margin-top:1rem;color:#A84868;text-decoration:underline;}
+
+.product-quick-specs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.product-quick-specs dd {
+  margin: 0;
+}
+
+.product-options [hidden] {
+  display: none;
+}
+
+.purchase-actions .btn {
+  cursor: pointer;
+}
+
+#purchase-note:empty {
+  display: none;
+}
