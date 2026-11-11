@@ -241,3 +241,12 @@ Nội dung đang được cập nhật bởi Vanh (TV5).
 - **Công cụ:** Codex hỗ trợ tạo, tích hợp và kiểm thử ảnh minh họa sản phẩm.
 - **Yêu cầu tạo ảnh:** Ba góc cho dải ảnh Vintage bốn ô, postcard Y2K lưới 2 × 2, khung để bàn vân gỗ sáng, scrapbook A5 một mặt và dải ảnh bóng có họa tiết QR minh họa. Ánh sáng ấm, tông kem và hồng, giữ quy cách từng mẫu.
 - **Kết quả:** Thêm 15 ảnh WebP vào `images/products/gallery/`. Cả tám trang chi tiết có ba góc xem và chú thích ảnh minh họa.
+
+
+## Lần sử dụng 9 – Cải tiến giỏ hàng và trải nghiệm sản phẩm Buổi 3
+
+- **Công cụ:** ChatGPT (GPT-6) hỗ trợ rà soát mã nguồn, đề xuất và thực hiện chỉnh sửa.
+- **Phạm vi:** Nhánh `buoi-3/Javascript`; cải tiến theo thứ tự ưu tiên giỏ hàng cá nhân hóa, phản hồi thêm giỏ, xem ảnh toàn màn hình và preview Photostrip 1×3.
+- **Kết quả mã nguồn:** Mỗi dòng giỏ có định danh theo mã sản phẩm, các lựa chọn và ghi chú; khôi phục localStorage giữ các cấu hình khác nhau thành các dòng riêng. Trang giỏ hiển thị lựa chọn/ghi chú và đổi số lượng hoặc xóa theo đúng dòng. Phản hồi thêm giỏ hiển thị tên sản phẩm, số lượng và liên kết xem giỏ. Ảnh chi tiết mở lightbox, hỗ trợ phím mũi tên và Escape. Trang Photostrip 1×3 có ba ô chọn ảnh từ thiết bị và xem trước tại chỗ.
+- **Giới hạn cần lưu ý:** Ảnh người dùng chọn trong preview hiện chỉ dùng URL tạm trên trình duyệt, chưa tải lên máy chủ và không được lưu thành dữ liệu ảnh trong giỏ. Ghi chú ngắn và các lựa chọn sản phẩm được lưu trong giỏ. Đây là phần giao diện Buổi 3, chưa thay thế quy trình đăng nhập, lưu thiết kế và xử lý đơn ở backend.
+- **Kiểm thử:** Đã rà soát luồng dữ liệu và script liên quan qua mã nguồn GitHub. Chưa chạy kiểm thử tương tác trực tiếp trên trình duyệt; cần kiểm tra các trường hợp thêm hai cấu hình khác nhau của cùng sản phẩm, tải lại trang, thao tác số lượng/xóa đúng dòng, lightbox bằng bàn phím và tải đủ ba ảnh.
