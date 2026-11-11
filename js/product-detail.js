@@ -104,7 +104,7 @@
 
     const help = document.createElement("p");
     help.className = "photostrip-customizer__help";
-    help.textContent = "Chọn ảnh từ thiết bị cho từng vị trí. Bạn có thể thay ảnh trước khi thêm sản phẩm vào giỏ.";
+    help.textContent = "Chọn ảnh từ thiết bị cho từng vị trí để xem trước. Ảnh hiện chỉ hiển thị trong phiên trình duyệt này, chưa được gửi lên máy chủ hoặc lưu kèm giỏ hàng.";
 
     const groupsContainer = document.createElement("div");
     groupsContainer.className = "photostrip-customizer__groups";

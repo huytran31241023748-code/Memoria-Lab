@@ -706,3 +706,26 @@ body.lightbox-open { overflow: hidden; }
   .photostrip-customizer { margin-top: 16px; }
   .photostrip-customizer__groups { grid-template-columns: minmax(0, 1fr); }
 }
+
+
+/* Reset lớp vỏ ô tải ảnh cũ để phần chọn ảnh và nút gỡ không bị cắt. */
+.photostrip-upload-slot {
+  position: static;
+  display: block;
+  aspect-ratio: auto;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  cursor: default;
+}
+.photostrip-upload-slot__picker { min-height: 110px; }
+.photostrip-upload-slot__picker:focus-within {
+  outline: 3px solid var(--lavender);
+  outline-offset: 3px;
+}
+@media (max-width: 480px) {
+  .photostrip-upload-grid[data-layout="strip-4"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .photostrip-upload-grid[data-layout="strip-4"] .photostrip-upload-slot__picker { aspect-ratio: 4 / 3; }
+}
