@@ -89,6 +89,73 @@
   });
   choiceGrid.hidden = choiceGrid.childElementCount === 0;
 
+  // Photostrip 1×3: xem trước ba ảnh tải từ thiết bị, không gửi ảnh lên máy chủ.
+  if (String(product.id) === "1") {
+    const uploadSection = document.createElement("section");
+    uploadSection.className = "photostrip-customizer";
+    uploadSection.setAttribute("aria-labelledby", "photostrip-customizer-title");
+    const uploadHeading = document.createElement("h2");
+    uploadHeading.id = "photostrip-customizer-title";
+    uploadHeading.textContent = "Thử bố cục Photostrip 1×3";
+    const uploadHelp = document.createElement("p");
+    uploadHelp.className = "photostrip-customizer__help";
+    uploadHelp.textContent = "Chọn ba ảnh từ thiết bị để xem thử thứ tự ảnh trên dải. Ảnh chỉ hiển thị trong phiên xem trước này.";
+    const uploadGrid = document.createElement("div");
+    uploadGrid.className = "photostrip-upload-grid";
+    const previewUrls = [null, null, null];
+
+    for (let index = 0; index < 3; index += 1) {
+      const slot = document.createElement("label");
+      slot.className = "photostrip-upload-slot";
+      const preview = document.createElement("img");
+      preview.className = "photostrip-upload-slot__image";
+      preview.alt = `Ảnh xem trước ô ${index + 1}`;
+      preview.hidden = true;
+      const prompt = document.createElement("span");
+      prompt.className = "photostrip-upload-slot__prompt";
+      prompt.textContent = `+ Chọn ảnh ${index + 1}`;
+      const input = document.createElement("input");
+      input.type = "file";
+      input.accept = "image/jpeg,image/png,image/webp";
+      input.setAttribute("aria-label", `Tải ảnh ${index + 1} cho Photostrip`);
+      input.addEventListener("change", () => {
+        const file = input.files && input.files[0];
+        if (!file) return;
+        if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
+          input.value = "";
+          uploadStatus.textContent = "Vui lòng chọn ảnh JPG, PNG hoặc WebP.";
+          return;
+        }
+        if (previewUrls[index]) URL.revokeObjectURL(previewUrls[index]);
+        previewUrls[index] = URL.createObjectURL(file);
+        preview.src = previewUrls[index];
+        preview.hidden = false;
+        prompt.hidden = true;
+        slot.classList.add("has-image");
+        uploadStatus.textContent = `Đã chọn ảnh ${index + 1}.`;
+      });
+      slot.append(preview, prompt, input);
+      uploadGrid.append(slot);
+    }
+
+    const uploadStatus = document.createElement("p");
+    uploadStatus.className = "photostrip-customizer__status";
+    uploadStatus.setAttribute("role", "status");
+    uploadSection.append(uploadHeading, uploadHelp, uploadGrid, uploadStatus);
+    choiceGrid.after(uploadSection);
+    window.addEventListener("beforeunload", () => {
+      previewUrls.forEach((url) => { if (url) URL.revokeObjectURL(url); });
+    });
+
+    const noteLabel = $('label[for="personal-note"]');
+    const noteInput = $("#personal-note");
+    if (noteLabel) noteLabel.textContent = "Ghi chú ngắn (không bắt buộc)";
+    if (noteInput) {
+      noteInput.maxLength = 120;
+      noteInput.placeholder = "Ví dụ: Mãi bên nhau nhé!";
+    }
+  }
+
   const specs = $(".spec-list");
   const info = { "Tên sản phẩm": product.name, "Danh mục": labels[product.category] || product.category, ...(product.specs || {}), "Giá": price };
   Object.entries(info).forEach(([label, value]) => {
@@ -190,8 +257,8 @@
   document.addEventListener("keydown", (event) => {
     if (lightbox.hidden) return;
     if (event.key === "Escape") closeLightbox();
-    else if (event.key === "ArrowLeft") movePhoto(-1);
-    else if (event.key === "ArrowRight") movePhoto(1);
+    else if (event.key === "ArrowLeft") { event.preventDefault(); movePhoto(-1); }
+    else if (event.key === "ArrowRight") { event.preventDefault(); movePhoto(1); }
   });
 
   const relatedGrid = $(".related-grid");

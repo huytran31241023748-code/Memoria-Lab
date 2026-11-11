@@ -32,13 +32,9 @@
     };
   }
 
-  function getCustomizationKey(customization) {
-    const clean = normalizeCustomization(customization);
-    return JSON.stringify([clean.options, clean.personalNote]);
-  }
-
   function createCartItemId(productId, customization) {
-    return JSON.stringify([String(productId), getCustomizationKey(customization)]);
+    const clean = normalizeCustomization(customization);
+    return JSON.stringify([String(productId), clean.options, clean.personalNote]);
   }
 
   function getCart() {
