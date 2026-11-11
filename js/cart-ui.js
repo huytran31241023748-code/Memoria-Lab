@@ -210,6 +210,61 @@
         }
     }
 
+    let cartFeedback;
+
+    function initCartFeedback() {
+        const announcement = document.createElement('div');
+        announcement.className = 'cart-toast-announcement';
+        announcement.setAttribute('role', 'status');
+        announcement.setAttribute('aria-atomic', 'true');
+
+        const toast = document.createElement('aside');
+        toast.className = 'cart-toast';
+        toast.setAttribute('aria-label', 'Thông báo giỏ hàng');
+        toast.hidden = true;
+        toast.innerHTML = `
+          <div class="cart-toast__body">
+            <p class="cart-toast__title"></p>
+            <p class="cart-toast__message"></p>
+            <a class="cart-toast__link" href="cart.html">Xem giỏ hàng →</a>
+          </div>
+          <button class="cart-toast__close" type="button" aria-label="Đóng thông báo">×</button>
+        `;
+        document.body.append(announcement, toast);
+
+        let trigger;
+        toast.querySelector('button').addEventListener('click', () => {
+            const focusIsInToast = toast.contains(document.activeElement);
+            toast.hidden = true;
+            announcement.replaceChildren();
+            if (focusIsInToast && trigger?.isConnected) trigger.focus({ preventScroll: true });
+        });
+
+        const title = toast.querySelector('.cart-toast__title');
+        const message = toast.querySelector('.cart-toast__message');
+        const link = toast.querySelector('.cart-toast__link');
+        return (added, productName, quantity, button) => {
+            trigger = button;
+            title.textContent = added ? 'Đã thêm vào giỏ hàng' : 'Chưa thể thêm vào giỏ';
+            message.textContent = added ? `${quantity} × ${productName}` : 'Vui lòng thử lại.';
+            link.hidden = !added;
+            toast.dataset.state = added ? 'success' : 'error';
+            toast.hidden = false;
+            announcement.replaceChildren(document.createTextNode(`${title.textContent}. ${message.textContent}`));
+        };
+    }
+
+    window.addToCartWithFeedback = (product, quantity, button) => {
+        let added = false;
+        try {
+            added = typeof window.addToCart === 'function' && window.addToCart(product.id, quantity) === true;
+        } catch (error) {
+            console.error('Lỗi khi thêm sản phẩm vào giỏ:', error);
+        }
+        cartFeedback ??= initCartFeedback();
+        cartFeedback(added, product.name, quantity, button);
+    };
+
     window.addEventListener('cartUpdated', renderCartPage);
     window.addEventListener('storage', function (event) {
         if (event.key === CART_STORAGE_KEY || event.key === null) {
@@ -219,6 +274,9 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         initCartEvents();
+        if (document.querySelector('#detail-add-to-cart, #product-list, #featured-product-list')) {
+            cartFeedback ??= initCartFeedback();
+        }
         renderCartPage();
     });
 })();

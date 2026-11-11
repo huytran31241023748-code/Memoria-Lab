@@ -166,21 +166,7 @@
       quantityInput.reportValidity();
       return;
     }
-    if (typeof window.addToCart !== "function") {
-      note.textContent = "Giỏ hàng chưa mở. Sản phẩm chưa được thêm.";
-      return;
-    }
-    // API Vanh bàn giao: addToCart(productId, quantity) trả về true/false.
-    try {
-      note.textContent = "";
-      const added = window.addToCart(String(product.id), quantity);
-      note.textContent = added === true
-        ? `Đã thêm ${quantity} sản phẩm “${product.name}” vào giỏ hàng.`
-        : "Không thêm được vào giỏ hàng. Vui lòng thử lại.";
-    } catch (error) {
-      console.error("Lỗi kết nối giỏ hàng:",error);
-      note.textContent="Không thêm được vào giỏ hàng. Vui lòng thử lại.";
-    }
+    window.addToCartWithFeedback(product, quantity, addButton);
   });
   $$("section.product-detail, section.product-tabs, section.related-products").forEach(section => section.hidden=false);
 })();

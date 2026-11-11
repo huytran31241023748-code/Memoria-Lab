@@ -149,26 +149,7 @@
     const button = event.target.closest("[data-add-to-cart]");
     if (!button) return;
 
-    const productId = button.dataset.addToCart;
-    if (typeof window.addToCart === "function") {
-      const added = window.addToCart(productId, 1);
-      const actions = button.parentElement;
-      let status = actions.querySelector(".product-card__cart-status");
-      if (!status) {
-        status = makeElement("p", "product-card__cart-status");
-        status.setAttribute("role", "status");
-        actions.appendChild(status);
-      }
-      status.textContent = added === true ? "Đã thêm 1 sản phẩm vào giỏ hàng." : "Không thêm được vào giỏ hàng. Vui lòng thử lại.";
-    } else {
-      const actions = button.parentElement;
-      let status = actions.querySelector(".product-card__cart-status");
-      if (!status) {
-        status = makeElement("p", "product-card__cart-status");
-        status.setAttribute("role", "status");
-        actions.appendChild(status);
-      }
-      status.textContent = "Giỏ hàng chưa mở. Sản phẩm chưa được thêm.";
-    }
+    const product = products.find((item) => String(item.id) === button.dataset.addToCart);
+    if (product) window.addToCartWithFeedback(product, 1, button);
   });
 })();
