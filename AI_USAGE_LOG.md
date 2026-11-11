@@ -224,3 +224,8 @@ Nội dung đang được cập nhật bởi Vanh (TV5).
 
 - **Công cụ:** Codex hỗ trợ đối chiếu bố cục của Nook Ký, chỉnh sửa và kiểm thử Trang chủ Memoria Lab.
 - **Kết quả:** Banner có tiêu đề tiếng Việt và hai hướng điều hướng. Khối bộ quà ngay sau banner dùng ảnh hiện có và đọc giá, quy cách từ danh mục chung. Các liên kết và bố cục được kiểm tra trên Chromium.
+
+## Lần sử dụng 6 – Cải tiến Trang chủ đợt 2
+
+- **Công cụ:** Codex hỗ trợ chỉnh giao diện và kiểm thử điều hướng.
+- **Kết quả:** Bốn thẻ danh mục mở bộ lọc tương ứng. Quy trình thiết kế nằm sau khu sản phẩm, dùng ảnh có sẵn và gộp phần giới thiệu Photobooth, Custom Studio vào các bước liên quan.

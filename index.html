@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Memoria Lab – Trang chủ</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/home.css?v=2">
   <script src="js/products.js" defer></script>
   <script src="js/cart.js" defer></script>
   <script src="js/cart-storage.js" defer></script>
@@ -86,36 +86,28 @@
       </div>
     </section>
 
-    <!-- HOW IT WORKS -->
-    <section class="section" id="how-it-works">
+    <section class="section home-categories" aria-labelledby="home-categories-title">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">QUY TRÌNH THIẾT KẾ</p>
-          <h2>Từ khoảnh khắc đến món quà</h2>
-          <p>Bốn bước để tạo món quà từ ảnh và lời nhắn của bạn.</p>
+          <h2 id="home-categories-title">Khám phá theo danh mục</h2>
         </div>
-
-        <div class="steps-grid">
-          <article class="step-card">
-            <span class="step-card__number">01</span>
-            <h3>Chụp hoặc tải ảnh</h3>
-            <p>Chụp bằng Web Photobooth hoặc tải những bức ảnh bạn muốn lưu giữ.</p>
-          </article>
-          <article class="step-card">
-            <span class="step-card__number">02</span>
-            <h3>Thiết kế</h3>
-            <p>Sắp xếp ảnh, thêm lời nhắn và chọn khung trang trí theo phong cách của bạn.</p>
-          </article>
-          <article class="step-card">
-            <span class="step-card__number">03</span>
-            <h3>Gắn mã QR</h3>
-            <p>Dùng mã QR để kết nối món quà với trang kỷ niệm số.</p>
-          </article>
-          <article class="step-card">
-            <span class="step-card__number">04</span>
-            <h3>Đặt in</h3>
-            <p>In thiết kế đã hoàn thiện để lưu giữ hoặc trao tặng.</p>
-          </article>
+        <div class="home-category-grid">
+          <a class="home-category" href="products.html?category=photostrip">
+            <img src="images/products/product-01.jpg" alt="" width="800" height="1000" loading="lazy" decoding="async">
+            <span>Dải ảnh<span aria-hidden="true">→</span></span>
+          </a>
+          <a class="home-category" href="products.html?category=cards">
+            <img src="images/products/product-05.jpg" alt="" width="800" height="1000" loading="lazy" decoding="async">
+            <span>Thiệp &amp; Postcard<span aria-hidden="true">→</span></span>
+          </a>
+          <a class="home-category" href="products.html?category=frames">
+            <img src="images/products/product-04.jpg" alt="" width="800" height="1000" loading="lazy" decoding="async">
+            <span>Khung &amp; Scrapbook<span aria-hidden="true">→</span></span>
+          </a>
+          <a class="home-category" href="products.html?category=combo">
+            <img src="images/products/product-08.jpg" alt="" width="800" height="1000" loading="lazy" decoding="async">
+            <span>Combo<span aria-hidden="true">→</span></span>
+          </a>
         </div>
       </div>
     </section>
@@ -149,68 +141,52 @@
     </section>
     <!-- THUY: KET THUC KHU VUC SAN PHAM NOI BAT -->
 
-    <!-- PHOTOBOOTH / CUSTOM STUDIO -->
-    <section class="section">
-      <div class="container explore-grid">
-        <article class="explore-card">
-          <div class="explore-card__image">
-  <img
-    class="home-explore-photo"
-    src="images/photobooth-preview.jpg"
-    alt="Minh họa trải nghiệm chụp ảnh Photobooth"
-    width="1600"
-    height="900"
-    loading="lazy"
-    decoding="async"
-  >
-</div>
-          <div class="explore-card__content">
-            <p class="eyebrow">PHOTOBOOTH</p>
-            <h2>Chụp khoảnh khắc của bạn</h2>
-            <p>Chụp bằng webcam hoặc tải ảnh để bắt đầu tạo kỷ niệm.</p>
-            <p>Giao diện minh họa.</p>
-            <a class="btn btn--primary" aria-disabled="true">Bắt đầu sáng tạo</a>
-          </div>
-        </article>
-
-        <article class="explore-card">
-          <div class="explore-card__image">
-  <img
-    class="home-explore-photo"
-    src="images/studio-preview.jpg"
-    alt="Minh họa thiết kế quà tặng trong Custom Studio"
-    width="1600"
-    height="900"
-    loading="lazy"
-    decoding="async"
-  >
-</div>
-          <div class="explore-card__content">
-            <p class="eyebrow">CUSTOM STUDIO</p>
-            <h2>Tự tay thiết kế</h2>
-            <p>Thêm chữ, sticker, khung và xem trước thành phẩm.</p>
-            <p>Giao diện minh họa.</p>
-            <a class="btn btn--secondary" aria-disabled="true">Khám phá Studio</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- QUÀ TẶNG THEO DỊP -->
-    <section class="section section--soft">
+    <!-- HOW IT WORKS -->
+    <section class="section home-process" id="how-it-works" aria-labelledby="home-process-title">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">GIFT GUIDE</p>
-          <h2>Quà tặng theo dịp</h2>
+          <p class="eyebrow">QUY TRÌNH THIẾT KẾ</p>
+          <h2 id="home-process-title">Từ khoảnh khắc đến món quà</h2>
+          <p>Bốn bước để tạo món quà từ ảnh và lời nhắn của bạn. Hình ảnh minh họa cách sử dụng Photobooth và Custom Studio trong quy trình thiết kế.</p>
         </div>
-        <div class="occasion-grid">
-          <a class="occasion-card" href="products.html">Sinh nhật</a>
-          <a class="occasion-card" href="products.html">Kỷ niệm</a>
-          <a class="occasion-card" href="products.html">Tốt nghiệp</a>
-          <a class="occasion-card" href="products.html">Tặng bạn bè</a>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <img src="images/photobooth-preview.jpg" alt="Xem trước bố cục dải ảnh khi chụp Photobooth" loading="lazy" decoding="async">
+            <div class="home-process__content">
+              <span class="step-card__number">01</span>
+              <h3>Chụp hoặc tải ảnh</h3>
+              <p>Chụp bằng Web Photobooth hoặc tải những bức ảnh bạn muốn lưu giữ.</p>
+            </div>
+          </article>
+          <article class="step-card">
+            <img src="images/studio-preview.jpg" alt="Sắp xếp ảnh và hình trang trí trong Custom Studio" loading="lazy" decoding="async">
+            <div class="home-process__content">
+              <span class="step-card__number">02</span>
+              <h3>Thiết kế</h3>
+              <p>Sắp xếp ảnh, thêm lời nhắn và chọn khung trang trí theo phong cách của bạn.</p>
+            </div>
+          </article>
+          <article class="step-card">
+            <img src="images/21572.png" alt="Mã QR dùng để mở trang kỷ niệm" loading="lazy" decoding="async">
+            <div class="home-process__content">
+              <span class="step-card__number">03</span>
+              <h3>Gắn mã QR</h3>
+              <p>Dùng mã QR để kết nối món quà với trang kỷ niệm số.</p>
+            </div>
+          </article>
+          <article class="step-card">
+            <img src="images/bd7de513cc42206d8eb39cbd60e7bbb6.jpg" alt="Các ảnh in được sắp xếp thành một trang scrapbook" loading="lazy" decoding="async">
+            <div class="home-process__content">
+              <span class="step-card__number">04</span>
+              <h3>Đặt in</h3>
+              <p>In thiết kế đã hoàn thiện để lưu giữ hoặc trao tặng.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- FOOTER DO YẾN HOÀN THIỆN THEO ĐÚNG MỤC 2.4, 3.1, 3.5 & 4 TRONG ĐẶC TẢ PDF -->

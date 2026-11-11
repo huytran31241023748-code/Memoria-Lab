@@ -24,7 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!document.getElementById(listId) || typeof window.renderProducts !== "function") return;
 
   // Danh mục đang chọn: "all", "photostrip", "cards", "frames", "combo"
-  let currentCategory = "all";
+  const params = new URLSearchParams(window.location.search);
+  const requestedCategory = params.get("category");
+  let currentCategory = categoryButtons.some((button) => button.dataset.filter === requestedCategory)
+    ? requestedCategory
+    : "all";
 
   // Chuẩn hóa chữ để tìm kiếm không phân biệt hoa thường và dấu tiếng Việt
   function normalize(text) {
@@ -142,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Đọc từ khóa trên đường dẫn, ví dụ products.html?q=photostrip
   if (searchInput) {
-    const q = new URLSearchParams(window.location.search).get("q");
+    const q = params.get("q");
     searchInput.value = q ? q.slice(0, 100) : "";
   }
 
