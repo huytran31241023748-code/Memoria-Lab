@@ -250,3 +250,11 @@ Nội dung đang được cập nhật bởi Vanh (TV5).
 - **Kết quả mã nguồn:** Mỗi dòng giỏ có định danh theo mã sản phẩm, các lựa chọn và ghi chú; khôi phục localStorage giữ các cấu hình khác nhau thành các dòng riêng. Trang giỏ hiển thị lựa chọn/ghi chú và đổi số lượng hoặc xóa theo đúng dòng. Phản hồi thêm giỏ hiển thị tên sản phẩm, số lượng và liên kết xem giỏ. Ảnh chi tiết mở lightbox, hỗ trợ phím mũi tên và Escape. Trang Photostrip 1×3 có ba ô chọn ảnh từ thiết bị và xem trước tại chỗ.
 - **Giới hạn cần lưu ý:** Ảnh người dùng chọn trong preview hiện chỉ dùng URL tạm trên trình duyệt, chưa tải lên máy chủ và không được lưu thành dữ liệu ảnh trong giỏ. Ghi chú ngắn và các lựa chọn sản phẩm được lưu trong giỏ. Đây là phần giao diện Buổi 3, chưa thay thế quy trình đăng nhập, lưu thiết kế và xử lý đơn ở backend.
 - **Kiểm thử:** Đã rà soát luồng dữ liệu và script liên quan qua mã nguồn GitHub. Chưa chạy kiểm thử tương tác trực tiếp trên trình duyệt; cần kiểm tra các trường hợp thêm hai cấu hình khác nhau của cùng sản phẩm, tải lại trang, thao tác số lượng/xóa đúng dòng, lightbox bằng bàn phím và tải đủ ba ảnh.
+
+
+### Điều chỉnh giao diện sau phản hồi
+
+- Chuyển khu tải ảnh khỏi cột thông tin sản phẩm thành một khu vực riêng nằm bên dưới hàng ảnh + thông tin; đặt lại căn lề hai cột về đầu hàng để tránh cảm giác lệch.
+- Khai báo nhóm ảnh theo từng sản phẩm trong `js/products.js`; cả tám sản phẩm đều có ô tải ảnh. Combo có hai nhóm ảnh riêng cho photostrip và khung; khung và scrapbook cho phép thêm ô ảnh.
+- Khu tải ảnh chỉ tạo preview cục bộ bằng URL tạm. File chưa được upload lên backend hoặc lưu vào giỏ hàng; giao diện hiển thị rõ giới hạn này.
+- Đã đổi query phiên bản CSS/JavaScript của trang chi tiết để buộc trình duyệt nhận bản mới.

@@ -18,12 +18,12 @@ Mở thư mục dự án bằng Live Server và truy cập `index.html`. Có th�
 
 1. Mở danh sách để kiểm tra tám sản phẩm, tìm `ky niem`, lọc danh mục và sắp xếp theo giá.
 2. Mở chi tiết theo `id=8` và thử `id=999` để kiểm tra thông báo lỗi và đường quay lại.
-3. Ở trang chi tiết `id=1`, chọn chất liệu và tùy chọn QR; tải ba ảnh vào ba ô Photostrip 1×3 và nhập ghi chú ngắn.
+3. Mở lần lượt trang chi tiết `id=1` đến `id=8`; kiểm tra khu tải ảnh theo bố cục từng sản phẩm (Photostrip 1×3, Photostrip 1×4, Postcard 2×2, khung, thiệp, scrapbook và combo).
 4. Thêm cùng sản phẩm với hai cấu hình khác nhau; kiểm tra giỏ tạo hai dòng riêng và hiển thị đúng lựa chọn, ghi chú. Thử tăng/giảm số lượng và xóa từng dòng.
 5. Tải lại trang để kiểm tra các cấu hình và ghi chú vẫn còn trong `memoria_cart`. Thử thêm lựa chọn phong bì ở `id=5` và hộp quà ở `id=8`.
 6. Bấm ảnh sản phẩm để mở toàn màn hình; dùng phím mũi tên để đổi ảnh và Escape để đóng. Sau khi thêm sản phẩm, kiểm tra thông báo có tên, số lượng và nút xem giỏ hàng.
 
-Ảnh tải vào preview Photostrip hiện chỉ được hiển thị bằng URL tạm trên trình duyệt; chưa được tải lên máy chủ hoặc lưu trong giỏ. Phần tích hợp thao tác thêm sản phẩm vẫn dùng API giỏ hàng chung; giao diện giỏ cập nhật theo mã dòng cấu hình thay vì chỉ mã sản phẩm.
+Ảnh tải vào khu preview của cả tám sản phẩm hiện chỉ được hiển thị bằng URL tạm trên trình duyệt; chưa được tải lên máy chủ hoặc lưu trong giỏ. Phần tích hợp thao tác thêm sản phẩm vẫn dùng API giỏ hàng chung; giao diện giỏ cập nhật theo mã dòng cấu hình thay vì chỉ mã sản phẩm.
 
 ## Buổi 2 – Giao diện website HTML5/CSS3
 
