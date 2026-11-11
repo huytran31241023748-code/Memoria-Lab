@@ -229,3 +229,9 @@ Nội dung đang được cập nhật bởi Vanh (TV5).
 
 - **Công cụ:** Codex hỗ trợ chỉnh giao diện và kiểm thử điều hướng.
 - **Kết quả:** Bốn thẻ danh mục mở bộ lọc tương ứng. Quy trình thiết kế nằm sau khu sản phẩm, dùng ảnh có sẵn và gộp phần giới thiệu Photobooth, Custom Studio vào các bước liên quan.
+
+## Lần sử dụng 7 – Ảnh sản phẩm đợt 3
+
+- **Công cụ:** Codex hỗ trợ tạo ảnh minh họa, tích hợp và kiểm thử.
+- **Yêu cầu tạo ảnh:** Minh họa dải ảnh 5 × 15 cm, thiệp A5 và bộ dải ảnh kèm khung để bàn. Mỗi mẫu có ảnh toàn cảnh, cận chất liệu và ảnh đặt trong không gian sử dụng. Dùng ánh sáng ấm, tông kem và hồng, không thêm logo hay chữ vào ảnh.
+- **Kết quả:** Chín ảnh WebP trong `images/products/gallery/` dùng cho ba mẫu. Trang chi tiết có chú thích ảnh AI và cho phép đổi góc bằng chuột hoặc bàn phím. Năm mẫu chưa có thêm ảnh hiển thị một ảnh chính.

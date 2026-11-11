@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
 <html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1.0" name="viewport"/><meta content="Chi tiết sản phẩm và quà tặng cá nhân hóa tại Memoria Lab." name="description"/><title>Chi tiết sản phẩm | Memoria Lab</title><link href="css/style.css?v=ket-noi" rel="stylesheet"/>
-<link href="css/product-detail.css" rel="stylesheet"/>  <script src="js/products.js" defer></script>
+<link href="css/product-detail.css?v=gallery" rel="stylesheet"/>  <script src="js/products.js?v=gallery" defer></script>
   <script src="js/cart.js" defer></script>
   <script src="js/cart-storage.js" defer></script>
   <script src="js/cart-ui.js" defer></script>
-  <script src="js/product-detail.js" defer></script>
+  <script src="js/product-detail.js?v=gallery" defer></script>
 </head><body><header class="site-header">
 <div class="container site-header__inner">
 <a aria-label="Memoria Lab - Trang chủ" class="brand" href="index.html"><span class="brand__name">Memoria Lab</span></a>
@@ -13,7 +13,22 @@
 <a class="nav-link" href="index.html">Trang chủ</a><a class="nav-link nav-link--active" href="products.html">Sản phẩm</a><a class="nav-link" href="about.html">Về chúng tôi</a><a class="nav-link" href="contact.html">Liên hệ</a></nav>
 <div aria-label="Tiện ích" class="header-actions"><a aria-label="Tìm kiếm sản phẩm" class="icon-button" href="products.html#product-search">⌕</a><button aria-label="Giỏ hàng" class="icon-button" type="button">🛒</button></div></div></header><main class="detail-page"><div class="container product-detail-notice" hidden="" id="product-detail-notice" role="status"></div><div class="container">
 <nav aria-label="Đường dẫn" class="breadcrumb"><a href="index.html">Trang chủ</a><span aria-hidden="true">/</span><a href="products.html">Sản phẩm</a><span aria-hidden="true">/</span><span aria-current="page">Photostrip 1×3 – Hàn Quốc</span></nav>
-<section aria-labelledby="product-title" class="product-detail" hidden=""><div aria-label="Ảnh sản phẩm" class="product-gallery" role="group"><input aria-label="Chọn góc xem ảnh sản phẩm" checked="" class="gallery-input" id="view-1" name="gallery" type="radio"/><input aria-label="Chọn góc xem ảnh sản phẩm" class="gallery-input" id="view-2" name="gallery" type="radio"/><input aria-label="Chọn góc xem ảnh sản phẩm" class="gallery-input" id="view-3" name="gallery" type="radio"/><div class="gallery-stage"><figure class="view-1"><img alt="" height="750" loading="lazy" src="" width="600"/></figure><figure class="view-2"><img alt="" height="750" loading="lazy" src="" width="600"/></figure><figure class="view-3"><img alt="" height="750" loading="lazy" src="" width="600"/></figure></div><div class="gallery-thumbs"><label for="view-1"><img alt="" height="100" loading="lazy" src="" width="100"/><span>Toàn cảnh</span></label><label for="view-2"><img alt="" height="100" loading="lazy" src="" width="100"/><span>Phóng to</span></label><label for="view-3"><img alt="" height="100" loading="lazy" src="" width="100"/><span>Cận bố cục</span></label></div></div><div class="product-info"><span class="product-tag"></span><h1 id="product-title">Đang tải sản phẩm…</h1><p class="product-price"></p><p class="product-summary"></p><div class="product-options" role="group" aria-label="Lựa chọn sản phẩm">
+<section aria-labelledby="product-title" class="product-detail" hidden=""><div class="product-gallery" role="group" aria-label="Ảnh sản phẩm">
+  <input class="gallery-input" type="radio" name="gallery" id="view-1" checked hidden>
+  <input class="gallery-input" type="radio" name="gallery" id="view-2" hidden>
+  <input class="gallery-input" type="radio" name="gallery" id="view-3" hidden>
+  <div class="gallery-stage">
+    <figure class="view-1"><img alt="" decoding="async"></figure>
+    <figure class="view-2"><img alt="" decoding="async" loading="lazy"></figure>
+    <figure class="view-3"><img alt="" decoding="async" loading="lazy"></figure>
+  </div>
+  <div class="gallery-thumbs" hidden>
+    <label for="view-1"><img alt="" loading="lazy"><span>Toàn cảnh</span></label>
+    <label for="view-2"><img alt="" loading="lazy"><span>Cận chất liệu</span></label>
+    <label for="view-3"><img alt="" loading="lazy"><span>Trong không gian</span></label>
+  </div>
+  <p class="image-note gallery-disclosure" hidden>Hình ảnh minh họa tạo bằng AI.</p>
+</div><div class="product-info"><span class="product-tag"></span><h1 id="product-title">Đang tải sản phẩm…</h1><p class="product-price"></p><p class="product-summary"></p><div class="product-options" role="group" aria-label="Lựa chọn sản phẩm">
   <dl class="product-quick-specs" aria-label="Quy cách sản phẩm"></dl>
   <div class="option-grid" id="detail-choices" hidden></div>
   <div>

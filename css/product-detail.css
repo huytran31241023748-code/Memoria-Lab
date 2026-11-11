@@ -22,8 +22,7 @@ a,button,input,select,textarea,label{touch-action:manipulation}
 @media(max-width:1023px){.product-detail{gap:24px;padding:20px}.product-info h1{font-size:30px}.product-tabs{padding:0 20px 20px}}
 @media(max-width:767px){.detail-page{padding:20px 0 36px}.breadcrumb{font-size:12px;margin-bottom:16px}.product-detail{grid-template-columns:1fr;padding:16px;gap:24px}.gallery-stage{max-height:460px}.product-info h1{font-size:26px}.product-price{font-size:28px}.tab-bar{gap:20px}.tab-bar label{font-size:13px;min-height:48px}.product-tabs{padding:0 16px 20px;margin-top:24px}.spec-list div{grid-template-columns:1fr;gap:4px}.related-grid{grid-template-columns:1fr}.related-card{display:grid;grid-template-columns:110px minmax(0,1fr)}.related-card img{height:100%;min-height:150px;aspect-ratio:auto}.related-products{margin-top:32px}.related-products h2{font-size:24px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
-/* Gallery variations use the same supplied mockup, without inventing additional product photos. */
-.gallery-stage figure{overflow:hidden}.gallery-stage .view-2 img{transform:scale(1.2)}.gallery-stage .view-3 img{transform:scale(1.45)}.gallery-thumbs span{display:block;text-align:center;font-size:11px;padding-top:4px}.fixed-option{max-width:100%;overflow-wrap:anywhere}.option-grid>*{min-width:0}.product-card__image{object-fit:contain}.product-grid--list{grid-template-columns:repeat(4,minmax(0,1fr))}.product-card{min-width:0}.product-info h1{overflow-wrap:anywhere}
+.gallery-stage figure{overflow:hidden}.gallery-thumbs span{display:block;text-align:center;font-size:11px;padding-top:4px}.fixed-option{max-width:100%;overflow-wrap:anywhere}.option-grid>*{min-width:0}.product-card__image{object-fit:contain}.product-grid--list{grid-template-columns:repeat(4,minmax(0,1fr))}.product-card{min-width:0}.product-info h1{overflow-wrap:anywhere}
 
 
 /* ==========================================================================
@@ -556,3 +555,27 @@ a,button,input,select,textarea,label{touch-action:manipulation}
 .detail-quantity button:last-child { border-radius: 0 10px 10px 0; }
 .detail-quantity button:disabled { opacity: .5; cursor: default; }
 .detail-quantity button:hover:not(:disabled) { background: var(--background); }
+
+.gallery-thumbs[hidden],
+.gallery-thumbs label[hidden] {
+  display: none;
+}
+
+.product-gallery--multiple .gallery-stage {
+  aspect-ratio: 2 / 1;
+}
+
+.product-gallery--multiple .gallery-thumbs img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.gallery-thumbs label {
+  color: var(--text);
+}
+
+@media (max-width: 480px) {
+  .gallery-thumbs {
+    gap: 6px;
+  }
+}

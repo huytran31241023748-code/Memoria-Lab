@@ -5,7 +5,11 @@ window.products = [
     "name": "Photostrip 1×3 – Hàn Quốc",
     "price": 89000,
     "category": "photostrip",
-    "image": "images/products/product-01.jpg",
+    "image": "images/products/gallery/photostrip-overview.webp",
+    "gallery": [
+      "images/products/gallery/photostrip-detail.webp",
+      "images/products/gallery/photostrip-lifestyle.webp"
+    ],
     "previewOptions": {
       "Chất liệu": ["Giấy ảnh bóng", "Giấy mỹ thuật nhám"],
       "Kỷ niệm số": ["Không gắn mã QR", "Gắn mã QR"]
@@ -87,7 +91,11 @@ window.products = [
     "name": "Thiệp kỷ niệm cá nhân hóa",
     "price": 69000,
     "category": "cards",
-    "image": "images/products/product-05.jpg",
+    "image": "images/products/gallery/card-overview.webp",
+    "gallery": [
+      "images/products/gallery/card-detail.webp",
+      "images/products/gallery/card-lifestyle.webp"
+    ],
     "previewOptions": { "Phong bì": ["Không thêm phong bì", "Thêm phong bì giấy kraft"] },
     "description": "Thêm ảnh và lời chúc để gửi một lời cảm ơn, lời chúc mừng hoặc điều bạn muốn nói.",
     "specs": {
@@ -147,7 +155,11 @@ window.products = [
     "name": "Set quà combo Photostrip + Frame",
     "price": 249000,
     "category": "combo",
-    "image": "images/products/product-08.jpg",
+    "image": "images/products/gallery/combo-overview.webp",
+    "gallery": [
+      "images/products/gallery/combo-detail.webp",
+      "images/products/gallery/combo-lifestyle.webp"
+    ],
     "previewOptions": { "Hộp quà": ["Không thêm hộp quà", "Thêm hộp giấy kraft"] },
     "description": "Một photostrip và một khung để bàn, đồng bộ phong cách để trao tặng kỷ niệm.",
     "specs": {

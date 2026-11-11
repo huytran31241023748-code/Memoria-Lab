@@ -103,7 +103,7 @@
   max-height: 420px;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  object-position: 50% 34%;
+  object-position: center;
 }
 
 @media (max-width: 767px) {

@@ -82,13 +82,38 @@
     const div=document.createElement("div"),dt=document.createElement("dt"),dd=document.createElement("dd");
     dt.textContent=label;dd.textContent=value;div.append(dt,dd);specs.append(div);
   });
-  // Chỉ có một ảnh nguồn cho mỗi sản phẩm; các góc phóng được CSS đảm nhiệm.
-  $$(".gallery-stage img, .gallery-thumbs img").forEach(image => {
-    image.src=product.image;
-    image.alt=image.closest(".gallery-thumbs") ? "" : product.name;
-    image.addEventListener("error", () => {image.alt="Ảnh sản phẩm hiện chưa tải được";image.removeAttribute("src");}, {once:true});
+  const gallery = $(".product-gallery");
+  const photos = [product.image, ...(product.gallery || []).slice(0, 2)];
+  const viewLabels = $$(".gallery-thumbs label", gallery);
+  const stages = $$(".gallery-stage img", gallery);
+  const radios = $$(".gallery-input", gallery);
+  viewLabels.slice(photos.length).forEach((label) => { label.hidden = true; });
+
+  function setGalleryImage(image, source, description) {
+    image.alt = description;
+    image.addEventListener("error", () => {
+      image.alt = "Ảnh sản phẩm hiện chưa tải được";
+      image.removeAttribute("src");
+    }, { once: true });
+    image.src = source;
+  }
+
+  photos.forEach((source, index) => {
+    const label = viewLabels[index].textContent.trim();
+    setGalleryImage(stages[index], source, `${label} – ${product.name}`);
+    if (photos.length > 1) {
+      setGalleryImage($("img", viewLabels[index]), source, "");
+      radios[index].setAttribute("aria-label", label);
+      radios[index].hidden = false;
+    }
   });
-  $$(".gallery-input").forEach((radio,index) => { radio.setAttribute("aria-label",["Toàn cảnh","Phóng to","Cận bố cục"][index]+": "+product.name);});
+
+  if (photos.length > 1) {
+    gallery.classList.add("product-gallery--multiple");
+    $(".gallery-thumbs", gallery).hidden = false;
+    $(".gallery-disclosure", gallery).hidden = false;
+  }
+
   const grid = $(".related-grid");
   const related = products.filter(item => String(item.id) !== String(product.id))
     .sort((a,b) => Number(b.category === product.category) - Number(a.category === product.category))
