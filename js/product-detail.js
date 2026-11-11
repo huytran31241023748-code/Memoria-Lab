@@ -1,0 +1,137 @@
+/* Memoria Lab - Trang chi tiết động. Chỉ dùng window.products (products.js). */
+(() => {
+  "use strict";
+  const params = new URLSearchParams(window.location.search);
+  const rawId = params.get("id");
+  // Mã URL chỉ chấp nhận số nguyên dương dạng số thập phân, có thể có số 0 đầu.
+  const valid = typeof rawId === "string" && /^\d+$/.test(rawId.trim()) && Number.isSafeInteger(Number(rawId.trim())) && Number(rawId.trim()) > 0;
+  const id = valid ? String(Number(rawId.trim())) : null;
+  const products = Array.isArray(window.products) ? window.products : [];
+  // Thiếu hoặc sai mã đều hiện thông báo, không tự chọn sản phẩm.
+  const product = id === null ? null : products.find(item => String(item.id) === id);
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+  const money = new Intl.NumberFormat("vi-VN", {style:"currency",currency:"VND",maximumFractionDigits:0});
+  const labels = { photostrip:"Dải ảnh", cards:"Thiệp & Postcard", frames:"Khung tranh & Scrapbook", combo:"Combo" };
+  const notice = $("#product-detail-notice");
+  const breadcrumbCurrent = $('.breadcrumb [aria-current="page"]');
+
+  function fail(message) {
+    if (!notice) return;
+    notice.replaceChildren();
+    const p = document.createElement("p"); p.textContent = message; notice.append(p);
+    const link = document.createElement("a"); link.href = "products.html"; link.textContent = "← Quay lại danh sách sản phẩm"; notice.append(link);
+    notice.hidden = false;
+    document.title = "Không tìm thấy sản phẩm | Memoria Lab";
+    if (breadcrumbCurrent) breadcrumbCurrent.textContent = "Không tìm thấy sản phẩm";
+  }
+  if (!product) {
+    fail(rawId === null ? "Thiếu mã sản phẩm trong đường dẫn." : "Mã sản phẩm không hợp lệ hoặc không tồn tại.");
+    return;
+  }
+
+  const price = money.format(Number(product.price));
+  document.title = `${product.name} | Memoria Lab`;
+  const meta = $('meta[name="description"]'); if (meta) meta.content = product.description;
+  $("#product-title").textContent = product.name;
+  if (breadcrumbCurrent) breadcrumbCurrent.textContent = product.name;
+  $(".product-price").textContent = price;
+  $(".product-tag").textContent = labels[product.category] || product.category;
+  $(".product-summary").textContent = product.description;
+  const descriptions = Array.isArray(product.detailDescription) && product.detailDescription.length ? product.detailDescription : [product.description];
+  const descriptionPanel = $("#description-panel");
+  const descHeading = document.createElement("h2");descHeading.textContent = `Về ${product.name}`;descriptionPanel.append(descHeading);
+  descriptions.forEach(text => {const p=document.createElement("p");p.textContent=text;descriptionPanel.append(p);});
+  const paperOptions = product.previewOptions?.paper || [];
+  const quickSpecs = $(".product-quick-specs");
+  const quickSpecLabels = ["Kích thước / quy cách", "Bố cục / thành phần", "Chất liệu", "Màu khung", "Phong bì", "Hộp quà", "Kỷ niệm số"];
+  quickSpecLabels.forEach(label => {
+    if (label === "Chất liệu" && paperOptions.length) return;
+    const value = product.specs?.[label];
+    if (!value) return;
+    const item = document.createElement("div");
+    const term = document.createElement("dt");
+    const description = document.createElement("dd");
+    term.className = "field-title";
+    term.textContent = label;
+    description.className = "fixed-option";
+    description.textContent = value;
+    item.append(term, description);
+    quickSpecs.append(item);
+  });
+
+  if (paperOptions.length) {
+    const fieldset = $("#detail-paper-options");
+    const row = $(".option-row", fieldset);
+    paperOptions.forEach((option, index) => {
+      const label = document.createElement("label");
+      const input = document.createElement("input");
+      const text = document.createElement("span");
+      label.className = "option-label";
+      input.type = "radio";
+      input.name = "paper";
+      input.value = option.value;
+      input.checked = index === 0;
+      text.textContent = option.label;
+      label.append(input, text);
+      row.append(label);
+    });
+    fieldset.hidden = false;
+  }
+  $("#detail-qr-options").hidden = product.previewOptions?.qr !== true;
+
+  const specs = $(".spec-list");
+  const info = {"Tên sản phẩm":product.name,"Danh mục":labels[product.category] || product.category,...(product.specs || {}),"Giá minh họa":price};
+  Object.entries(info).forEach(([label,value]) => {
+    const div=document.createElement("div"),dt=document.createElement("dt"),dd=document.createElement("dd");
+    dt.textContent=label;dd.textContent=value;div.append(dt,dd);specs.append(div);
+  });
+  // Chỉ có một ảnh nguồn cho mỗi sản phẩm; các góc phóng được CSS đảm nhiệm.
+  $$(".gallery-stage img, .gallery-thumbs img").forEach(image => {
+    image.src=product.image;
+    image.alt=image.closest(".gallery-thumbs") ? "" : `Ảnh minh họa ${product.name}`;
+    image.addEventListener("error", () => {image.alt="Ảnh sản phẩm hiện chưa tải được";image.removeAttribute("src");}, {once:true});
+  });
+  $$(".gallery-input").forEach((radio,index) => { radio.setAttribute("aria-label",["Toàn cảnh","Phóng to","Cận bố cục"][index]+": "+product.name);});
+  const grid = $(".related-grid");
+  const related = products.filter(item => String(item.id) !== String(product.id))
+    .sort((a,b) => Number(b.category === product.category) - Number(a.category === product.category))
+    .slice(0,3);
+  related.forEach(item => {
+    const article=document.createElement("article");article.className="related-card";
+    const href=`product-detail.html?id=${encodeURIComponent(item.id)}`;
+    const photoLink=document.createElement("a");photoLink.href=href;
+    const img=document.createElement("img");img.src=item.image;img.alt=item.name;img.loading="lazy";img.width=300;img.height=375;photoLink.append(img);
+    const body=document.createElement("div");body.className="related-card__body";
+    const title=document.createElement("h3"),nameLink=document.createElement("a");nameLink.href=href;nameLink.textContent=item.name;title.append(nameLink);
+    const p=document.createElement("p");p.textContent=money.format(Number(item.price));
+    const action=document.createElement("a");action.href=href;action.textContent="Xem chi tiết →";
+    body.append(title,p,action);article.append(photoLink,body);grid.append(article);
+  });
+  const addButton = $("#detail-add-to-cart");
+  const note = $("#purchase-note");
+  $("#detail-customize").addEventListener("click", () => {
+    $("#personal-note").focus();
+    note.textContent = "Bạn có thể thử các lựa chọn và ghi chú thiết kế tại đây. Studio thiết kế chưa mở.";
+  });
+  addButton.addEventListener("click", () => {
+    const quantity = Number($("#quantity").value);
+    if (!Number.isSafeInteger(quantity) || quantity < 1) {window.alert("Số lượng không hợp lệ.");return;}
+    if (typeof window.addToCart !== "function") {
+      note.textContent = "Giỏ hàng chưa mở. Sản phẩm chưa được thêm.";
+      return;
+    }
+    // API Vanh bàn giao: addToCart(productId, quantity) trả về true/false.
+    try {
+      note.textContent = "";
+      const added = window.addToCart(String(product.id), quantity);
+      note.textContent = added === true
+        ? `Đã thêm ${quantity} sản phẩm “${product.name}” vào giỏ hàng.`
+        : "Không thêm được vào giỏ hàng. Vui lòng thử lại.";
+    } catch (error) {
+      console.error("Lỗi kết nối giỏ hàng:",error);
+      note.textContent="Không thêm được vào giỏ hàng. Vui lòng thử lại.";
+    }
+  });
+  $$("section.product-detail, section.product-tabs, section.related-products").forEach(section => section.hidden=false);
+})();
