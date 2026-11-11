@@ -579,3 +579,23 @@ a,button,input,select,textarea,label{touch-action:manipulation}
     gap: 6px;
   }
 }
+
+
+/* Lightbox ảnh sản phẩm */
+.product-gallery .gallery-stage { cursor: zoom-in; }
+.product-gallery .gallery-stage:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+body.lightbox-open { overflow: hidden; }
+.product-lightbox[hidden] { display: none; }
+.product-lightbox { position: fixed; inset: 0; z-index: 2000; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-rows: minmax(0, 1fr) auto; align-items: center; justify-items: center; gap: 16px; padding: 64px 24px 32px; background: rgba(24, 18, 21, .94); }
+.product-lightbox__image { grid-column: 2; grid-row: 1; max-width: min(78vw, 1100px); max-height: calc(100vh - 140px); object-fit: contain; }
+.product-lightbox__close { position: absolute; top: 18px; right: 22px; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; background: transparent; color: #fff; font-size: 30px; cursor: pointer; }
+.product-lightbox__arrow { width: 44px; height: 56px; border: 1px solid rgba(255,255,255,.45); border-radius: 12px; background: rgba(255,255,255,.1); color: #fff; font-size: 36px; cursor: pointer; }
+.product-lightbox__prev { grid-column: 1; grid-row: 1; }
+.product-lightbox__next { grid-column: 3; grid-row: 1; }
+.product-lightbox__counter { grid-column: 2; grid-row: 2; margin: 0; color: #fff; font-size: 13px; }
+.product-lightbox button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+@media (max-width: 600px) {
+  .product-lightbox { grid-template-columns: 36px minmax(0, 1fr) 36px; gap: 6px; padding-inline: 10px; }
+  .product-lightbox__image { max-width: 100%; max-height: calc(100vh - 150px); }
+  .product-lightbox__arrow { width: 34px; height: 46px; }
+}

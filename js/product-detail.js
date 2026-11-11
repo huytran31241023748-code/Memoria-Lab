@@ -1,30 +1,35 @@
-/* Memoria Lab - Trang chi tiết động. Chỉ dùng window.products (products.js). */
+/* Memoria Lab – Trang chi tiết động. */
 (() => {
   "use strict";
   const params = new URLSearchParams(window.location.search);
   const rawId = params.get("id");
-  // Mã URL chỉ chấp nhận số nguyên dương dạng số thập phân, có thể có số 0 đầu.
-  const valid = typeof rawId === "string" && /^\d+$/.test(rawId.trim()) && Number.isSafeInteger(Number(rawId.trim())) && Number(rawId.trim()) > 0;
+  const valid = typeof rawId === "string" && /^\d+$/.test(rawId.trim())
+    && Number.isSafeInteger(Number(rawId.trim())) && Number(rawId.trim()) > 0;
   const id = valid ? String(Number(rawId.trim())) : null;
   const products = Array.isArray(window.products) ? window.products : [];
-  // Thiếu hoặc sai mã đều hiện thông báo, không tự chọn sản phẩm.
-  const product = id === null ? null : products.find(item => String(item.id) === id);
+  const product = id === null ? null : products.find((item) => String(item.id) === id);
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
-  const money = new Intl.NumberFormat("vi-VN", {style:"currency",currency:"VND",maximumFractionDigits:0});
-  const labels = { photostrip:"Dải ảnh", cards:"Thiệp & Postcard", frames:"Khung tranh & Scrapbook", combo:"Combo" };
+  const money = new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND", maximumFractionDigits: 0 });
+  const labels = { photostrip: "Dải ảnh", cards: "Thiệp & Postcard", frames: "Khung tranh & Scrapbook", combo: "Combo" };
   const notice = $("#product-detail-notice");
   const breadcrumbCurrent = $('.breadcrumb [aria-current="page"]');
 
   function fail(message) {
     if (!notice) return;
     notice.replaceChildren();
-    const p = document.createElement("p"); p.textContent = message; notice.append(p);
-    const link = document.createElement("a"); link.href = "products.html"; link.textContent = "← Quay lại danh sách sản phẩm"; notice.append(link);
+    const paragraph = document.createElement("p");
+    paragraph.textContent = message;
+    notice.append(paragraph);
+    const link = document.createElement("a");
+    link.href = "products.html";
+    link.textContent = "← Quay lại danh sách sản phẩm";
+    notice.append(link);
     notice.hidden = false;
     document.title = "Không tìm thấy sản phẩm | Memoria Lab";
     if (breadcrumbCurrent) breadcrumbCurrent.textContent = "Không tìm thấy sản phẩm";
   }
+
   if (!product) {
     fail(rawId === null ? "Thiếu mã sản phẩm trong đường dẫn." : "Mã sản phẩm không hợp lệ hoặc không tồn tại.");
     return;
@@ -32,56 +37,70 @@
 
   const price = money.format(Number(product.price));
   document.title = `${product.name} | Memoria Lab`;
-  const meta = $('meta[name="description"]'); if (meta) meta.content = product.description;
+  const meta = $('meta[name="description"]');
+  if (meta) meta.content = product.description;
   $("#product-title").textContent = product.name;
   if (breadcrumbCurrent) breadcrumbCurrent.textContent = product.name;
   $(".product-price").textContent = price;
   $(".product-tag").textContent = labels[product.category] || product.category;
   $(".product-summary").textContent = product.description;
-  const descriptions = Array.isArray(product.detailDescription) && product.detailDescription.length ? product.detailDescription : [product.description];
+
+  const descriptions = Array.isArray(product.detailDescription) && product.detailDescription.length
+    ? product.detailDescription : [product.description];
   const descriptionPanel = $("#description-panel");
-  const descHeading = document.createElement("h2");descHeading.textContent = `Về ${product.name}`;descriptionPanel.append(descHeading);
-  descriptions.forEach(text => {const p=document.createElement("p");p.textContent=text;descriptionPanel.append(p);});
+  const descriptionHeading = document.createElement("h2");
+  descriptionHeading.textContent = `Về ${product.name}`;
+  descriptionPanel.append(descriptionHeading);
+  descriptions.forEach((value) => {
+    const paragraph = document.createElement("p");
+    paragraph.textContent = value;
+    descriptionPanel.append(paragraph);
+  });
+
   const quickSpecs = $(".product-quick-specs");
   const choiceGrid = $("#detail-choices");
   const quickSpecLabels = ["Kích thước / quy cách", "Bố cục / thành phần", "Chất liệu", "Màu khung", "Phong bì", "Hộp quà", "Kỷ niệm số"];
-
   quickSpecLabels.forEach((label, index) => {
     const choices = product.previewOptions?.[label] || [];
     const value = choices[0] || product.specs?.[label];
     if (!value) return;
-
     const item = document.createElement("div");
     if (choices.length > 1) {
       const title = document.createElement("label");
       const select = document.createElement("select");
       select.id = `detail-choice-${index}`;
+      select.dataset.optionLabel = label;
       select.setAttribute("aria-describedby", "customization-note");
       title.className = "field-title";
       title.htmlFor = select.id;
       title.textContent = label;
-      choices.forEach(choice => select.add(new Option(choice)));
+      choices.forEach((choice) => select.add(new Option(choice)));
       item.append(title, select);
       choiceGrid.append(item);
-      return;
+    } else {
+      const term = document.createElement("dt");
+      const description = document.createElement("dd");
+      term.className = "field-title";
+      term.textContent = label;
+      description.textContent = value;
+      item.append(term, description);
+      quickSpecs.append(item);
     }
-
-    const term = document.createElement("dt");
-    const description = document.createElement("dd");
-    term.className = "field-title";
-    term.textContent = label;
-    description.textContent = value;
-    item.append(term, description);
-    quickSpecs.append(item);
   });
   choiceGrid.hidden = choiceGrid.childElementCount === 0;
 
   const specs = $(".spec-list");
-  const info = {"Tên sản phẩm":product.name,"Danh mục":labels[product.category] || product.category,...(product.specs || {}),"Giá":price};
-  Object.entries(info).forEach(([label,value]) => {
-    const div=document.createElement("div"),dt=document.createElement("dt"),dd=document.createElement("dd");
-    dt.textContent=label;dd.textContent=value;div.append(dt,dd);specs.append(div);
+  const info = { "Tên sản phẩm": product.name, "Danh mục": labels[product.category] || product.category, ...(product.specs || {}), "Giá": price };
+  Object.entries(info).forEach(([label, value]) => {
+    const row = document.createElement("div");
+    const term = document.createElement("dt");
+    const description = document.createElement("dd");
+    term.textContent = label;
+    description.textContent = value;
+    row.append(term, description);
+    specs.append(row);
   });
+
   const gallery = $(".product-gallery");
   const photos = [product.image, ...(product.gallery || []).slice(0, 2)];
   const viewLabels = $$(".gallery-thumbs label", gallery);
@@ -107,58 +126,135 @@
       radios[index].hidden = false;
     }
   });
-
   if (photos.length > 1) {
     gallery.classList.add("product-gallery--multiple");
     $(".gallery-thumbs", gallery).hidden = false;
     $(".gallery-disclosure", gallery).hidden = false;
   }
 
-  const grid = $(".related-grid");
-  const related = products.filter(item => String(item.id) !== String(product.id))
-    .sort((a,b) => Number(b.category === product.category) - Number(a.category === product.category))
-    .slice(0,3);
-  related.forEach(item => {
-    const article=document.createElement("article");article.className="related-card";
-    const href=`product-detail.html?id=${encodeURIComponent(item.id)}`;
-    const photoLink=document.createElement("a");photoLink.href=href;
-    const img=document.createElement("img");img.src=item.image;img.alt=item.name;img.loading="lazy";img.width=300;img.height=375;photoLink.append(img);
-    const body=document.createElement("div");body.className="related-card__body";
-    const title=document.createElement("h3"),nameLink=document.createElement("a");nameLink.href=href;nameLink.textContent=item.name;title.append(nameLink);
-    const p=document.createElement("p");p.textContent=money.format(Number(item.price));
-    const action=document.createElement("a");action.href=href;action.textContent="Xem chi tiết →";
-    body.append(title,p,action);article.append(photoLink,body);grid.append(article);
+  const stage = $(".gallery-stage", gallery);
+  const lightbox = document.createElement("div");
+  lightbox.className = "product-lightbox";
+  lightbox.hidden = true;
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.setAttribute("aria-label", `Ảnh sản phẩm ${product.name}`);
+  lightbox.innerHTML = `
+    <button class="product-lightbox__close" type="button" aria-label="Đóng ảnh">×</button>
+    <button class="product-lightbox__arrow product-lightbox__prev" type="button" aria-label="Ảnh trước">‹</button>
+    <img class="product-lightbox__image" alt="">
+    <button class="product-lightbox__arrow product-lightbox__next" type="button" aria-label="Ảnh tiếp theo">›</button>
+    <p class="product-lightbox__counter" aria-live="polite"></p>`;
+  document.body.append(lightbox);
+  const lightboxImage = $(".product-lightbox__image", lightbox);
+  const lightboxCounter = $(".product-lightbox__counter", lightbox);
+  let activePhoto = 0;
+  let previousFocus = null;
+
+  function currentPhotoIndex() {
+    const checked = radios.findIndex((radio) => radio.checked);
+    return checked >= 0 ? checked : 0;
+  }
+  function showPhoto(index) {
+    activePhoto = (index + photos.length) % photos.length;
+    if (radios[activePhoto]) radios[activePhoto].checked = true;
+    lightboxImage.src = photos[activePhoto];
+    lightboxImage.alt = `${product.name} – ảnh ${activePhoto + 1}`;
+    lightboxCounter.textContent = `${activePhoto + 1} / ${photos.length}`;
+  }
+  function openLightbox() {
+    previousFocus = document.activeElement;
+    showPhoto(currentPhotoIndex());
+    lightbox.hidden = false;
+    document.body.classList.add("lightbox-open");
+    $(".product-lightbox__close", lightbox).focus();
+  }
+  function closeLightbox() {
+    lightbox.hidden = true;
+    document.body.classList.remove("lightbox-open");
+    if (previousFocus && previousFocus.isConnected) previousFocus.focus();
+  }
+  function movePhoto(step) { showPhoto(activePhoto + step); }
+
+  stage.addEventListener("click", openLightbox);
+  stage.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") { event.preventDefault(); openLightbox(); }
   });
+  stage.tabIndex = 0;
+  stage.setAttribute("role", "button");
+  stage.setAttribute("aria-label", "Mở ảnh sản phẩm toàn màn hình");
+  $(".product-lightbox__close", lightbox).addEventListener("click", closeLightbox);
+  $(".product-lightbox__prev", lightbox).addEventListener("click", () => movePhoto(-1));
+  $(".product-lightbox__next", lightbox).addEventListener("click", () => movePhoto(1));
+  lightbox.addEventListener("click", (event) => { if (event.target === lightbox) closeLightbox(); });
+  document.addEventListener("keydown", (event) => {
+    if (lightbox.hidden) return;
+    if (event.key === "Escape") closeLightbox();
+    else if (event.key === "ArrowLeft") movePhoto(-1);
+    else if (event.key === "ArrowRight") movePhoto(1);
+  });
+
+  const relatedGrid = $(".related-grid");
+  const related = products.filter((item) => String(item.id) !== String(product.id))
+    .sort((a, b) => Number(b.category === product.category) - Number(a.category === product.category))
+    .slice(0, 3);
+  related.forEach((item) => {
+    const article = document.createElement("article");
+    article.className = "related-card";
+    const href = `product-detail.html?id=${encodeURIComponent(item.id)}`;
+    const imageLink = document.createElement("a");
+    imageLink.href = href;
+    const image = document.createElement("img");
+    image.src = item.image;
+    image.alt = item.name;
+    image.loading = "lazy";
+    image.width = 300;
+    image.height = 375;
+    imageLink.append(image);
+    const body = document.createElement("div");
+    body.className = "related-card__body";
+    const heading = document.createElement("h3");
+    const nameLink = document.createElement("a");
+    nameLink.href = href;
+    nameLink.textContent = item.name;
+    heading.append(nameLink);
+    const paragraph = document.createElement("p");
+    paragraph.textContent = money.format(Number(item.price));
+    const action = document.createElement("a");
+    action.href = href;
+    action.textContent = "Xem chi tiết →";
+    body.append(heading, paragraph, action);
+    article.append(imageLink, body);
+    relatedGrid.append(article);
+  });
+
   const addButton = $("#detail-add-to-cart");
-  const note = $("#purchase-note");
+  const purchaseNote = $("#purchase-note");
   const quantityInput = $("#quantity");
-  const decreaseQuantity = $("#detail-quantity-decrease");
-  const increaseQuantity = $("#detail-quantity-increase");
+  const decreaseButton = $("#detail-quantity-decrease");
+  const increaseButton = $("#detail-quantity-increase");
   quantityInput.max = String(Number.MAX_SAFE_INTEGER);
 
   function updateQuantityControls() {
     quantityInput.setCustomValidity("");
     const quantity = quantityInput.valueAsNumber;
-    decreaseQuantity.disabled = quantity === 1;
-    increaseQuantity.disabled = quantity === Number.MAX_SAFE_INTEGER;
+    decreaseButton.disabled = quantity === 1;
+    increaseButton.disabled = quantity === Number.MAX_SAFE_INTEGER;
   }
-
   function changeQuantity(step) {
-    const quantity = quantityInput.valueAsNumber;
-    const next = Number.isSafeInteger(quantity) && quantity >= 1 ? quantity + step : 1;
-    if (Number.isSafeInteger(next) && next >= 1) {
-      quantityInput.value = String(next);
-    }
+    const current = quantityInput.valueAsNumber;
+    const next = Number.isSafeInteger(current) && current >= 1 ? current + step : 1;
+    if (Number.isSafeInteger(next) && next >= 1) quantityInput.value = String(next);
     updateQuantityControls();
   }
-
   quantityInput.addEventListener("input", updateQuantityControls);
-  decreaseQuantity.addEventListener("click", () => changeQuantity(-1));
-  increaseQuantity.addEventListener("click", () => changeQuantity(1));
+  decreaseButton.addEventListener("click", () => changeQuantity(-1));
+  increaseButton.addEventListener("click", () => changeQuantity(1));
   $("#detail-customize").addEventListener("click", () => {
     $("#personal-note").focus();
-    note.textContent = "Bạn có thể thử các lựa chọn và ghi chú thiết kế tại đây. Studio thiết kế chưa mở.";
+    purchaseNote.textContent = "Bạn có thể chọn quy cách và ghi chú cá nhân hóa trước khi thêm vào giỏ.";
   });
+
   addButton.addEventListener("click", () => {
     const quantity = quantityInput.valueAsNumber;
     if (!Number.isSafeInteger(quantity) || quantity < 1) {
@@ -166,7 +262,13 @@
       quantityInput.reportValidity();
       return;
     }
-    window.addToCartWithFeedback(product, quantity, addButton);
+    const options = {};
+    $$("#detail-choices select").forEach((select) => {
+      options[select.dataset.optionLabel || select.id] = select.value;
+    });
+    const customization = { options, personalNote: $("#personal-note").value };
+    window.addToCartWithFeedback(product, quantity, addButton, customization);
   });
-  $$("section.product-detail, section.product-tabs, section.related-products").forEach(section => section.hidden=false);
+
+  $$("section.product-detail, section.product-tabs, section.related-products").forEach((section) => { section.hidden = false; });
 })();

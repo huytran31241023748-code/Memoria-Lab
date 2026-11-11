@@ -1068,3 +1068,11 @@ h3 {
     transform: none;
   }
 }
+
+
+/* Cấu hình cá nhân hóa theo từng dòng giỏ hàng */
+.cart-item__customization { margin-top: 8px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+.cart-item__customization ul { margin: 0; padding-left: 16px; }
+.cart-item__customization li { margin: 2px 0; }
+.cart-item__customization li span { color: var(--text); font-weight: 600; }
+.cart-item__note { margin: 6px 0 0; overflow-wrap: anywhere; }
