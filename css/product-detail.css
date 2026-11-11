@@ -599,3 +599,12 @@ body.lightbox-open { overflow: hidden; }
   .product-lightbox__image { max-width: 100%; max-height: calc(100vh - 150px); }
   .product-lightbox__arrow { width: 34px; height: 46px; }
 }
+
+
+@media (min-width: 768px) {
+  .product-detail {
+    align-items: center;
+  }
+}
+
+/* Căn giữa dải ảnh theo chiều dọc với cột thông tin sản phẩm trên desktop. */
