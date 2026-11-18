@@ -1,80 +1,48 @@
-# Memoria Lab
+# Memoria Lab — Phản hồi thêm giỏ
 
-Website quà tặng kỷ niệm cá nhân hóa của nhóm sinh viên môn Phát triển ứng dụng thương mại điện tử.
+## Nhánh và mục tiêu
 
-## Main và sản phẩm
+Nhánh fix/cart-feedback phụ trách phản hồi thêm giỏ của website Memoria Lab.
 
-Main là bản tích hợp của website, gồm Trang chủ, danh mục, chi tiết và cá nhân hóa tại trình duyệt, giỏ hàng, giới thiệu và liên hệ.
+Phụ trách hoặc điều phối theo công việc hiện có là THuy điều phối, phối hợp Vanh và Yến. Lịch sử commit ghi nhận người thực hiện thực tế. Nhóm rà lại phân công khi giao nhiệm vụ mới.
 
-- [Website demo](https://huytran31241023748-code.github.io/Memoria-Lab/)
-- [Repository](https://github.com/huytran31241023748-code/Memoria-Lab)
-- [Bảng phân công](https://docs.google.com/spreadsheets/d/1eJ1J088PnPgRg2XK-QkzYYVgHOOGAT-d/edit?gid=1128739764#gid=1128739764)
+## Hiện trạng
 
-## Chức năng đã có
+Thông báo nổi có tên, số lượng, nút xem giỏ và nút đóng.
 
-- Tám sản phẩm dùng chung dữ liệu và có ba ảnh minh họa mỗi mẫu.
-- Tìm kiếm không dấu, lọc danh mục, sắp xếp và đọc điều kiện URL.
-- Chi tiết theo id, lựa chọn, ghi chú, số lượng và ảnh toàn màn hình.
-- Tải ảnh từ thiết bị để xem thử bố cục cá nhân hóa.
-- Giỏ phân biệt các cấu hình, hỗ trợ tăng giảm, xóa, tính tổng và khôi phục khi tải lại.
-- Thông báo thêm giỏ, giới thiệu, liên hệ và biểu tượng tab.
+Nhánh được tạo từ main đã tích hợp. Chức năng hiện có kế thừa từ bản nền và các commit trước ngày tổ chức nhánh. Bản khởi tạo README đánh dấu phạm vi công việc cho những thay đổi tiếp theo.
 
-Ảnh tải từ thiết bị hiện phục vụ xem trước trong phiên trình duyệt. Các lựa chọn và ghi chú được lưu trong giỏ. Mã QR trên hình ảnh sản phẩm là minh họa. Thanh toán và backend thuộc kế hoạch phát triển tiếp theo. Một số quy cách và kênh liên hệ dùng thông tin nhóm lựa chọn cho bản học tập.
+## File và phạm vi
 
-## Nhánh và phân công
+- [js/cart-ui.js](js/cart-ui.js)
+- [js/render-products.js](js/render-products.js)
+- [js/product-detail.js](js/product-detail.js)
+- [css/style.css](css/style.css)
 
-| Nhánh | Phần việc | Phụ trách hoặc điều phối |
-|---|---|---|
-| [feature/homepage](https://github.com/huytran31241023748-code/Memoria-Lab/tree/feature/homepage) | Trang chủ | KAnh và THuy |
-| [feature/product-data](https://github.com/huytran31241023748-code/Memoria-Lab/tree/feature/product-data) | Dữ liệu sản phẩm | THuy |
-| [feature/product-catalog](https://github.com/huytran31241023748-code/Memoria-Lab/tree/feature/product-catalog) | Danh sách sản phẩm | KAnh |
-| [feature/search-filter-sort](https://github.com/huytran31241023748-code/Memoria-Lab/tree/feature/search-filter-sort) | Tìm kiếm, lọc và sắp xếp | Quyên |
-| [feature/product-detail](https://github.com/huytran31241023748-code/Memoria-Lab/tree/feature/product-detail) | Chi tiết và ảnh sản phẩm | Quang |
-| [feature/product-customization](https://github.com/huytran31241023748-code/Memoria-Lab/tree/feature/product-customization) | Cá nhân hóa sản phẩm | THuy điều phối, phối hợp Quang và Vanh |
-| [feature/shopping-cart](https://github.com/huytran31241023748-code/Memoria-Lab/tree/feature/shopping-cart) | Giỏ hàng | Vanh và Yến |
-| [feature/cart-storage](https://github.com/huytran31241023748-code/Memoria-Lab/tree/feature/cart-storage) | Lưu trữ giỏ hàng | VHuy |
-| [feature/about-contact](https://github.com/huytran31241023748-code/Memoria-Lab/tree/feature/about-contact) | Giới thiệu và liên hệ | THuy điều phối, phối hợp Vanh và Yến |
-| [style/responsive-accessibility](https://github.com/huytran31241023748-code/Memoria-Lab/tree/style/responsive-accessibility) | Responsive và khả năng tiếp cận | THuy điều phối, phối hợp Yến và Cường |
-| [fix/cart-feedback](https://github.com/huytran31241023748-code/Memoria-Lab/tree/fix/cart-feedback) | Phản hồi thêm giỏ | THuy điều phối, phối hợp Vanh và Yến |
-| [test/integration](https://github.com/huytran31241023748-code/Memoria-Lab/tree/test/integration) | Kiểm thử tích hợp | Cường, phối hợp các thành viên |
-| [docs/project-report](https://github.com/huytran31241023748-code/Memoria-Lab/tree/docs/project-report) | Báo cáo và tài liệu | THuy và Cường, thành viên bổ sung phần phụ trách |
-| [chore/repository-setup](https://github.com/huytran31241023748-code/Memoria-Lab/tree/chore/repository-setup) | Tổ chức repository | THuy |
-| [release/submission](https://github.com/huytran31241023748-code/Memoria-Lab/tree/release/submission) | Bản bàn giao | THuy, Cường kiểm tra và các thành viên xác nhận |
+Các file dùng chung cần trao đổi với chủ nhánh liên quan trước khi sửa.
 
-Đọc [quy trình nhánh](docs/branch-workflow.md) để bàn giao, tạo Pull Request và xử lý README riêng. Các nhánh công việc có bản đầy đủ của website và README theo phạm vi.
+## Cách chạy
 
-## Công nghệ và cách chạy
+Mở thư mục bằng Live Server hoặc chạy python -m http.server 8000, sau đó mở http://localhost:8000/index.html. Trang chi tiết dùng product-detail.html?id=1 đến id=8.
 
-HTML5, CSS3, JavaScript thuần, localStorage và GitHub Pages.
+## Kiểm tra phần phụ trách
 
-Mở thư mục bằng Live Server hoặc chạy python -m http.server 8000 tại thư mục gốc, sau đó truy cập http://localhost:8000/index.html.
+Thêm hàng từ ba trang, thêm nhiều lần, đóng thông báo và kiểm tra vị trí cuộn.
 
-## Cấu trúc
+Chạy thêm chức năng liên quan trước khi tích hợp. Ghi kết quả thực tế, lỗi, người xử lý và kết quả chạy lại khi bàn giao.
 
-| Đường dẫn | Nội dung |
-|---|---|
-| index.html | Trang chủ |
-| products.html | Danh mục |
-| product-detail.html | Chi tiết theo id |
-| cart.html | Giỏ hàng |
-| about.html, contact.html | Giới thiệu và liên hệ |
-| js/ | Dữ liệu, render, tìm kiếm, chi tiết và giỏ |
-| css/ | Giao diện dùng chung và từng trang |
-| images/ | Ảnh và biểu tượng |
-| docs/ | Tài liệu, quy trình nhánh và hồ sơ |
+## Phụ thuộc và dữ liệu
 
-## Kiểm thử
+Nguồn sản phẩm dùng js/products.js. Giỏ dùng js/cart.js, js/cart-storage.js và js/cart-ui.js. Ảnh tải từ thiết bị hiện chỉ xem trước tại trình duyệt. Cấu hình và ghi chú giỏ được lưu vào memoria_cart.
 
-Thử danh sách tám sản phẩm, tìm ky niem, lọc kết hợp và sắp xếp. Mở chi tiết id=1 đến id=8, id=999 và thiếu id. Thử tải ảnh, đổi góc ảnh, cấu hình, ghi chú, thêm giỏ, thêm trùng cấu hình, sửa số lượng, xóa, tải lại và JSON localStorage hỏng. Kiểm tra Console và bố cục 1366, 768, 390 px.
+## Bàn giao vào main
 
-## Khắc phục thường gặp
+1. Cập nhật nhánh từ main và giữ README phạm vi của nhánh này.
+2. Hoàn thành phần việc, commit và push lên fix/cart-feedback.
+3. Mở Pull Request với base là main, compare là fix/cart-feedback.
+4. Ghi thay đổi, kết quả kiểm thử và minh chứng. Review xong mới merge.
+5. Khi merge, giữ README tổng quan trên main. Đưa nội dung bàn giao cần lưu vào tài liệu chức năng trong docs.
 
-- Ảnh hoặc CSS cũ, tải lại bằng Ctrl + F5.
-- Ảnh xem trước mất khi tải lại, chọn lại ảnh từ thiết bị cho phiên mới.
-- Xung đột README khi tích hợp, áp dụng hướng dẫn tại docs/branch-workflow.md.
+## Tài liệu
 
-## Tài liệu và AI hỗ trợ
-
-[Phân công](PROJECT_PLAN.md), [yêu cầu](REQUIREMENTS.md), [nhật ký tích hợp](INTEGRATION_LOG.md), [nhật ký AI](AI_USAGE_LOG.md) và [README lịch sử](docs/previous-project-readme.md).
-
-AI hỗ trợ đối chiếu, tích hợp, tạo ảnh minh họa, kiểm thử và tài liệu. Thành viên chịu trách nhiệm rà soát phần bàn giao.
+[Quy trình nhánh](docs/branch-workflow.md), [kế hoạch](PROJECT_PLAN.md), [yêu cầu](REQUIREMENTS.md), [nhật ký AI](AI_USAGE_LOG.md), [README main](https://github.com/huytran31241023748-code/Memoria-Lab/blob/main/README.md) và [website](https://huytran31241023748-code.github.io/Memoria-Lab/).
