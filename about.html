@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Khám phá Memoria Lab - nền tảng sáng tạo quà tặng kỷ niệm cá nhân hóa, kết nối Photobooth, thiết kế và in ấn.">
     <title>Về chúng tôi | Memoria Lab</title>
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico" sizes="16x16 32x32">
+  <link rel="icon" href="images/memoria-favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="stylesheet" href="css/style.css?v=ket-noi">
     <link rel="stylesheet" href="css/about.css">
+    <script src="js/products.js?v=gallery-2" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/cart-storage.js" defer></script>
+    <script src="js/cart-ui.js" defer></script>
 </head>
 
 <body>
@@ -22,8 +28,8 @@
       <nav class="site-nav" aria-label="Điều hướng chính">
         <a class="nav-link" href="index.html">Trang chủ</a>
         <a class="nav-link" href="products.html">Sản phẩm</a>
-        <a class="nav-link" href="product-detail.html">Chi tiết sản phẩm</a>
         <a class="nav-link nav-link--active" aria-current="page" href="about.html">Về chúng tôi</a>
+        <a class="nav-link" href="contact.html">Liên hệ</a>
       </nav>
 
       <div class="header-actions" aria-label="Tiện ích">
@@ -184,12 +190,9 @@
             <div class="container">
 
                 <div class="section-heading about-section-heading">
-                    <p class="eyebrow">HOW IT WORKS</p>
+                    <p class="eyebrow">QUY TRÌNH THIẾT KẾ</p>
                     <h2>Từ khoảnh khắc đến món quà</h2>
-                    <p>
-                        Bốn bước kết nối trải nghiệm sáng tạo với
-                        những kỷ niệm có thể lưu giữ lâu dài.
-                    </p>
+                    <p>Bốn bước để tạo món quà từ ảnh và lời nhắn của bạn.</p>
                 </div>
 
                 <div class="about-process__grid">
@@ -199,11 +202,8 @@
                             src="images/chup_photobooth_tren_laptop_thumb_4225642aa1.webp"
                             alt="Minh họa bước chụp ảnh Photobooth">
                         <span class="about-process-card__number">01</span>
-                        <h3>Capture</h3>
-                        <p>
-                            Chụp ảnh bằng Web Photobooth hoặc
-                            tải những bức ảnh yêu thích.
-                        </p>
+                        <h3>Chụp hoặc tải ảnh</h3>
+                        <p>Chụp bằng Web Photobooth hoặc tải những bức ảnh bạn muốn lưu giữ.</p>
                     </article>
 
                     <article class="about-process-card">
@@ -211,11 +211,8 @@
                             src="images/1788948688330-2c33e2ba-3e52-4bed-b381-44b4cc8541bb-mmmmmm.png"
                             alt="Minh họa bước thiết kế và trang trí">
                         <span class="about-process-card__number">02</span>
-                        <h3>Design</h3>
-                        <p>
-                            Thêm sticker, khung hình, màu sắc
-                            và lời nhắn để tạo dấu ấn riêng.
-                        </p>
+                        <h3>Thiết kế</h3>
+                        <p>Sắp xếp ảnh, thêm lời nhắn và chọn khung trang trí theo phong cách của bạn.</p>
                     </article>
 
                     <article class="about-process-card">
@@ -223,11 +220,8 @@
                             src="images/21572.png"
                             alt="Minh họa mã QR kết nối kỷ niệm số">
                         <span class="about-process-card__number">03</span>
-                        <h3>Connect</h3>
-                        <p>
-                            Kết nối sản phẩm với trang kỷ niệm
-                            số thông qua mã QR.
-                        </p>
+                        <h3>Gắn mã QR</h3>
+                        <p>Dùng mã QR để kết nối món quà với trang kỷ niệm số.</p>
                     </article>
 
                     <article class="about-process-card">
@@ -235,11 +229,8 @@
                             src="images/bd7de513cc42206d8eb39cbd60e7bbb6.jpg"
                             alt="Minh họa thành phẩm quà tặng được in">
                         <span class="about-process-card__number">04</span>
-                        <h3>Print</h3>
-                        <p>
-                            Đặt in thiết kế thành những món quà
-                            vật lý để lưu giữ và trao tặng.
-                        </p>
+                        <h3>Đặt in</h3>
+                        <p>In thiết kế đã hoàn thiện để lưu giữ hoặc trao tặng.</p>
                     </article>
 
                 </div>
@@ -326,21 +317,28 @@
           <nav class="footer-links" aria-label="Liên kết chân trang">
             <a class="footer-link" href="index.html">Trang chủ</a>
             <a class="footer-link" href="products.html">Sản phẩm</a>
-            <a class="footer-link" href="product-detail.html">Chi tiết sản phẩm</a>
             <a class="footer-link footer-link--active" aria-current="page" href="about.html">Về chúng tôi</a>
+            <a class="footer-link" href="contact.html">Liên hệ</a>
           </nav>
         </div>
 
         <!-- Nhóm 3: Thông tin liên hệ & Mạng xã hội (Mục 2.4 & 3.4: chỉ điền sau khi nhóm xác nhận) -->
         <div class="site-footer__contact">
-          <h3 class="site-footer__title">Thông tin liên hệ</h3>
-          <p class="site-footer__text">
-            Email, số điện thoại và mạng xã hội chính thức sẽ được cập nhật
-            sau khi nhóm xác nhận.
-          </p>
-          <div class="footer-meta">
-            <a class="footer-link" href="about.html">Tìm hiểu câu chuyện Memoria Lab →</a>
-          </div>
+          <h3 class="site-footer__title">Kết nối</h3>
+          <ul class="footer-contact">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
+              <span><span class="footer-contact__label">Email </span>memorialab.contact@gmail.com</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2c0 8.8 7.2 16 16 16a2 2 0 0 0 2-2v-3l-5-2-2 2a13 13 0 0 1-6-6l2-2-2-5Z"/></svg>
+              <span><span class="footer-contact__label">Điện thoại </span>0349 800 003</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M13 21v-9h3m-6 0h3V9a2 2 0 0 1 2-2h1"/></svg>
+              <span>Facebook · @memorialab.vn</span>
+            </li>
+          </ul>
         </div>
       </div>
 

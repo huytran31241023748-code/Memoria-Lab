@@ -212,3 +212,54 @@ Gộp thành AI_USAGE_LOG.md; bỏ yêu cầu nộp các file phụ. Tên hiện
 **Trần Lâm Huy — chờ rà soát bản tổng hợp này trước khi nộp.**
 
 Nội dung đang được cập nhật bởi Vanh (TV5).
+
+## Lần sử dụng 4 – Hoàn thiện giao diện Buổi 3
+
+- **Công cụ:** Codex hỗ trợ rà soát, chỉnh sửa và kiểm thử website.
+- **Yêu cầu:** Cho phép nhập số lượng trên trang chi tiết, thống nhất quy trình thiết kế, cập nhật quy cách sản phẩm và thêm trang Liên hệ.
+- **Kết quả:** Giỏ hàng tiếp tục nhận số lượng qua API hiện có. Hai trang giới thiệu dùng chung nội dung bốn bước. Dữ liệu quy cách được cập nhật tập trung trong `js/products.js`. Trang Liên hệ sử dụng ảnh sẵn có, có mục câu hỏi thường gặp và liên kết góp ý kỹ thuật.
+- **Nội dung cần nhóm rà soát:** Một số thông số về chất liệu và phụ kiện được điền tạm để hoàn thiện danh mục. Nhóm cập nhật lại theo thông số thực tế và bổ sung kênh liên hệ chính thức khi có thông tin.
+
+## Lần sử dụng 5 – Cải tiến Trang chủ đợt 1
+
+- **Công cụ:** Codex hỗ trợ đối chiếu bố cục của Nook Ký, chỉnh sửa và kiểm thử Trang chủ Memoria Lab.
+- **Kết quả:** Banner có tiêu đề tiếng Việt và hai hướng điều hướng. Khối bộ quà ngay sau banner dùng ảnh hiện có và đọc giá, quy cách từ danh mục chung. Các liên kết và bố cục được kiểm tra trên Chromium.
+
+## Lần sử dụng 6 – Cải tiến Trang chủ đợt 2
+
+- **Công cụ:** Codex hỗ trợ chỉnh giao diện và kiểm thử điều hướng.
+- **Kết quả:** Bốn thẻ danh mục mở bộ lọc tương ứng. Quy trình thiết kế nằm sau khu sản phẩm, dùng ảnh có sẵn và gộp phần giới thiệu Photobooth, Custom Studio vào các bước liên quan.
+
+## Lần sử dụng 7 – Ảnh sản phẩm đợt 3
+
+- **Công cụ:** Codex hỗ trợ tạo ảnh minh họa, tích hợp và kiểm thử.
+- **Yêu cầu tạo ảnh:** Minh họa dải ảnh 5 × 15 cm, thiệp A5 và bộ dải ảnh kèm khung để bàn. Mỗi mẫu có ảnh toàn cảnh, cận chất liệu và ảnh đặt trong không gian sử dụng. Dùng ánh sáng ấm, tông kem và hồng, không thêm logo hay chữ vào ảnh.
+- **Kết quả:** Chín ảnh WebP trong `images/products/gallery/` dùng cho ba mẫu. Trang chi tiết có chú thích ảnh AI và cho phép đổi góc bằng chuột hoặc bàn phím. Năm mẫu chưa có thêm ảnh hiển thị một ảnh chính.
+
+## Lần sử dụng 8 – Hoàn thiện ảnh cho toàn bộ danh mục
+
+- **Công cụ:** Codex hỗ trợ tạo, tích hợp và kiểm thử ảnh minh họa sản phẩm.
+- **Yêu cầu tạo ảnh:** Ba góc cho dải ảnh Vintage bốn ô, postcard Y2K lưới 2 × 2, khung để bàn vân gỗ sáng, scrapbook A5 một mặt và dải ảnh bóng có họa tiết QR minh họa. Ánh sáng ấm, tông kem và hồng, giữ quy cách từng mẫu.
+- **Kết quả:** Thêm 15 ảnh WebP vào `images/products/gallery/`. Cả tám trang chi tiết có ba góc xem và chú thích ảnh minh họa.
+
+
+## Lần sử dụng 9 – Cải tiến giỏ hàng và trải nghiệm sản phẩm Buổi 3
+
+- **Công cụ:** ChatGPT (GPT-6) hỗ trợ rà soát mã nguồn, đề xuất và thực hiện chỉnh sửa.
+- **Phạm vi:** Nhánh `buoi-3/Javascript`; cải tiến theo thứ tự ưu tiên giỏ hàng cá nhân hóa, phản hồi thêm giỏ, xem ảnh toàn màn hình và preview Photostrip 1×3.
+- **Kết quả mã nguồn:** Mỗi dòng giỏ có định danh theo mã sản phẩm, các lựa chọn và ghi chú; khôi phục localStorage giữ các cấu hình khác nhau thành các dòng riêng. Trang giỏ hiển thị lựa chọn/ghi chú và đổi số lượng hoặc xóa theo đúng dòng. Phản hồi thêm giỏ hiển thị tên sản phẩm, số lượng và liên kết xem giỏ. Ảnh chi tiết mở lightbox, hỗ trợ phím mũi tên và Escape. Trang Photostrip 1×3 có ba ô chọn ảnh từ thiết bị và xem trước tại chỗ.
+- **Giới hạn cần lưu ý:** Ảnh người dùng chọn trong preview hiện chỉ dùng URL tạm trên trình duyệt, chưa tải lên máy chủ và không được lưu thành dữ liệu ảnh trong giỏ. Ghi chú ngắn và các lựa chọn sản phẩm được lưu trong giỏ. Đây là phần giao diện Buổi 3, chưa thay thế quy trình đăng nhập, lưu thiết kế và xử lý đơn ở backend.
+- **Kiểm thử:** Đã rà soát luồng dữ liệu và script liên quan qua mã nguồn GitHub. Chưa chạy kiểm thử tương tác trực tiếp trên trình duyệt; cần kiểm tra các trường hợp thêm hai cấu hình khác nhau của cùng sản phẩm, tải lại trang, thao tác số lượng/xóa đúng dòng, lightbox bằng bàn phím và tải đủ ba ảnh.
+
+
+### Điều chỉnh giao diện sau phản hồi
+
+- Chuyển khu tải ảnh khỏi cột thông tin sản phẩm thành một khu vực riêng nằm bên dưới hàng ảnh + thông tin; đặt lại căn lề hai cột về đầu hàng để tránh cảm giác lệch.
+- Khai báo nhóm ảnh theo từng sản phẩm trong `js/products.js`; cả tám sản phẩm đều có ô tải ảnh. Combo có hai nhóm ảnh riêng cho photostrip và khung; khung và scrapbook cho phép thêm ô ảnh.
+- Khu tải ảnh chỉ tạo preview cục bộ bằng URL tạm. File chưa được upload lên backend hoặc lưu vào giỏ hàng; giao diện hiển thị rõ giới hạn này.
+- Đã đổi query phiên bản CSS/JavaScript của trang chi tiết để buộc trình duyệt nhận bản mới.
+
+
+## Tổ chức nhánh theo chức năng
+
+Codex hỗ trợ đối chiếu main với buoi-3/CSS, tích hợp hai lịch sử và chuẩn bị README riêng cho 15 nhánh. Bản dữ liệu và render mở rộng trên nhánh phát triển được giữ khi giải quyết hai xung đột add/add. Nhóm đã chấp thuận dùng main làm bản tích hợp và nguồn triển khai.

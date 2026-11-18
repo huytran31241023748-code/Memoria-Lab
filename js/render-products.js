@@ -36,7 +36,10 @@
     card.dataset.category = product.category;
     card.dataset.productId = String(product.id);
 
-    const imageBox = makeElement("div", "product-card__img-box");
+    const detailUrl = `product-detail.html?id=${encodeURIComponent(product.id)}`;
+    const imageBox = makeElement("a", "product-card__img-box product-card__image-link");
+    imageBox.href = detailUrl;
+    imageBox.setAttribute("aria-label", `Xem chi tiết ${product.name}`);
     const image = makeElement("img", "product-card__image");
     image.src = product.image;
     image.alt = `Hình ảnh minh họa ${product.name}`;
@@ -55,7 +58,7 @@
     imageBox.appendChild(image);
     card.appendChild(imageBox);
 
-    const body = makeElement("div", featured ? "product-card__body" : "product-card__body");
+    const body = makeElement("div", "product-card__body");
     const category = makeElement(
       "p",
       "product-card__category",
@@ -63,7 +66,10 @@
     );
     body.appendChild(category);
 
-    const title = makeElement("h3", "product-card__title", product.name);
+    const title = makeElement("h3", "product-card__title");
+    const titleLink = makeElement("a", "product-card__title-link", product.name);
+    titleLink.href = detailUrl;
+    title.appendChild(titleLink);
     title.id = `product-title-${String(product.id).replace(/[^a-zA-Z0-9_-]/g, "-")}`;
     card.setAttribute("aria-labelledby", title.id);
     body.appendChild(title);
@@ -77,7 +83,7 @@
     actions.appendChild(price);
 
     const detailLink = makeElement("a", "btn product-card__btn", "Xem chi tiết");
-    detailLink.href = `product-detail.html?id=${encodeURIComponent(product.id)}`;
+    detailLink.href = detailUrl;
     detailLink.setAttribute("aria-label", `Xem chi tiết ${product.name}`);
     actions.appendChild(detailLink);
 
@@ -117,11 +123,25 @@
   window.createProductCard = createProductCard;
 
   document.addEventListener("DOMContentLoaded", () => {
-    const listContainer = document.getElementById("product-list");
     const featuredContainer = document.getElementById("featured-product-list");
 
-    if (listContainer) renderProducts(products, listContainer);
     if (featuredContainer) renderProducts(products.slice(0, 4), featuredContainer, { featured: true });
+
+    const spotlight = document.querySelector("[data-spotlight-product]");
+    if (!spotlight) return;
+    const product = products.find((item) => String(item.id) === spotlight.dataset.spotlightProduct);
+    if (!product) return;
+
+    const spec = product.specs?.["Kích thước / quy cách"];
+    if (spec) {
+      const specElement = spotlight.querySelector("[data-spotlight-spec]");
+      specElement.textContent = spec;
+      specElement.hidden = false;
+    }
+
+    const priceElement = spotlight.querySelector("[data-spotlight-price]");
+    priceElement.textContent = money.format(Number(product.price));
+    priceElement.hidden = false;
   });
 
   // Dùng event delegation để các nút vẫn hoạt động sau mỗi lần render lại.
@@ -129,11 +149,7 @@
     const button = event.target.closest("[data-add-to-cart]");
     if (!button) return;
 
-    const productId = button.dataset.addToCart;
-    if (typeof window.addToCart === "function") {
-      window.addToCart(productId);
-    } else {
-      window.alert("Chức năng giỏ hàng đang chờ tích hợp. Vui lòng thử lại sau.");
-    }
+    const product = products.find((item) => String(item.id) === button.dataset.addToCart);
+    if (product) window.addToCartWithFeedback(product, 1, button);
   });
 })();

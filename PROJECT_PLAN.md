@@ -302,3 +302,8 @@ Hướng dẫn, tài liệu kỹ thuật và khung báo cáo được viết t�
 | R19 | Nguồn ảnh/font/sticker/nhạc hoặc code không rõ quyền sử dụng | Trung bình | Ghi nguồn/license, dùng tài nguyên được phép, lưu source inventory; không lấy tài nguyên bất kỳ rồi mặc định miễn phí. | Lâm Phú Cường |
 | R20 | Chuỗi AI1→AI2→yêu cầu bị dồn hạn Chương 1 | Cao | Tách T1.4a và T1.4b, bàn giao từng đầu ra, báo chặn sớm; sửa việc tồn trong cập nhật thay vì khai hoàn thành hồi tố. | Trần Lâm Huy |
 
+
+
+## Tổ chức nhánh theo chức năng
+
+Main là bản tích hợp, 15 nhánh công việc có README riêng. Danh sách và quy trình được ghi tại [docs/branch-workflow.md](docs/branch-workflow.md). Công việc mới được tổ chức theo chức năng, sửa lỗi, giao diện, kiểm thử, tài liệu, bảo trì và bàn giao.

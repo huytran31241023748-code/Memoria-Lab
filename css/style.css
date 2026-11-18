@@ -793,7 +793,7 @@ h3 {
 .featured-products .product-card__img-box {
   flex-shrink: 0;
   overflow: hidden;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 2;
   border-radius: var(--radius-image, 12px);
   background: #f7eee8;
 }
@@ -802,7 +802,7 @@ h3 {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   transition: transform 240ms ease;
 }
 
@@ -1265,4 +1265,216 @@ h3 {
 
 .home-hero-photo {
   border-radius: var(--radius-image);
+}
+
+
+/* Nút thêm giỏ cho các thẻ sản phẩm nổi bật được render bằng JavaScript. */
+.featured-products .product-card__add-btn {
+  display: flex; align-items: center; justify-content: center; width: 100%;
+  min-height: 42px; margin-top: 8px; padding: 10px 12px;
+  border: 1px solid var(--featured-accent, var(--accent));
+  border-radius: var(--radius-button, 999px); background: var(--surface, #fff);
+  color: var(--featured-accent, var(--accent)); font: inherit; font-size: 13px;
+  font-weight: 600; cursor: pointer;
+}
+.featured-products .product-card__add-btn:hover {
+  background: var(--featured-accent, var(--accent)); color: #fff;
+}
+.featured-products .product-card__add-btn:focus-visible {
+  outline: 3px solid var(--featured-accent, var(--accent)); outline-offset: 3px;
+}
+.featured-products .product-card__title { overflow-wrap: anywhere; }
+
+.product-card__image-link {
+  display: block;
+}
+
+.product-card__title-link:hover,
+.product-card__title-link:focus-visible {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.product-card__image-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.header-actions .icon-button {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border-radius: var(--radius-button);
+  background-color: var(--accent);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(168, 72, 104, 0.28);
+}
+
+.cart-badge[hidden] {
+  display: none !important;
+}
+
+.site-footer__contact .site-footer__title {
+  color: #f2bdcf;
+}
+
+.footer-contact {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #eadfdf;
+  font-size: 14px;
+}
+
+.footer-contact li {
+  display: grid;
+  grid-template-columns: 19px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  overflow-wrap: anywhere;
+}
+
+.footer-contact svg {
+  width: 19px;
+  height: 19px;
+  margin-top: 2px;
+  color: #f2bdcf;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer-contact__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.cart-toast {
+  position: fixed;
+  z-index: 30;
+  inset-inline-end: max(16px, env(safe-area-inset-right));
+  inset-block-end: max(16px, env(safe-area-inset-bottom));
+  width: min(370px, calc(100% - 32px));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  padding: 16px 12px 16px 18px;
+  border: 1px solid var(--border);
+  border-inline-start: 4px solid var(--accent);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 8px 30px rgb(67 35 48 / 18%);
+}
+
+.cart-toast[hidden],
+.cart-toast__link[hidden] {
+  display: none;
+}
+
+.cart-toast[data-state="error"] {
+  border-inline-start-color: #9c303a;
+}
+
+.cart-toast__title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.cart-toast__message {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: .875rem;
+  overflow-wrap: anywhere;
+}
+
+.cart-toast__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--accent);
+  font-size: .875rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cart-toast__close {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 1.35rem;
+  cursor: pointer;
+}
+
+.cart-toast :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.cart-toast-announcement {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+
+/* Nút xem giỏ trong phản hồi thêm sản phẩm */
+.cart-toast__link {
+  min-height: 40px;
+  margin-top: 12px;
+  padding: 9px 16px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  justify-content: center;
+}
+.cart-toast__link:hover { background: #7d2e49; border-color: #7d2e49; color: #fff; }
+.cart-toast__link:focus-visible { outline: 3px solid var(--lavender); outline-offset: 3px; }
+
+/* Photostrip 1×3 – tải ảnh và xem trước tại chỗ */
+.photostrip-customizer { margin-top: 20px; padding: 16px; border: 1px solid var(--border); border-radius: 14px; background: rgba(255,255,255,.72); }
+.photostrip-customizer h2 { margin: 0 0 6px; font-size: 18px; }
+.photostrip-customizer__help, .photostrip-customizer__status { margin: 0 0 12px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.photostrip-customizer__status { margin: 10px 0 0; min-height: 18px; }
+.photostrip-upload-grid { display: grid; grid-template-columns: minmax(0, 220px); gap: 8px; margin-inline: auto; }
+.photostrip-upload-slot { position: relative; display: grid; place-items: center; min-width: 0; aspect-ratio: 4 / 3; overflow: hidden; border: 1px dashed var(--accent); border-radius: 10px; background: #fbf4f0; color: var(--accent); cursor: pointer; }
+.photostrip-upload-slot__image { width: 100%; height: 100%; object-fit: cover; }
+.photostrip-upload-slot__prompt { padding: 8px; text-align: center; font-size: 12px; font-weight: 600; }
+.photostrip-upload-slot input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.photostrip-upload-slot:focus-within { outline: 3px solid var(--lavender); outline-offset: 3px; }
+@media (max-width: 420px) {
+  .photostrip-customizer { padding: 12px; }
+  .photostrip-upload-grid { width: min(100%, 220px); gap: 6px; }
+  .photostrip-upload-slot__prompt { font-size: 11px; }
 }
